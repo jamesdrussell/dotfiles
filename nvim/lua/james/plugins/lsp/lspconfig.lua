@@ -26,3 +26,10 @@ local on_attach = function(client, bufnr)
     keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
     keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
 end
+
+local capabilities = cmp_nvim_lsp.default_capabilities()
+
+lspconfig["rust_analyzer"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
