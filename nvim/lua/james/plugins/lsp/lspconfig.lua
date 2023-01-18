@@ -30,6 +30,9 @@ end
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
 lspconfig["rust_analyzer"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
+    capabilities = capabilities,
+    on_attach = on_attach,
+    settings = {
+        ["rust-analyzer"] = {}
+    }
 })
