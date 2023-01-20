@@ -187,6 +187,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     mode hide
+    modifier none
 }
 
 gaps inner 10
