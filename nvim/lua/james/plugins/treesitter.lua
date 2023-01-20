@@ -17,6 +17,7 @@ treesitter.setup({
     ensure_installed = {
         "rust",
         "vim",
+        "lua",
     },
     -- auto install above language parsers
     auto_install = true,
