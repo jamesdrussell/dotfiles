@@ -1,6 +1,10 @@
-# to spawn the terminal
-alt + Return
+# open a terminal
+alt + t
     alacritty
+
+# open a browser
+alt + b
+    google-chrome
 
 # make sxhkd reload its configuration file
 alt + Escape
