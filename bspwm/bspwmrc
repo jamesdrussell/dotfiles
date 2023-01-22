@@ -1,5 +1,7 @@
 #! /bin/sh
 
+hsetroot -solid "#000000"
+
 -pgrep -x sxhkd > /dev/null || sxhkd &
 picom --config $HOME/.config/picom/picom.conf &
 -pgrep -x light-locker > /dev/null || light-locker &
