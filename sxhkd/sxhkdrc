@@ -1,3 +1,7 @@
+# open dmenu
+alt + d
+    dmenu_run
+
 # open a terminal
 alt + t
     alacritty
