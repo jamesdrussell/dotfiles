@@ -1,0 +1,15 @@
+# to spawn the terminal
+alt + Return
+    alacritty
+
+# make sxhkd reload its configuration file
+alt + Escape
+    pkill -USR1 -x sxhkd
+
+# for dmenu
+alt + p
+    dmenu_run
+
+# quit/restart bspwm
+shift + alt + {q,r}
+    bspc {quit,wm -r}
