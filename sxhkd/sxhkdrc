@@ -22,6 +22,10 @@ shift + alt + {q,r}
 alt + shift + {1-9}
     bspc node -d '{1-9}' --follow
 
-#switch to desktop
+# switch to desktop
 alt + {1-9}
     bspc desktop -f '{1-9}'
+
+# focus or swap the node in given direction
+alt + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
