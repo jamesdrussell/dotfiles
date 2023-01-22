@@ -13,3 +13,11 @@ alt + p
 # quit/restart bspwm
 shift + alt + {q,r}
     bspc {quit,wm -r}
+
+# send to desktop
+alt + shift + {1-9}
+    bspc node -d '{1-9}' --follow
+
+#switch to desktop
+alt + {1-9}
+    bspc desktop -f '{1-9}'
