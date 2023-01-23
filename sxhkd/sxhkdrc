@@ -8,7 +8,7 @@ alt + t
 
 # open a browser
 alt + b
-    google-chrome --force-dark-mode
+    google-chrome
 
 # make sxhkd reload its configuration file
 alt + Escape
