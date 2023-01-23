@@ -1,5 +1,5 @@
 # open dmenu
-alt + d
+alt + @space
     dmenu_run
 
 # open a terminal
