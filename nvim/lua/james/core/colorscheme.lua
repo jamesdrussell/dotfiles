@@ -1,4 +1,4 @@
-local status, _ = pcall(vim.cmd, "colorscheme vscode")
+local status, _ = pcall(vim.cmd, "colorscheme tokyonight")
 if not status then
     print("Colorscheme not found")
     return
