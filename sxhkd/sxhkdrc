@@ -52,3 +52,15 @@ alt + super + {h,j,k,l}
     bspc node -z bottom 0 -20, \
     bspc node -z right +20 0; \
     bspc node -z left -20 0}
+
+# mute volume
+alt + F10
+    pamixer -t
+
+# decrease volume
+alt + F11
+    pamixer -d 5
+
+# increase volume
+alt + F12
+    pamixer -i 5
