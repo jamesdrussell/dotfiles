@@ -1,5 +1,7 @@
 local keymap = vim.keymap
 
+vim.g.mapleader = " "
+
 keymap.set("i", "jk", "<ESC>")
 keymap.set("n", "x", '"_x')
 
