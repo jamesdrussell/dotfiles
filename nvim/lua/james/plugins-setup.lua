@@ -26,7 +26,7 @@ end
 return packer.startup(function(use)
     use("wbthomason/packer.nvim")
     use("nvim-lua/plenary.nvim")
-    use("sainnhe/edge")
+    use("joshdick/onedark.vim")
     use("christoomey/vim-tmux-navigator")
     use("szw/vim-maximizer")
     use("tpope/vim-surround")
