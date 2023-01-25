@@ -17,7 +17,13 @@ telescope.setup({
                 ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
             }
         }
+    },
+    extensions = {
+        file_browser = {
+            hijack_netrw = true,
+        }
     }
 })
 
 telescope.load_extension("fzf")
+telescope.load_extension("file_browser")
