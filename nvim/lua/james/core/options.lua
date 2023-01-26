@@ -28,3 +28,5 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.iskeyword:append("-")
+
+opt.laststatus = 3
