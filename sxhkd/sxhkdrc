@@ -6,6 +6,10 @@ alt + @space
 alt + t
     alacritty
 
+# open editor
+alt + e
+    emacs
+
 # open a browser
 alt + b
     google-chrome
