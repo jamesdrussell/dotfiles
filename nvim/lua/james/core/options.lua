@@ -1,6 +1,7 @@
 local opt = vim.opt
 
 opt.number = true
+opt.relativenumber = true
 
 opt.mouse = 'a'
 
@@ -10,6 +11,9 @@ opt.expandtab = true
 opt.autoindent = true
 
 opt.wrap = false
+
+opt.hlsearch = false
+opt.incsearch = true
 
 opt.ignorecase = true
 opt.smartcase = true
