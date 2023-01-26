@@ -16,8 +16,8 @@ keymap.set("n", "<leader>tp", ":tabp<CR>")
 
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
-keymap.set("n", "<leader>fe", "<cmd>Telescope file_browser<cr>")
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
-keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+keymap.set("n", "<leader>ff", "<cmd>Telescope find_files theme=dropdown previewer=false<cr>")
+keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep theme=dropdown previewer=false<cr>")
+keymap.set("n", "<leader>fe", "<cmd>Telescope file_browser theme=dropdown previewer=false<cr>")
+keymap.set("n", "<leader>fb", "<cmd>Telescope buffers theme=dropdown previewer=false<cr>")
+keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags theme=dropdown previewer=false<cr>")
