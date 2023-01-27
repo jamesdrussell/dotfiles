@@ -1,5 +1,7 @@
 {
     "workbench.startupEditor": "none",
     "workbench.activityBar.visible": false,
-    "window.menuBarVisibility": "hidden"
+    "window.menuBarVisibility": "hidden",
+    "security.workspace.trust.enabled": false,
+    "extensions.ignoreRecommendations": true
 }
