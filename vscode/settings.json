@@ -3,5 +3,9 @@
     "workbench.activityBar.visible": false,
     "window.menuBarVisibility": "hidden",
     "security.workspace.trust.enabled": false,
-    "extensions.ignoreRecommendations": true
+    "extensions.ignoreRecommendations": true,
+    "editor.minimap.enabled": false,
+    "workbench.tips.enabled": false,
+    "editor.fontFamily": "'CaskaydiaCove Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontSize": 16
 }
