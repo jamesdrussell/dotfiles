@@ -7,5 +7,6 @@
     "editor.minimap.enabled": false,
     "workbench.tips.enabled": false,
     "editor.fontFamily": "'CaskaydiaCove Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace",
-    "editor.fontSize": 16
+    "editor.fontSize": 16,
+    "workbench.colorTheme": "One Dark Pro"
 }
