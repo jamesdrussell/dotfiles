@@ -36,3 +36,5 @@ opt.splitbelow = true
 opt.iskeyword:append("-")
 
 opt.laststatus = 3
+
+opt.shortmess:append("I")
