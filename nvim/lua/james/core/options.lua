@@ -41,4 +41,4 @@ opt.shortmess:append("I")
 
 opt.showmode = false
 opt.showcmd = false
-opt.cmdheight = 0
+opt.cmdheight = 1
