@@ -38,3 +38,5 @@ opt.iskeyword:append("-")
 opt.laststatus = 3
 
 opt.shortmess:append("I")
+
+opt.showcmd = false
