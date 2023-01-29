@@ -43,7 +43,7 @@ alt + {_,shift + }Tab
 	bspc node -f {next,prev}.local.!hidden.window
 
 # resizing windows
-alt + shift + {h,j,k,l}
+alt + super + {h,j,k,l}
     {bspc node -z right -20 0; \
     bspc node -z left +20 0, \
     bspc node -z top 0 -20; \
