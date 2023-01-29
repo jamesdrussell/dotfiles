@@ -1,5 +1,6 @@
 #! /bin/sh
 
+xsetroot -cursor_name left_ptr
 hsetroot -solid "#000000"
 
 picom --config $HOME/.config/picom/picom.conf &
