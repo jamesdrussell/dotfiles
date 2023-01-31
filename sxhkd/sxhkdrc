@@ -10,6 +10,10 @@ super + t
 super + b
     google-chrome
 
+# open music
+super + m
+    spotify
+
 # make sxhkd reload its configuration file
 super + Escape
     pkill -USR1 -x sxhkd
