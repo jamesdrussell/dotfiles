@@ -31,12 +31,12 @@ super + f
 	bspc desktop -l next
 
 # send to desktop
-super + shift + {1-9}
-    bspc node -d '{1-9}' --follow
+super + shift + {1-4}
+    bspc node -d '{1-4}' --follow
 
 # switch to desktop
-super + {1-9}
-    bspc desktop -f '{1-9}'
+super + {1-4}
+    bspc desktop -f '{1-4}'
 
 # focus or swap the node in given direction
 super + {_,shift + }{h,j,k,l}
