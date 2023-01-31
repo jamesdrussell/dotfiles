@@ -3,6 +3,4 @@
 xsetroot -cursor_name left_ptr
 hsetroot -solid "#000000"
 
-picom --config $HOME/.config/picom/picom.conf &
-sxhkd &
-exec bspwm
+exec dbus-launch --sh-syntax --exit-with-session bspwm
