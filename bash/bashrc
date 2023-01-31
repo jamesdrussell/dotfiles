@@ -114,7 +114,7 @@ fi
 . "$HOME/.cargo/env"
 
 # Attaches tmux to the last session; creates a new session if none exists.
-alias t='tmux attach || tmux new-session -c $HOME'
+alias tm='tmux attach || tmux new-session -c $HOME'
 
 # Attaches tmux to a session (example: ta portal)
 alias ta='tmux attach -t'
