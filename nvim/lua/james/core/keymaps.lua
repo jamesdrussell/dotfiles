@@ -23,3 +23,5 @@ keymap.set("n", "<leader>b", "<cmd>Telescope buffers<cr>")
 
 keymap.set({"n","v"}, "H", "^")
 keymap.set({"n","v"}, "L", "$")
+keymap.set({"n","v"}, "J", "5j")
+keymap.set({"n","v"}, "K", "5k")
