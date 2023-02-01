@@ -1,21 +1,17 @@
 # open dmenu
-super + @space
+alt + @space
     dmenu_run
 
 # open a terminal
-super + t
+alt + t
     alacritty
 
-# open an editor
-super + e
-    code
-
 # open a browser
-super + b
+alt + b
     google-chrome
 
 # open music
-super + m
+alt + m
     spotify
 
 # make sxhkd reload its configuration file
@@ -35,20 +31,24 @@ super + f
 	bspc desktop -l next
 
 # send to desktop
-super + shift + {1-4}
-    bspc node -d '{1-4}' --follow
+alt + shift + {1-2}
+    bspc node -d '{1-2}' --follow
 
 # switch to desktop
-super + {1-4}
-    bspc desktop -f '{1-4}'
+alt + {1-2}
+    bspc desktop -f '{1-2}'
 
 # focus or swap the node in given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the next/previous window in the current desktop
-super + {_,shift + }Tab
+alt + {_,shift + }Tab
 	bspc node -f {next,prev}.local.!hidden.window
+
+# focus the next/previous desktop
+super + {_,shift + }Tab
+	bspc desktop -f {next,prev}
 
 # resizing windows
 super + alt + {h,j,k,l}
