@@ -3,10 +3,12 @@
 pgrep -x picom > /dev/null || picom --config $HOME/.config/picom/picom.conf &
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d 1 2
+bspc monitor -d 1 2 3 4
 
 bspc desktop 1 -l monocle
 bspc desktop 2 -l monocle
+bspc desktop 3 -l monocle
+bspc desktop 4 -l monocle
 
 bspc config border_width         2
 bspc config window_gap           0

@@ -19,12 +19,12 @@ alt + f
 	bspc desktop -l next
 
 # send to desktop
-alt + shift + {1-2}
-    bspc node -d '{1-2}' --follow
+alt + shift + {1-4}
+    bspc node -d '{1-4}' --follow
 
 # switch to desktop
-alt + {1-2}
-    bspc desktop -f '{1-2}'
+alt + {1-4}
+    bspc desktop -f '{1-4}'
 
 # focus or swap the node in given direction
 super + {_,shift + }{h,j,k,l}
