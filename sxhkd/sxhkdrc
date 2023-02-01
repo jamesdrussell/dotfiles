@@ -58,16 +58,8 @@ super + alt + {h,j,k,l}
     bspc node -z left -20 0}
 
 # mute volume
-alt + F10
+F9
     pamixer -t
-
-# decrease volume
-alt + F11
-    pamixer -d 5
-
-# increase volume
-alt + F12
-    pamixer -i 5
 
 # play/pause
 F10
