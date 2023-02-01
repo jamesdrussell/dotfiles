@@ -6,6 +6,10 @@ super + @space
 super + t
     alacritty
 
+# open an editor
+super + e
+    code
+
 # open a browser
 super + b
     google-chrome
