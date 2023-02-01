@@ -20,3 +20,6 @@ keymap.set("n", "<leader>f", "<cmd>Telescope find_files<cr>")
 keymap.set("n", "<leader>g", "<cmd>Telescope live_grep<cr>")
 keymap.set("n", "<leader>e", "<cmd>Telescope file_browser<cr>")
 keymap.set("n", "<leader>b", "<cmd>Telescope buffers<cr>")
+
+keymap.set({"n","v"}, "H", "^")
+keymap.set({"n","v"}, "L", "$")
