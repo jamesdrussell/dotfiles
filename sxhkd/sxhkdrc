@@ -2,18 +2,6 @@
 alt + @space
     dmenu_run
 
-# open a terminal
-alt + t
-    alacritty
-
-# open a browser
-alt + b
-    google-chrome
-
-# open music
-alt + m
-    spotify
-
 # make sxhkd reload its configuration file
 super + Escape
     pkill -USR1 -x sxhkd
@@ -23,11 +11,11 @@ super + shift + {q,r}
     bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }w
+alt + {_,shift + }q
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
-super + f
+alt + f
 	bspc desktop -l next
 
 # send to desktop
