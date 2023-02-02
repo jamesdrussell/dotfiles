@@ -16,10 +16,11 @@ keymap.set("n", "<leader>tp", ":tabp<CR>")
 
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
-keymap.set("n", "<leader>f", "<cmd>Telescope find_files<cr>")
-keymap.set("n", "<leader>g", "<cmd>Telescope live_grep<cr>")
-keymap.set("n", "<leader>e", "<cmd>Telescope file_browser<cr>")
-keymap.set("n", "<leader>b", "<cmd>Telescope buffers<cr>")
+keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
+keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
+keymap.set("n", "<leader>fe", "<cmd>Telescope file_browser<cr>")
+keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
+keymap.set("n", "<leader>fl", "<cmd>Telescope current_buffer_fuzzy_find<cr>")
 
 keymap.set("n", "H", "^")
 keymap.set("n", "L", "$")

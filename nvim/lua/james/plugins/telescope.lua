@@ -18,7 +18,16 @@ telescope.setup({
                 ["<C-j>"] = actions.move_selection_next,
                 ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
             }
-        }
+        },
+        layout_strategy = "vertical",
+        layout_config = {
+            prompt_position = "top",
+            vertical = {
+                height = 20
+            }
+        },
+        preview = false,
+        sorting_strategy = "ascending",
     },
     extensions = {
         file_browser = {
