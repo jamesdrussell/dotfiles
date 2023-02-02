@@ -2,3 +2,5 @@
 
 xsetroot -cursor_name left_ptr
 hsetroot -solid "#000000"
+
+exec dbus-launch --sh-syntax --exit-with-session bspwm
