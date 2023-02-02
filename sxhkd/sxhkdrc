@@ -15,11 +15,11 @@ alt + m
     spotify
 
 # make sxhkd reload its configuration file
-super + Escape
+alt + Escape
     pkill -USR1 -x sxhkd
 
 # quit/restart bspwm
-super + shift + {q,r}
+alt + shift + {q,r}
     bspc {quit,wm -r}
 
 # close and kill
