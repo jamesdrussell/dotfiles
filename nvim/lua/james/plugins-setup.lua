@@ -60,18 +60,6 @@ return packer.startup(function(use)
     use("lewis6991/gitsigns.nvim")
     use("lukas-reineke/indent-blankline.nvim")
     use({ "akinsho/toggleterm.nvim", tag = "*" })
-    use {
-        "folke/which-key.nvim",
-        config = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-            require("which-key").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
-        end
-    }
 
     if packer_bootstrap then
         require("packer").sync()
