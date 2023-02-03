@@ -59,6 +59,9 @@ return packer.startup(function(use)
     use("windwp/nvim-ts-autotag")
     use("lewis6991/gitsigns.nvim")
     use("lukas-reineke/indent-blankline.nvim")
+    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+        require("toggleterm").setup()
+    end}
 
     if packer_bootstrap then
         require("packer").sync()

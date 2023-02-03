@@ -22,6 +22,9 @@ keymap.set("n", "<leader>fe", "<cmd>Telescope file_browser<cr>")
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 keymap.set("n", "<leader>fl", "<cmd>Telescope current_buffer_fuzzy_find<cr>")
 
+keymap.set("n", "<leader>tt", "<cmd>ToggleTerm direction=float<cr>")
+keymap.set("t", "<Esc>", "<C-\\><C-n><C-w>l")
+
 keymap.set("n", "H", "^")
 keymap.set("n", "L", "$")
 keymap.set("n", "J", "5j")
