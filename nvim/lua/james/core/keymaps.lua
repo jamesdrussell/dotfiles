@@ -6,6 +6,11 @@ keymap.set("n", "x", '"_x')
 
 keymap.set("n", "<leader>w", "<cmd>w<cr>")
 keymap.set("n", "<leader>q", "<cmd>q<cr>")
+keymap.set("n", "<leader>v", "<C-w>v")
+keymap.set("n", "<leader>h", "<C-w>s")
+keymap.set("n", "<leader>=", "<C-w>=")
+keymap.set("n", "<leader>m", "<cmd>MaximizerToggle<cr>")
+keymap.set("n", "<leader>x", "<cmd>close<cr>")
 
 keymap.set("n", "<leader>f", "<cmd>Telescope find_files<cr>")
 keymap.set("n", "<leader>s", "<cmd>Telescope live_grep<cr>")
