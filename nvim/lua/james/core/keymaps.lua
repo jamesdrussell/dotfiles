@@ -12,6 +12,7 @@ keymap.set("n", "<leader>l", "<cmd>Telescope current_buffer_fuzzy_find<cr>")
 
 keymap.set("n", "<leader>t", "<cmd>ToggleTerm direction=float<cr>")
 keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>c")
+keymap.set("t", "<Esc>", "<C-\\><C-n><C-w>c")
 keymap.set("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<cr>")
 
 keymap.set("n", "H", "^")
