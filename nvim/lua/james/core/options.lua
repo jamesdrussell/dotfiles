@@ -24,7 +24,7 @@ opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
 
-opt.scrolloff = 1
+opt.scrolloff = 5
 
 opt.backspace = "indent,eol,start"
 

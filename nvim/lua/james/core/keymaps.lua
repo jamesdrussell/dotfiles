@@ -4,27 +4,15 @@ vim.g.mapleader = " "
 
 keymap.set("n", "x", '"_x')
 
-keymap.set("n", "<leader>sv", "<C-w>v")
-keymap.set("n", "<leader>sh", "<C-w>s")
-keymap.set("n", "<leader>se", "<C-w>=")
-keymap.set("n", "<leader>sx", ":close<CR>")
+keymap.set("n", "<leader>f", "<cmd>Telescope find_files<cr>")
+keymap.set("n", "<leader>s", "<cmd>Telescope live_grep<cr>")
+keymap.set("n", "<leader>e", "<cmd>Telescope file_browser<cr>")
+keymap.set("n", "<leader>b", "<cmd>Telescope buffers<cr>")
+keymap.set("n", "<leader>l", "<cmd>Telescope current_buffer_fuzzy_find<cr>")
 
-keymap.set("n", "<leader>to", ":tabnew<CR>")
-keymap.set("n", "<leader>tx", ":tabclose<CR>")
-keymap.set("n", "<leader>tn", ":tabn<CR>")
-keymap.set("n", "<leader>tp", ":tabp<CR>")
-
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
-
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
-keymap.set("n", "<leader>fe", "<cmd>Telescope file_browser<cr>")
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
-keymap.set("n", "<leader>fl", "<cmd>Telescope current_buffer_fuzzy_find<cr>")
-
-keymap.set("n", "<leader>tt", "<cmd>ToggleTerm direction=float<cr>")
+keymap.set("n", "<leader>t", "<cmd>ToggleTerm direction=float<cr>")
 keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>c")
-keymap.set("n", "<leader>tg", "<cmd>lua _LAZYGIT_TOGGLE()<cr>")
+keymap.set("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<cr>")
 
 keymap.set("n", "H", "^")
 keymap.set("n", "L", "$")
