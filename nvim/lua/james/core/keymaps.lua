@@ -4,6 +4,9 @@ vim.g.mapleader = " "
 
 keymap.set("n", "x", '"_x')
 
+keymap.set("n", "<leader>w", "<cmd>w<cr>")
+keymap.set("n", "<leader>q", "<cmd>q<cr>")
+
 keymap.set("n", "<leader>f", "<cmd>Telescope find_files<cr>")
 keymap.set("n", "<leader>s", "<cmd>Telescope live_grep<cr>")
 keymap.set("n", "<leader>e", "<cmd>Telescope file_browser<cr>")
