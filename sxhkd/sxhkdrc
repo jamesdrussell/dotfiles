@@ -8,7 +8,7 @@ alt + t
 
 # open browser
 alt + b
-    google-chrome
+    google-chrome-stable
 
 # open music
 alt + m
