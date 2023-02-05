@@ -12,8 +12,6 @@ keymap.set("n", "<leader>h", "<C-w>s")
 keymap.set("n", "<leader>=", "<C-w>=")
 keymap.set("n", "<leader>m", "<cmd>MaximizerToggle<cr>")
 keymap.set("n", "<leader>x", "<cmd>close<cr>")
-keymap.set("n", "<leader>n", "<cmd>bnext<cr>")
-keymap.set("n", "<leader>N", "<cmd>bprev<cr>")
 
 keymap.set("n", "<leader>f", "<cmd>Telescope find_files<cr>")
 keymap.set("n", "<leader>s", "<cmd>Telescope live_grep<cr>")
