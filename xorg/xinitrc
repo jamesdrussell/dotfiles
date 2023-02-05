@@ -3,4 +3,5 @@
 xsetroot -cursor_name left_ptr
 hsetroot -solid "#000000"
 
+exec xautolock -time 5 -locker slock &
 exec dbus-launch --sh-syntax --exit-with-session bspwm
