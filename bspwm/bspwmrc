@@ -1,5 +1,18 @@
 #! /bin/sh
 
+export GTK_THEME=Adwaita:dark
+
+export XSECURELOCK_SAVER=saver_blank
+export XSECURELOCK_BACKGROUND_COLOR="#000000"
+export XSECURELOCK_AUTH_BACKGROUND_COLOR="#000000"
+export XSECURELOCK_FONT="CaskaydiaCove Nerd Font"
+export XSECURELOCK_DISCARD_FIRST_KEYPRESS=0
+export XSECURELOCK_COMPOSITE_OBSCURER=0
+export XSECURELOCK_NO_COMPOSITE=1
+
+xsetroot -cursor_name left_ptr
+hsetroot -solid "#000000"
+
 pgrep -x picom > /dev/null || picom --config $HOME/.config/picom/picom.conf &
 pgrep -x sxhkd > /dev/null || sxhkd &
 
@@ -17,8 +30,6 @@ bspc config focus_follows_pointer true
 
 bspc rule -a feh state=floating
 bspc rule -a Emacs state=tiled
-#bspc rule -a Gimp desktop='^8' state=floating follow=on
-#bspc rule -a Chromium desktop='^2'
-#bspc rule -a mplayer2 state=floating
-#bspc rule -a Kupfer.py focus=on
-#bspc rule -a Screenkey manage=off
+
+xset s 300 5
+xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
