@@ -1,16 +1,89 @@
-require("james.plugins-setup")
-require("james.core.options")
-require("james.core.keymaps")
-require("james.core.colorscheme")
-require("james.plugins.comment")
-require("james.plugins.lualine")
-require("james.plugins.telescope")
-require("james.plugins.nvim-cmp")
-require("james.plugins.lsp.mason")
-require("james.plugins.lsp.lspsaga")
-require("james.plugins.lsp.lspconfig")
-require("james.plugins.autopairs")
-require("james.plugins.treesitter")
-require("james.plugins.gitsigns")
-require("james.plugins.indent-blankline")
-require("james.plugins.toggleterm")
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable",
+        lazypath,
+    })
+end
+
+vim.opt.rtp:prepend(lazypath)
+
+vim.g.mapleader = " "
+
+require("lazy").setup("plugins")
+
+vim.opt.number = true
+
+vim.opt.mouse = "a"
+
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.autoindent = true
+
+vim.opt.wrap = false
+
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+vim.opt.cursorline = true
+
+vim.opt.termguicolors = true
+vim.opt.background = "dark"
+vim.opt.signcolumn = "yes"
+
+vim.opt.scrolloff = 5
+
+vim.opt.backspace = "indent,eol,start"
+
+vim.opt.clipboard:append("unnamedplus")
+
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
+vim.opt.iskeyword:append("-")
+
+vim.opt.laststatus = 3
+
+vim.opt.shortmess:append("I")
+
+vim.opt.showmode = false
+vim.opt.showcmd = false
+vim.opt.cmdheight = 1
+
+vim.opt.hidden = true
+
+vim.keymap.set("n", "x", '"_x')
+
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
+vim.keymap.set("n", "<leader>q", "<cmd>q<cr>")
+vim.keymap.set("n", "<leader>Q", "<cmd>q!<cr>")
+vim.keymap.set("n", "<leader>v", "<C-w>v")
+vim.keymap.set("n", "<leader>h", "<C-w>s")
+vim.keymap.set("n", "<leader>=", "<C-w>=")
+vim.keymap.set("n", "<leader>m", "<cmd>MaximizerToggle<cr>")
+vim.keymap.set("n", "<leader>x", "<cmd>close<cr>")
+
+vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>c")
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n><C-w>c")
+-- vim.keymap.set("n", "<leader>g", "<cmd>lua lazygit_toggle()<cr>")
+
+vim.keymap.set("n", "H", "^")
+vim.keymap.set("n", "L", "$")
+vim.keymap.set("n", "J", "5j")
+vim.keymap.set("n", "K", "5k")
+
+vim.keymap.set("i", "<C-h>", "<Left>")
+vim.keymap.set("i", "<C-j>", "<Down>")
+vim.keymap.set("i", "<C-k>", "<Up>")
+vim.keymap.set("i", "<C-l>", "<Right>")
+
+vim.keymap.set("n", "U", "<C-r>")
