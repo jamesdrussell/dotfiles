@@ -52,6 +52,6 @@ return {
         "saadparwaiz1/cmp_luasnip"
     },
     {
-        "hrsh7th/cmp-nvim-lsp"
+        "rafamadriz/friendly-snippets"
     }
 }
