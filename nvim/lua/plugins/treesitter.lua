@@ -15,7 +15,7 @@ return {
             auto_install = true
         })
     end,
-    run = function()
+    build = function()
         require("nvim-treesitter.install").update({ with_sync = true })
     end
 }
