@@ -23,7 +23,7 @@ return {
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-            local on_attach = function(client, bufnr)
+            local on_attach = function(_, bufnr)
                 local opts = { noremap = true, silent = true, buffer = bufnr }
 
                 vim.keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
@@ -51,7 +51,13 @@ return {
             require("lspconfig")["sumneko_lua"].setup({
                 capabilities = capabilities,
                 on_attach = on_attach,
-                settings = {}
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { "vim" }
+                        }
+                    }
+                }
             })
         end,
         enabled = true
