@@ -26,23 +26,13 @@ return {
                     { name = "luasnip" },
                     { name = "buffer" },
                     { name = "path" }
-                }),
-                formatting = {
-                    format = require("lspkind").cmp_format({
-                        maxwidth = 50,
-                        ellipsis_char = "..."
-                    }),
-                },
+                })
             })
         end,
         enabled = true
     },
     {
         "L3MON4D3/LuaSnip",
-        enabled = true
-    },
-    {
-        "onsails/lspkind.nvim",
         enabled = true
     },
     {
@@ -55,10 +45,6 @@ return {
     },
     {
         "saadparwaiz1/cmp_luasnip",
-        enabled = true
-    },
-    {
-        "rafamadriz/friendly-snippets",
         enabled = true
     }
 }
