@@ -3,7 +3,8 @@ return {
         "williamboman/mason.nvim",
         config = function()
             require("mason").setup()
-        end
+        end,
+        enabled = true
     },
     {
         "williamboman/mason-lspconfig.nvim",
@@ -13,7 +14,8 @@ return {
                     "rust_analyzer"
                 }
             })
-        end
+        end,
+        enabled = true
     },
     {
         "neovim/nvim-lspconfig",
@@ -40,10 +42,12 @@ return {
                     ["rust-analyzer"] = {}
                 }
             })
-        end
+        end,
+        enabled = true
     },
     {
-        "hrsh7th/cmp-nvim-lsp"
+        "hrsh7th/cmp-nvim-lsp",
+        enabled = true
     },
     {
         "glepnir/lspsaga.nvim",
@@ -60,6 +64,7 @@ return {
                     },
                 },
             })
-        end
+        end,
+        enabled = true
     }
 }

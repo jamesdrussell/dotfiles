@@ -13,5 +13,6 @@ return {
             direction = "float",
             hidden = true
         })
-    end
+    end,
+    enabled = true
 }

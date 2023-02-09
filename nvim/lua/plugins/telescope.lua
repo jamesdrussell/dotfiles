@@ -2,7 +2,8 @@ return {
     {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
-        lazy = true
+        lazy = true,
+        enabled = true
     },
     {
         "nvim-telescope/telescope.nvim",
@@ -43,7 +44,8 @@ return {
             })
 
             require("telescope").load_extension("fzf")
-        end
+        end,
+        enabled = true
     },
     {
         "nvim-telescope/telescope-file-browser.nvim",
@@ -70,6 +72,7 @@ return {
             {"<leader>e", function()
                 require("telescope").extensions.file_browser.file_browser()
             end},
-        }
+        },
+        enabled = true
     }
 }

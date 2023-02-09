@@ -34,24 +34,31 @@ return {
                     }),
                 },
             })
-        end
+        end,
+        enabled = true
     },
     {
-        "L3MON4D3/LuaSnip"
+        "L3MON4D3/LuaSnip",
+        enabled = true
     },
     {
-        "onsails/lspkind.nvim"
+        "onsails/lspkind.nvim",
+        enabled = true
     },
     {
-        "hrsh7th/cmp-buffer"
+        "hrsh7th/cmp-buffer",
+        enabled = true
     },
     {
-        "hrsh7th/cmp-path"
+        "hrsh7th/cmp-path",
+        enabled = true
     },
     {
-        "saadparwaiz1/cmp_luasnip"
+        "saadparwaiz1/cmp_luasnip",
+        enabled = true
     },
     {
-        "rafamadriz/friendly-snippets"
+        "rafamadriz/friendly-snippets",
+        enabled = true
     }
 }
