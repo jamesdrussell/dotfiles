@@ -2,19 +2,10 @@
 
 export GTK_THEME=Adwaita:dark
 
-export XSECURELOCK_SAVER=saver_blank
-export XSECURELOCK_BACKGROUND_COLOR="#000000"
-export XSECURELOCK_AUTH_BACKGROUND_COLOR="#000000"
-export XSECURELOCK_FONT="CaskaydiaCove Nerd Font"
-export XSECURELOCK_PASSWORD_PROMPT=asterisks
-export XSECURELOCK_DISCARD_FIRST_KEYPRESS=0
-export XSECURELOCK_COMPOSITE_OBSCURER=0
-export XSECURELOCK_NO_COMPOSITE=1
-
 xsetroot -cursor_name left_ptr
-hsetroot -solid "#000000"
+#hsetroot -solid "#000000"
 
-pgrep -x picom > /dev/null || picom --config $HOME/.config/picom/picom.conf &
+#pgrep -x picom > /dev/null || picom --config $HOME/.config/picom/picom.conf &
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d 1 2 3 4
@@ -31,6 +22,3 @@ bspc config focus_follows_pointer true
 
 bspc rule -a feh state=floating
 bspc rule -a Emacs state=tiled
-
-xset s 300 5
-xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
