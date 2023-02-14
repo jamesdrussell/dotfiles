@@ -12,7 +12,7 @@ return {
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "rust_analyzer",
-                    "sumneko_lua"
+                    "lua_ls"
                 }
             })
         end,
@@ -48,7 +48,7 @@ return {
                 }
             })
 
-            require("lspconfig")["sumneko_lua"].setup({
+            require("lspconfig")["lua_ls"].setup({
                 capabilities = capabilities,
                 on_attach = on_attach,
                 settings = {
