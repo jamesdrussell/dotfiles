@@ -7,7 +7,6 @@ xsetroot -cursor_name left_ptr
 
 pgrep -x picom > /dev/null || picom --config $HOME/.config/picom/picom.conf &
 pgrep -x sxhkd > /dev/null || sxhkd &
-pgrep -x light-locker > /dev/null || light-locker &
 
 bspc monitor -d 1 2 3 4
 
