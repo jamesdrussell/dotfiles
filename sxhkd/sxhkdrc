@@ -63,7 +63,7 @@ alt + super + {h,j,k,l}
 
 # mute volume
 F9
-    pamixer -t
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # previous track
 F10
