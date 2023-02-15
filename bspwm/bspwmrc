@@ -2,7 +2,7 @@
 
 export GTK_THEME=Adwaita:dark
 
-#xsetroot -cursor_name left_ptr
+xsetroot -cursor_name left_ptr
 #hsetroot -solid "#000000"
 
 pgrep -x picom > /dev/null || picom --config $HOME/.config/picom/picom.conf &
