@@ -11,6 +11,7 @@ dnf install -y alacritty neovim bspwm sxhkd picom xsetroot @base-x google-chrome
                 xrandr ripgrep fd-find fzf lazygit gcc-c++ nodejs bash-completion playerctl \
                 dbus-x11 xsecurelock xset xss-lock
 
+ln -sf ~/projects/dotfiles/bash/bashrc ~./.bashrc
 ln -sf ~/projects/dotfiles/xorg/xinitrc ~/.xinitrc
 ln -sf ~/projects/dotfiles/fonts ~/.fonts
 ln -sf ~/projects/dotfiles/git/gitconfig ~/.gitconfig
