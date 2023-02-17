@@ -7,11 +7,9 @@ dnf install -y fedora-workstation-repositories
 dnf config-manager --sfet-enabled google-chrome
 dnf copr enable atim/lazygit -y
 
-dnf install -y alacritty neovim bspwm sxhkd picom xsetroot @base-x git google-chrome-stable \
+dnf install -y alacritty neovim bspwm sxhkd picom xsetroot @base-x google-chrome-stable \
                 xrandr ripgrep fd-find fzf lazygit gcc-c++ nodejs bash-completion playerctl \
                 dbus-x11 xsecurelock xset xss-lock
-
-git clone git@github.com:jamesdrussell/dotfiles.git ~/projects/dotfiles
 
 ln -sf ~/projects/dotfiles/xorg/xinitrc ~/.xinitrc
 ln -sf ~/projects/dotfiles/fonts ~/.fonts
