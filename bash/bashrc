@@ -111,7 +111,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-. "$HOME/.cargo/env"
+
+[[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
 # Attaches tmux to the last session; creates a new session if none exists.
 alias tm='tmux attach || tmux new-session -c $HOME'
