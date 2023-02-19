@@ -1,7 +1,7 @@
 #! /bin/sh
 
 dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-dnf install -y akmod-nvidia
+dnf install -y akmod-nvidia xorg-x11-drv-nvidia-cuda nvidia-vaapi-driver
 
 dnf install -y fedora-workstation-repositories
 dnf config-manager --set-enabled google-chrome
@@ -9,7 +9,7 @@ dnf copr enable atim/lazygit -y
 
 dnf install -y alacritty neovim bspwm sxhkd picom xsetroot @base-x google-chrome-stable \
                 xrandr ripgrep fd-find fzf lazygit gcc-c++ nodejs bash-completion playerctl \
-                dbus-x11 xsecurelock xset xss-lock neofetch
+                dbus-x11 xsecurelock xset xss-lock ffmpeg neofetch
 
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 
