@@ -16,7 +16,7 @@ dnf copr enable atim/lazygit -y
 
 dnf install -y alacritty neovim bspwm sxhkd picom xsetroot google-chrome-stable \
                 xrandr ripgrep fd-find fzf lazygit gcc-c++ nodejs bash-completion playerctl \
-                dbus-x11 xsecurelock xset xss-lock neofetch
+                dbus-x11 xsecurelock xset xss-lock neofetch emacs
 
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 
