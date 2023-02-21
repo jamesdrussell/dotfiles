@@ -48,19 +48,3 @@ alt + super + {h,j,k,l}
     bspc node -z bottom 0 -20, \
     bspc node -z right +20 0; \
     bspc node -z left -20 0}
-
-# mute volume
-F9
-    pactl set-sink-mute @DEFAULT_SINK@ toggle
-
-# previous track
-F10
-    playerctl previous
-
-# play/pause
-F11
-    playerctl play-pause
-
-# next track
-F12
-    playerctl next
