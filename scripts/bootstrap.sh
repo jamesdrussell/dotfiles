@@ -10,8 +10,8 @@ sudo dnf groupupdate -y sound-and-video
 dnf copr enable atim/lazygit -y
 
 dnf install -y alacritty neovim bspwm sxhkd picom xsetroot chromium \
-                xrandr ripgrep fd-find fzf lazygit gcc-c++ nodejs bash-completion playerctl \
-                dbus-x11 xsecurelock xset xss-lock
+                ripgrep fd-find fzf lazygit gcc-c++ nodejs bash-completion \
+                dbus-x11
 
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 
