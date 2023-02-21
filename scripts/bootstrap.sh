@@ -2,25 +2,21 @@
 
 dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-#dnf install -y akmod-nvidia xorg-x11-drv-nvidia-cuda nvidia-vaapi-driver
-#systemctl disable nvidia-powerd.service
-
 sudo dnf groupupdate -y core
 sudo dnf groupupdate -y base-x
 sudo dnf groupupdate -y multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 sudo dnf groupupdate -y sound-and-video
 
-#dnf install -y fedora-workstation-repositories
-#dnf config-manager --set-enabled google-chrome
 dnf copr enable atim/lazygit -y
 
 dnf install -y alacritty neovim bspwm sxhkd picom xsetroot chromium \
                 xrandr ripgrep fd-find fzf lazygit gcc-c++ nodejs bash-completion playerctl \
-                dbus-x11 xsecurelock xset xss-lock neofetch
+                dbus-x11 xsecurelock xset xss-lock
 
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 
 mkdir -p $USER_HOME/.config
+mkdir -p $USER_HOME/.config/sxhkd
 mkdir -p $USER_HOME/.config/lazygit
 
 rm -f $USER_HOME/.bashrc
@@ -42,7 +38,11 @@ rm -rf $USER_HOME/.config/bspwm
 ln -s $USER_HOME/projects/dotfiles/bspwm $USER_HOME/.config/bspwm
 
 rm -rf $USER_HOME/.config/sxhkd
-ln -s $USER_HOME/projects/dotfiles/sxhkd $USER_HOME/.config/sxhkd
+if [[ $(uname -m) == "x86_64" ]]; then
+    ln -s $USER_HOME/projects/dotfiles/sxhkd-win $USER_HOME/.config/sxhkd
+elif [[ $(uname -m) == "aarch64" ]]; then
+    ln -s $USER_HOME/projects/dotfiles/sxhkd-mac $USER_HOME/.config/sxhkd
+fi
 
 rm -rf $USER_HOME/.config/picom
 ln -s $USER_HOME/projects/dotfiles/picom $USER_HOME/.config/picom
