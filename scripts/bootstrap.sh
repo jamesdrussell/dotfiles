@@ -37,11 +37,11 @@ ln -s $USER_HOME/projects/dotfiles/alacritty $USER_HOME/.config/alacritty
 rm -rf $USER_HOME/.config/bspwm
 ln -s $USER_HOME/projects/dotfiles/bspwm $USER_HOME/.config/bspwm
 
-rm -rf $USER_HOME/.config/sxhkd
+rm -rf $USER_HOME/.config/sxhkd/sxhkdrc
 if [[ $(uname -m) == "x86_64" ]]; then
-    ln -s $USER_HOME/projects/dotfiles/sxhkd-win $USER_HOME/.config/sxhkd
+    ln -s $USER_HOME/projects/dotfiles/sxhkd/sxhkdrc-win $USER_HOME/.config/sxhkd/sxhkdrc
 elif [[ $(uname -m) == "aarch64" ]]; then
-    ln -s $USER_HOME/projects/dotfiles/sxhkd-mac $USER_HOME/.config/sxhkd
+    ln -s $USER_HOME/projects/dotfiles/sxhkd/sxhkdrc-mac $USER_HOME/.config/sxhkd/sxhkdrc
 fi
 
 rm -rf $USER_HOME/.config/picom
