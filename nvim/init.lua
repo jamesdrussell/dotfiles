@@ -79,7 +79,7 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n><C-w>c")
 vim.keymap.set("n", "H", "^")
 vim.keymap.set("n", "L", "$")
 
-vim.keymap.set("i", "<C-i>", "<Esc>")
+vim.keymap.set("i", "<C-i>", "<Esc>`^")
 vim.keymap.set("i", "<C-h>", "<Left>")
 vim.keymap.set("i", "<C-j>", "<Down>")
 vim.keymap.set("i", "<C-k>", "<Up>")
