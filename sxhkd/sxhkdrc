@@ -6,6 +6,10 @@ alt + t
 alt + b
     google-chrome
 
+# open music
+alt + m
+    flatpak run com.spotify.Client
+
 # make sxhkd reload its configuration file
 alt + Escape
     pkill -USR1 -x sxhkd
