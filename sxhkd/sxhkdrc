@@ -4,7 +4,7 @@ alt + t
 
 # open browser
 alt + b
-    chromium-browser
+    google-chrome
 
 # make sxhkd reload its configuration file
 alt + Escape
