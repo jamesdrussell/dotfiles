@@ -2,21 +2,25 @@
 
 dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
+dnf install -y akmod-nvidia
+systemctl disable nvidia-powerd.service
+
 dnf groupupdate -y core
 dnf groupupdate -y base-x
 dnf groupupdate -y multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 dnf groupupdate -y sound-and-video
 
+dnf install -y fedora-workstation-repositories
+dnf config-manager --set-enabled google-chrome
 dnf copr enable atim/lazygit -y
 
-dnf install -y alacritty neovim bspwm sxhkd picom xsetroot chromium \
-                ripgrep fd-find fzf lazygit gcc-c++ nodejs bash-completion \
-                dbus-x11
+dnf install -y alacritty neovim bspwm sxhkd picom xsetroot google-chrome-stable \
+                xrandr ripgrep fd-find fzf lazygit gcc-c++ nodejs bash-completion \
+                playerctl dbus-x11 xsecurelock xset xss-lock
 
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 
 sudo -u $SUDO_USER mkdir -p $USER_HOME/.config
-sudo -u $SUDO_USER mkdir -p $USER_HOME/.config/sxhkd
 sudo -u $SUDO_USER mkdir -p $USER_HOME/.config/lazygit
 
 rm -f $USER_HOME/.bashrc
@@ -37,12 +41,8 @@ sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/alacritty $USER_HOME/.conf
 rm -rf $USER_HOME/.config/bspwm
 sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/bspwm $USER_HOME/.config/bspwm
 
-rm -rf $USER_HOME/.config/sxhkd/sxhkdrc
-if [[ $(uname -m) == "x86_64" ]]; then
-    sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/sxhkd/sxhkdrc-win $USER_HOME/.config/sxhkd/sxhkdrc
-elif [[ $(uname -m) == "aarch64" ]]; then
-    sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/sxhkd/sxhkdrc-mac $USER_HOME/.config/sxhkd/sxhkdrc
-fi
+rm -rf $USER_HOME/.config/sxhkd
+sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/sxhkd $USER_HOME/.config/sxhkd
 
 rm -rf $USER_HOME/.config/picom
 sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/picom $USER_HOME/.config/picom
