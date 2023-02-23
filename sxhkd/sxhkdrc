@@ -6,6 +6,10 @@ alt + t
 alt + b
     google-chrome
 
+# open editor
+alt + e
+    emacs
+
 # open music
 alt + m
     flatpak run com.spotify.Client
