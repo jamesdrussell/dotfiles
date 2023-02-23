@@ -11,8 +11,7 @@ return {
         config = function()
             require("mason-lspconfig").setup({
                 ensure_installed = {
-                    "rust_analyzer",
-                    "lua_ls"
+                    "rust_analyzer"
                 }
             })
         end,
@@ -45,18 +44,6 @@ return {
                 on_attach = on_attach,
                 settings = {
                     ["rust-analyzer"] = {}
-                }
-            })
-
-            require("lspconfig")["lua_ls"].setup({
-                capabilities = capabilities,
-                on_attach = on_attach,
-                settings = {
-                    Lua = {
-                        diagnostics = {
-                            globals = { "vim" }
-                        }
-                    }
                 }
             })
         end,
