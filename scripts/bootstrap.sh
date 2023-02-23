@@ -16,7 +16,11 @@ dnf copr enable atim/lazygit -y
 
 dnf install -y alacritty neovim bspwm sxhkd picom xsetroot google-chrome-stable \
                 xrandr ripgrep fd-find fzf lazygit gcc-c++ nodejs bash-completion \
-                playerctl dbus-x11 xsecurelock xset xss-lock
+                playerctl dbus-x11 xsecurelock xset xss-lock flatpak
+
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+flatpak install flathub com.spotify.Client
 
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 
