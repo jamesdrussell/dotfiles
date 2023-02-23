@@ -9,10 +9,16 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         config = function()
+            local ensure_installed = {
+                "rust_analyzer"
+            }
+
+            if require("jit").arch == "x64" then
+                table.insert(ensure_installed, "lua_ls")
+            end
+
             require("mason-lspconfig").setup({
-                ensure_installed = {
-                    "rust_analyzer"
-                }
+                ensure_installed = ensure_installed
             })
         end,
         enabled = true
@@ -46,6 +52,20 @@ return {
                     ["rust-analyzer"] = {}
                 }
             })
+
+            if require("jit").arch == "x64" then
+                require("lspconfig")["lua_ls"].setup({
+                    capabilities = capabilities,
+                    on_attach = on_attach,
+                    settings = {
+                        Lua = {
+                            diagnostics = {
+                                globals = { "vim" }
+                            }
+                        }
+                    }
+                })
+            end
         end,
         enabled = true
     },
