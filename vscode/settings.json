@@ -1,4 +1,6 @@
 {
     "workbench.startupEditor": "none",
-    "security.workspace.trust.enabled": false
+    "security.workspace.trust.enabled": false,
+    "editor.lightbulb.enabled": false,
+    "editor.minimap.enabled": false
 }

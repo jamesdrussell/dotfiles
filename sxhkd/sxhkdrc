@@ -8,7 +8,7 @@ alt + b
 
 # open editor
 alt + e
-    emacs
+    code
 
 # open music
 alt + m
