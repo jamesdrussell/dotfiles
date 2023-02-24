@@ -2,5 +2,8 @@
     "workbench.startupEditor": "none",
     "security.workspace.trust.enabled": false,
     "editor.lightbulb.enabled": false,
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "editor.codeLens": false,
+    "rust-analyzer.completion.callable.snippets": "add_parentheses",
+    "editor.inlayHints.enabled": "off"
 }
