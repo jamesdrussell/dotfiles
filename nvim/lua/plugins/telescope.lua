@@ -34,13 +34,22 @@ return {
                             ["<Esc>"] = require("telescope.actions").close
                         }
                     },
-                    layout_strategy = "vertical",
-                    layout_config = {
-                        prompt_position = "top",
-                    },
-                    preview = false,
-                    sorting_strategy = "ascending"
+                    preview = false
                 },
+                pickers = {
+                    find_files = {
+                        theme = "dropdown"
+                    },
+                    live_grep = {
+                        theme = "dropdown"
+                    },
+                    buffers = {
+                        theme = "dropdown"
+                    },
+                    current_buffer_fuzzy_find = {
+                        theme = "dropdown"
+                    }
+                }
             })
 
             require("telescope").load_extension("fzf")
@@ -61,7 +70,8 @@ return {
                             n = {
                                 e = require("telescope").extensions.file_browser.actions.create,
                             }
-                        }
+                        },
+                        theme = "dropdown"
                     }
                 }
             })
