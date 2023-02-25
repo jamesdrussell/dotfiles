@@ -29,8 +29,6 @@ return {
                         i = {
                             ["<C-k>"] = require("telescope.actions").move_selection_previous,
                             ["<C-j>"] = require("telescope.actions").move_selection_next,
-                            ["<C-q>"] = require("telescope.actions").send_selected_to_qflist + require("telescope.actions").open_qflist,
-                            ["<C-w>"] = require("telescope.actions").close,
                             ["<Esc>"] = require("telescope.actions").close
                         }
                     },
