@@ -12,5 +12,7 @@
     "workbench.tips.enabled": false,
     "editor.fontFamily": "'CaskaydiaCove Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace",
     "editor.fontSize": 16,
-    "workbench.colorTheme": "One Dark Pro"
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.selectionHighlight": false,
+    "rust-analyzer.highlightRelated.references.enable": false
 }

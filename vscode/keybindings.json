@@ -35,5 +35,9 @@
         "key": "ctrl+shift+tab",
         "command": "-workbench.action.quickOpenNavigatePreviousInEditorPicker",
         "when": "inEditorsPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+alt+v",
+        "command": "toggleVim"
     }
 ]
