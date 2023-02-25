@@ -74,7 +74,6 @@ vim.keymap.set("n", "<leader>x", "<cmd>close<cr>")
 
 vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>c")
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n><C-w>c")
--- vim.keymap.set("n", "<leader>g", "<cmd>lua lazygit_toggle()<cr>")
 
 vim.keymap.set("n", "H", "^")
 vim.keymap.set("n", "L", "$")
