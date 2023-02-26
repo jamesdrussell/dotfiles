@@ -5,7 +5,7 @@ return {
             require("toggleterm.terminal").Terminal:new({
                 count = 0,
                 on_open = function(term)
-                    vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<Esc>", "<C-\\><C-n><C-w>c", {noremap = true, silent = true})
+                    vim.keymap.set("t", "<Esc>", "<C-\\><C-n><C-w>c", {noremap = true, silent = true, buffer = term.bufnr})
                 end
             }):toggle()
         end},
