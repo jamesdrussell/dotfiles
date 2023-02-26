@@ -13,7 +13,7 @@ return {
                 "rust_analyzer"
             }
 
-            if require("jit").arch == "x64" then
+            if not(require("jit").arch == "arm64" and require("jit").os == "Linux") then
                 table.insert(ensure_installed, "lua_ls")
             end
 
@@ -53,7 +53,7 @@ return {
                 }
             })
 
-            if require("jit").arch == "x64" then
+            if not(require("jit").arch == "arm64" and require("jit").os == "Linux") then
                 require("lspconfig")["lua_ls"].setup({
                     capabilities = capabilities,
                     on_attach = on_attach,
