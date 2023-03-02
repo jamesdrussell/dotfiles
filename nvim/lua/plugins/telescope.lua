@@ -76,11 +76,11 @@ return {
 
             require("telescope").load_extension("file_browser")
         end,
-        keys = {
-            {"<leader>e", function()
-                require("telescope").extensions.file_browser.file_browser()
-            end},
-        },
-        enabled = true
+        -- keys = {
+        --     {"<leader>e", function()
+        --         require("telescope").extensions.file_browser.file_browser()
+        --     end},
+        -- },
+        enabled = false
     }
 }
