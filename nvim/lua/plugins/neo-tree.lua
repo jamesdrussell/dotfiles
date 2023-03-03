@@ -4,7 +4,10 @@ return {
         branch = "v2.x",
         keys = {
             {"<leader>e", function()
-                require("neo-tree").focus()
+                require("neo-tree.command").execute({
+                    action = "focus",
+                    toggle = true
+                })
             end},
         },
         config = function()
