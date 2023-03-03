@@ -6,7 +6,8 @@ return {
             {"<leader>e", function()
                 require("neo-tree.command").execute({
                     action = "focus",
-                    toggle = true
+                    toggle = true,
+                    reveal = true
                 })
             end},
         },
