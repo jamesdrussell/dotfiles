@@ -1,5 +1,9 @@
-# open terminal
+# open terminal with tmux session
 alt + t
+    alacritty -e tmux new -As0
+
+# open terminal without tmux session
+alt + T
     alacritty
 
 # open browser
