@@ -57,6 +57,9 @@ sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/nvim $USER_HOME/.config/nv
 rm -f /usr/local/bin/vim
 ln -s /usr/bin/nvim /usr/local/bin/vim
 
+rm -f /usr/local/bin/spotify
+ln -s /var/lib/flatpak/exports/bin/com.spotify.Client /usr/local/bin/spotify
+
 rm -f /etc/X11/xorg.conf.d/10-mouse.conf
 ln -s $USER_HOME/projects/dotfiles/xorg/10-mouse.conf /etc/X11/xorg.conf.d/10-mouse.conf
 
