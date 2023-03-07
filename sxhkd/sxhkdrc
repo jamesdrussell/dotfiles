@@ -1,3 +1,7 @@
+# open launcher
+alt + space
+    dmenu_run
+
 # open terminal with tmux session
 alt + t
     alacritty -e tmux new -As0
@@ -9,10 +13,6 @@ alt + T
 # open browser
 alt + b
     google-chrome
-
-# open music
-alt + m
-    flatpak run com.spotify.Client
 
 # make sxhkd reload its configuration file
 alt + Escape
@@ -27,7 +27,7 @@ alt + {_,shift + }w
 	bspc node -{c,k}
 
 # toggle between the tiled and monocle layout
-alt + f
+alt + m
 	bspc desktop -l next
 
 # send to desktop
