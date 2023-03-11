@@ -2,12 +2,8 @@
 alt + space
     dmenu_run
 
-# open terminal with tmux session
+# open terminal
 alt + t
-    alacritty -e tmux new -As0
-
-# open terminal without tmux session
-alt + T
     alacritty
 
 # open browser
