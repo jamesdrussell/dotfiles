@@ -28,14 +28,4 @@ unset rc
 
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
-# Attaches tmux to the last session; creates a new session if none exists.
-alias tm='tmux attach || tmux new-session -c $HOME'
-
-# Attaches tmux to a session (example: ta portal)
-alias ta='tmux attach -t'
-
-# Creates a new session
-alias tn='tmux new-session -c $HOME'
-
-# Lists all ongoing sessions
-alias tl='tmux list-sessions'
+alias tmux='TERM=xterm-256color tmux'
