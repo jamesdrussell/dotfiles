@@ -79,6 +79,9 @@ return {
         config = function()
             require("lspsaga").setup({
                 scroll_preview = { scroll_down = "<C-f>", scroll_up = "<C-b>" },
+                code_action_prompt = {
+                    enable = false
+                },
                 definition = {
                     edit = "<CR>",
                 },
