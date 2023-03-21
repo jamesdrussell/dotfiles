@@ -82,6 +82,9 @@ return {
                 code_action_prompt = {
                     enable = false
                 },
+                symbol_in_winbar = {
+                    enable = false
+                },
                 definition = {
                     edit = "<CR>",
                 },
