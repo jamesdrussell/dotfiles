@@ -34,6 +34,14 @@ alt + shift + {1-4}
 alt + {1-4}
     bspc desktop -f '{1-4}'
 
+# switch to prev/next desktop
+alt + {p,n}
+    bspc desktop -f {prev,next}
+
+# send to prev/next desktop
+alt + shift + {p,n}
+    bspc node -d {prev,next} --follow
+
 # focus or swap the node in given direction
 alt + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
