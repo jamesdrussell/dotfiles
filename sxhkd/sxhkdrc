@@ -50,6 +50,10 @@ alt + {_,shift + }{h,j,k,l}
 alt + {_,shift + }Tab
 	bspc node -f {next,prev}.local.!hidden.window
 
+# focus the next window in current desktop
+alt + o
+    bspc node -f next
+
 # resizing windows
 alt + super + {h,j,k,l}
     {bspc node -z right -20 0; \
