@@ -61,6 +61,10 @@ vim.opt.cmdheight = 1
 
 vim.opt.hidden = true
 
+vim.diagnostic.config({
+    virtual_text = false
+})
+
 vim.keymap.set("n", "x", '"_x')
 
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
