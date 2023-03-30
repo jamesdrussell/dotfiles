@@ -16,7 +16,7 @@ dnf copr enable atim/lazygit -y
 
 dnf install -y alacritty neovim bspwm sxhkd picom xsetroot google-chrome-stable \
                 xrandr ripgrep fd-find fzf lazygit gcc-c++ nodejs bash-completion \
-                playerctl dbus-x11 xsecurelock xset xss-lock flatpak dmenu
+                playerctl dbus-x11 xsecurelock xset xss-lock flatpak dmenu libxkbcommon-x11
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
