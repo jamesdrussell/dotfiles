@@ -17,11 +17,6 @@ vim.g.mapleader = " "
 
 require("lazy").setup("plugins")
 
-if vim.g.neovide then
-    vim.opt.guifont = "CaskaydiaCove Nerd Font:h12"
-    vim.g.neovide_cursor_animation_length = 0
-end
-
 vim.opt.number = true
 
 vim.opt.mouse = "a"
