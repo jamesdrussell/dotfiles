@@ -11,6 +11,8 @@ return {
                 "rust",
                 "vim",
                 "lua",
+                "markdown",
+                "markdown_inline"
             },
             auto_install = true
         })
