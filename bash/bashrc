@@ -28,6 +28,4 @@ unset rc
 
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
-eval "$(zoxide init bash)"
-
 alias tmux='TERM=xterm-256color tmux'
