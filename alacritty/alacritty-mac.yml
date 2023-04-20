@@ -382,13 +382,12 @@ font:
   # Default:
   #   - (Linux/BSD/macOS) `$SHELL` or the user's login shell, if `$SHELL` is unset
   #   - (Windows) powershell
-# shell:
+  # shell:
   # program: /bin/bash
   # args:
-    # - -l
-    # - -c
-    # - "tmux attach || tmux"
-
+  # - -l
+  # - -c
+  # - "tmux attach || tmux"
   # Startup directory
   #
   # Directory the shell is started in. If this is unset, or `None`, the working
@@ -824,8 +823,8 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#282c34'
-    foreground: '#abb2bf'
+    foreground: '#282c34'
+    background: '#ffffff'
 
   # Normal colors
   normal:
@@ -850,4 +849,4 @@ colors:
     magenta: '#c678dd'
     cyan: '#56b6c2'
     white: '#ffffff'
-theme: One-Dark
+theme: One-Light
