@@ -41,7 +41,7 @@ return {
                 vim.keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
                 vim.keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
                 vim.keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
-                vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+                -- vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
                 vim.keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
             end
 

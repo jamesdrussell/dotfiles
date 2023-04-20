@@ -76,6 +76,8 @@ vim.keymap.set("n", "<leader>=", "<C-w>=")
 vim.keymap.set("n", "<leader>m", "<cmd>MaximizerToggle<cr>")
 vim.keymap.set("n", "<leader>x", "<cmd>close<cr>")
 
+vim.keymap.set("n", "J", "5j")
+vim.keymap.set("n", "K", "5k")
 vim.keymap.set("n", "H", "^")
 vim.keymap.set("n", "L", "$")
 
