@@ -37,7 +37,7 @@ return {
                 pickers = {
                     find_files = {
                         theme = "dropdown",
-                        hidden = true
+                        hidden = false
                     },
                     live_grep = {
                         theme = "dropdown"
