@@ -1,13 +1,9 @@
 return {
-    "navarasu/onedark.nvim",
+    "joshdick/onedark.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-        require("onedark").setup({
-            style = "light"
-        })
-
-        require("onedark").load()
+        vim.cmd([[colorscheme onedark]])
     end,
     enabled = true
 }
