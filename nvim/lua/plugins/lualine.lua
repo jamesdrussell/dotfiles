@@ -5,5 +5,5 @@ return {
             theme = "auto"
         })
     end,
-    enabled = true
+    enabled = false
 }
