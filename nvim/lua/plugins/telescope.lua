@@ -37,20 +37,16 @@ return {
                 pickers = {
                     find_files = {
                         theme = "dropdown",
-                        hidden = false,
-                        disable_devicons = true
+                        hidden = false
                     },
                     live_grep = {
-                        theme = "dropdown",
-                        disable_devicons = true
+                        theme = "dropdown"
                     },
                     buffers = {
-                        theme = "dropdown",
-                        disable_devicons = true
+                        theme = "dropdown"
                     },
                     current_buffer_fuzzy_find = {
-                        theme = "dropdown",
-                        disable_devicons = true
+                        theme = "dropdown"
                     }
                 }
             })
@@ -74,8 +70,7 @@ return {
                                 e = require("telescope").extensions.file_browser.actions.create,
                             }
                         },
-                        theme = "dropdown",
-                        disable_devicons = true
+                        theme = "dropdown"
                     }
                 }
             })
