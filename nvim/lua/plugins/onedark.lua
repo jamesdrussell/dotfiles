@@ -1,9 +1,9 @@
 return {
-    "pbrisbin/vim-colors-off",
+    "joshdick/onedark.vim",
     lazy = false,
     priority = 1000,
     config = function()
-        vim.cmd([[colorscheme off]])
+        vim.cmd([[colorscheme onedark]])
     end,
     enabled = true
 }
