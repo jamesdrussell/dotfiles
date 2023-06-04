@@ -82,6 +82,6 @@ return {
                 require("telescope").extensions.file_browser.file_browser()
             end},
         },
-        enabled = true
+        enabled = false
     }
 }

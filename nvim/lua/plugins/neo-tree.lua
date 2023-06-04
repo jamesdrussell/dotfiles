@@ -19,7 +19,7 @@ return {
                 }
             })
         end,
-        enabled = false
+        enabled = true
     },
     {
         "MunifTanjim/nui.nvim",
