@@ -6,12 +6,12 @@
 (setq vc-follow-symlinks t)
 (setq make-backup-files nil)
 (setq create-lockfiles nil)
+(global-display-line-numbers-mode)
 
 (require 'package)
 (package-initialize)
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.org/packages/") t)
-(package-refresh-contents)
 
 ;; Download Evil
 (unless (package-installed-p 'evil)
