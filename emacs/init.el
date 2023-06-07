@@ -3,3 +3,4 @@
 (set-frame-font "Menlo 15" nil t)
 (setq vc-follow-symlinks t)
 (setq make-backup-files nil)
+(setq create-lockfiles nil)
