@@ -8,6 +8,7 @@
 (setq create-lockfiles nil)
 (global-display-line-numbers-mode)
 (global-hl-line-mode)
+(blink-cursor-mode -1)
 
 (require 'package)
 (package-initialize)
