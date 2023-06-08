@@ -11,6 +11,9 @@
 (blink-cursor-mode -1)
 (setq frame-title-format "%b - GNU Emacs")
 (setq inhibit-startup-screen t)
+(setq scroll-step 1
+      scroll-conservatively 10000
+      scroll-margin 5)
 
 (require 'package)
 (package-initialize)
