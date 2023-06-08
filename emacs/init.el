@@ -1,4 +1,4 @@
-(load-theme 'modus-vivendi t)
+(load-theme 'modus-operandi t)
 
 (setq ring-bell-function 'ignore)
 (tool-bar-mode -1)
