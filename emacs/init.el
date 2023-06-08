@@ -9,6 +9,8 @@
 (global-display-line-numbers-mode)
 (global-hl-line-mode)
 (blink-cursor-mode -1)
+(setq frame-title-format "%b - GNU Emacs")
+(setq inhibit-startup-screen t)
 
 (require 'package)
 (package-initialize)
