@@ -7,6 +7,7 @@
 (setq make-backup-files nil)
 (setq create-lockfiles nil)
 (global-display-line-numbers-mode)
+(global-hl-line-mode)
 
 (require 'package)
 (package-initialize)
