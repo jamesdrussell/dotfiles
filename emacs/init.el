@@ -14,6 +14,9 @@
 (setq scroll-step 1
       scroll-conservatively 10000
       scroll-margin 5)
+(setq read-file-name-completion-ignore-case t
+      read-buffer-completion-ignore-case t
+      completion-ignore-case t)
 
 (eval-when-compile
   (require 'use-package))
@@ -32,8 +35,15 @@
 (evil-mode 1)
 
 (use-package vertico
+  :bind (:map vertico-map
+         ("C-j" . vertico-next)
+         ("C-k" . vertico-previous))
   :init
   (vertico-mode))
+
+(use-package savehist
+  :init
+  (savehist-mode))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
