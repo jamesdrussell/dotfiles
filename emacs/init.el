@@ -15,6 +15,9 @@
       scroll-conservatively 10000
       scroll-margin 5)
 
+(eval-when-compile
+  (require 'use-package))
+
 (require 'package)
 (package-initialize)
 (add-to-list 'package-archives
@@ -28,6 +31,10 @@
 (require 'evil)
 (evil-mode 1)
 
+(use-package vertico
+  :init
+  (vertico-mode))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -35,7 +42,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("7887cf8b470098657395502e16809523b629249060d61607c2225d2ef2ad59f5" "cca1d386d4a3f645c2f8c49266e3eb9ee14cf69939141e3deb9dfd50ccaada79" default))
- '(package-selected-packages '(evil modus-themes)))
+ '(package-selected-packages '(vertico evil modus-themes)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
