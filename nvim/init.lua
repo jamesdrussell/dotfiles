@@ -61,6 +61,8 @@ vim.opt.cmdheight = 1
 
 vim.opt.hidden = true
 
+vim.opt.fillchars = {eob = " "}
+
 vim.diagnostic.config({
     virtual_text = false
 })
