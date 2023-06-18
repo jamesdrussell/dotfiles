@@ -16,6 +16,18 @@ return {
                 close_if_last_window = true,
                 filesystem = {
                     follow_current_file = true
+                },
+                enable_git_status = true,
+                default_component_configs = {
+                    git_status = {
+                        symbols = {
+                            untracked = "",
+                            ignored   = "",
+                            unstaged  = "",
+                            staged    = "",
+                            conflict  = ""
+                        }
+                    }
                 }
             })
         end,
