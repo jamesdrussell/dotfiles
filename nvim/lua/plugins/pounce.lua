@@ -8,5 +8,5 @@ return {
     config = function()
         require("pounce").setup()
     end,
-    enabled = true
+    enabled = false
 }
