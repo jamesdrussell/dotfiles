@@ -85,11 +85,6 @@ vim.keymap.set("n", "K", "5k")
 vim.keymap.set("n", "H", "^")
 vim.keymap.set("n", "L", "$")
 
-vim.keymap.set("n", "<C-h>", "<C-w><Left>")
-vim.keymap.set("n", "<C-j>", "<C-w><Down>")
-vim.keymap.set("n", "<C-k>", "<C-w><Up>")
-vim.keymap.set("n", "<C-l>", "<C-w><Right>")
-
 vim.keymap.set("i", "<C-h>", "<Left>")
 vim.keymap.set("i", "<C-j>", "<Down>")
 vim.keymap.set("i", "<C-k>", "<Up>")
