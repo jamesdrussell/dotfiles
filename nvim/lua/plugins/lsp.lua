@@ -10,7 +10,8 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             local ensure_installed = {
-                "rust_analyzer"
+                "rust_analyzer",
+                "ocamllsp"
             }
 
             if not(require("jit").arch == "arm64" and require("jit").os == "Linux") then
@@ -51,6 +52,11 @@ return {
                 settings = {
                     ["rust-analyzer"] = {}
                 }
+            })
+
+            require("lspconfig")["ocamllsp"].setup({
+                capabilities = capabilities,
+                on_attach = on_attach
             })
 
             if not(require("jit").arch == "arm64" and require("jit").os == "Linux") then
