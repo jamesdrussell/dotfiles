@@ -88,6 +88,9 @@ return {
                 code_action_prompt = {
                     enable = false
                 },
+                lightbulb = {
+                    enable = false
+                },
                 symbol_in_winbar = {
                     enable = false
                 },
