@@ -12,7 +12,8 @@ return {
                 "vim",
                 "lua",
                 "markdown",
-                "markdown_inline"
+                "markdown_inline",
+                "ocaml"
             },
             auto_install = true
         })
