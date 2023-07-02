@@ -26,13 +26,16 @@
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.org/packages/") t)
 
-;; Download Evil
-(unless (package-installed-p 'evil)
-  (package-install 'evil))
+(use-package evil
+  :ensure t
+  :config
+  (evil-mode 1)) 
 
-;; Enable Evil
-(require 'evil)
-(evil-mode 1)
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init))
 
 (use-package vertico
   :bind (:map vertico-map
@@ -51,6 +54,9 @@
   :config
   (global-evil-surround-mode 1))
 
+(use-package magit
+  :ensure t)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -58,7 +64,8 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("7887cf8b470098657395502e16809523b629249060d61607c2225d2ef2ad59f5" "cca1d386d4a3f645c2f8c49266e3eb9ee14cf69939141e3deb9dfd50ccaada79" default))
- '(package-selected-packages '(evil-surround vertico evil modus-themes)))
+ '(package-selected-packages
+   '(evil-collection magit evil-surround vertico evil modus-themes)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
