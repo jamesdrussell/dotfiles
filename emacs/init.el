@@ -39,7 +39,8 @@
          ("C-j" . vertico-next)
          ("C-k" . vertico-previous))
   :init
-  (vertico-mode))
+  (vertico-mode)
+  (setq vertico-cycle t))
 
 (use-package savehist
   :init
