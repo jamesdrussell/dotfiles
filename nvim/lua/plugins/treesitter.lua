@@ -13,7 +13,8 @@ return {
                 "lua",
                 "markdown",
                 "markdown_inline",
-                "ocaml"
+                "ocaml",
+                "swift"
             },
             auto_install = true
         })
