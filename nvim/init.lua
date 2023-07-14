@@ -18,7 +18,7 @@ vim.g.mapleader = " "
 require("lazy").setup("plugins")
 
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 vim.opt.mouse = "a"
 
