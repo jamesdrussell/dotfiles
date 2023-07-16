@@ -1,7 +1,7 @@
 return {
     {
         "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
+        branch = "v3.x",
         keys = {
             {"<leader>e", function()
                 require("neo-tree.command").execute({
@@ -15,7 +15,9 @@ return {
             require("neo-tree").setup({
                 close_if_last_window = true,
                 filesystem = {
-                    follow_current_file = true
+                    follow_current_file = {
+                        enabled = true
+                    }
                 },
                 enable_git_status = true,
                 default_component_configs = {
