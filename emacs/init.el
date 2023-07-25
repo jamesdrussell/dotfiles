@@ -8,7 +8,7 @@
 (global-display-line-numbers-mode)
 (global-hl-line-mode)
 (blink-cursor-mode -1)
-(setq frame-title-format "%b - GNU Emacs")
+(setq frame-title-format "%b - Emacs")
 (setq inhibit-startup-screen t)
 (setq scroll-step 1
       scroll-conservatively 10000
