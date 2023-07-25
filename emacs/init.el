@@ -2,6 +2,7 @@
 
 (setq ring-bell-function 'ignore)
 (tool-bar-mode -1)
+(menu-bar-mode -1)
 (set-frame-font "MesloLGS Nerd Font Mono 12" nil t)
 (setq vc-follow-symlinks t)
 (setq make-backup-files nil)
