@@ -2,7 +2,7 @@
 
 (setq ring-bell-function 'ignore)
 (tool-bar-mode -1)
-(set-frame-font "Menlo 15" nil t)
+(set-frame-font "MesloLGS Nerd Font Mono 12" nil t)
 (setq vc-follow-symlinks t)
 (setq make-backup-files nil)
 (setq create-lockfiles nil)
@@ -18,13 +18,19 @@
       read-buffer-completion-ignore-case t
       completion-ignore-case t)
 
+(require 'package)
+(add-to-list 'package-archives
+	     '("melpa" . "http://melpa.org/packages/") t)
+(package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
 (eval-when-compile
   (require 'use-package))
 
-(require 'package)
-(package-initialize)
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.org/packages/") t)
+(setq use-package-always-ensure t)
 
 (use-package evil
   :ensure t
