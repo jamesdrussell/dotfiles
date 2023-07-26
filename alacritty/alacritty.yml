@@ -382,13 +382,12 @@ font:
   # Default:
   #   - (Linux/BSD/macOS) `$SHELL` or the user's login shell, if `$SHELL` is unset
   #   - (Windows) powershell
-# shell:
+  # shell:
   # program: /bin/bash
   # args:
-    # - -l
-    # - -c
-    # - "tmux attach || tmux"
-
+  # - -l
+  # - -c
+  # - "tmux attach || tmux"
   # Startup directory
   #
   # Directory the shell is started in. If this is unset, or `None`, the working
@@ -822,31 +821,32 @@ font:
   # Highlight window damage information.
   #highlight_damage: false
 
-themes:
-  ### Edge (Light variant)
-  edge_light:	  &edge_light
-    primary:
-      background: "0xfafafa"
-      foreground: "0x4b505b"
-  
-    normal:
-      black: "0x4b505b"
-      red: "0xd05858"
-      green: "0x608e32"
-      yellow: "0xbe7e05"
-      blue: "0x5079be"
-      magenta: "0xb05ccc"
-      cyan: "0x3a8b84"
-      white: "0xfafafa"
-  
-    bright:
-      black: "0x4b505b"
-      red: "0xd05858"
-      green: "0x608e32"
-      yellow: "0xbe7e05"
-      blue: "0x5079be"
-      magenta: "0xb05ccc"
-      cyan: "0x3a8b84"
-      white: "0xfafafa"
+colors:
+  # Default colors
+  primary:
+    background: '#282c34'
+    foreground: '#abb2bf'
 
-colors: *edge_light
+  # Normal colors
+  normal:
+    # NOTE: Use '#131613' for the `black` color if you'd like to see
+    # black text on the background.
+    black: '#282c34'
+    red: '#e06c75'
+    green: '#98c379'
+    yellow: '#d19a66'
+    blue: '#61afef'
+    magenta: '#c678dd'
+    cyan: '#56b6c2'
+    white: '#abb2bf'
+
+  # Bright colors
+  bright:
+    black: '#5c6370'
+    red: '#e06c75'
+    green: '#98c379'
+    yellow: '#d19a66'
+    blue: '#61afef'
+    magenta: '#c678dd'
+    cyan: '#56b6c2'
+    white: '#ffffff'
