@@ -5,7 +5,7 @@
 
 (if (eq system-type 'darwin)
     (set-frame-font "MesloLGS Nerd Font Mono 15" nil t)
-    (set-frame-font "MesloLGS Nerd Font Mono 12" nil t))
+    (set-frame-font "MesloLGS Nerd Font Mono 11" nil t))
 
 (setq vc-follow-symlinks t)
 (setq make-backup-files nil)
