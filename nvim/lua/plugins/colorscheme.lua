@@ -1,9 +1,9 @@
 return {
-    "sainnhe/edge",
+    "joshdick/onedark.vim",
     lazy = false,
     priority = 1000,
     config = function()
-        vim.cmd([[colorscheme edge]])
+        vim.cmd([[colorscheme onedark]])
     end,
     enabled = true
 }
