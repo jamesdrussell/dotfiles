@@ -927,4 +927,4 @@ schemes:
       white: "0xc5cdd9"
 
 ### Choose one of the & tags from the schemes listed above
-colors: *edge_light
+colors: *edge_dark_default
