@@ -1,6 +1,6 @@
 # open launcher
 alt + space
-    dmenu_run
+    dmenu_run -nb '#282A2E' -sb '#373B41' -sf '#F0C674'
 
 # open terminal
 alt + t
