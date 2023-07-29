@@ -15,10 +15,9 @@ dnf install -y nvidia-vaapi-driver
 
 dnf install -y fedora-workstation-repositories
 dnf config-manager --set-enabled google-chrome
-dnf copr enable atim/lazygit -y
 
 dnf install -y alacritty neovim bspwm sxhkd picom xsetroot google-chrome-stable \
-                xrandr ripgrep fd-find fzf lazygit gcc-c++ nodejs bash-completion \
+                xrandr ripgrep fd-find fzf gcc-c++ nodejs bash-completion \
                 playerctl dbus-x11 xsecurelock xset xss-lock flatpak dmenu \
                 google-noto-emoji-color-fonts tmux pulseaudio-utils emacs
 
@@ -29,7 +28,6 @@ flatpak install flathub com.spotify.Client
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 
 sudo -u $SUDO_USER mkdir -p $USER_HOME/.config
-sudo -u $SUDO_USER mkdir -p $USER_HOME/.config/lazygit
 
 rm -f $USER_HOME/.bashrc
 sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/bash/bashrc $USER_HOME/.bashrc
@@ -66,9 +64,6 @@ ln -s /var/lib/flatpak/exports/bin/com.spotify.Client /usr/local/bin/spotify
 
 rm -f /etc/X11/xorg.conf.d/10-mouse.conf
 ln -s $USER_HOME/projects/dotfiles/xorg/10-mouse.conf /etc/X11/xorg.conf.d/10-mouse.conf
-
-rm -f $USER_HOME/.config/lazygit/config.yml
-sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/lazygit/config.yml $USER_HOME/.config/lazygit/config.yml
 
 rm -f $USER_HOME/.bash_profile
 sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/bash/bash_profile $USER_HOME/.bash_profile
