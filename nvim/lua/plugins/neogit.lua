@@ -5,13 +5,7 @@ return {
         config = function()
             require("neogit").setup({
                 disable_hint = true,
-                kind = "floating",
-                commit_editor = {
-                    kind = "floating"
-                },
-                popup = {
-                    kind = "floating"
-                }
+                kind = "replace"
             })
         end,
         keys = {
