@@ -4,6 +4,7 @@ return {
         dependencies = "nvim-lua/plenary.nvim",
         config = function()
             require("neogit").setup({
+                disable_hint = true,
                 kind = "floating",
                 commit_editor = {
                     kind = "floating"
