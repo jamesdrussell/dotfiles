@@ -7,6 +7,9 @@ return {
                 kind = "floating",
                 commit_editor = {
                     kind = "floating"
+                },
+                popup = {
+                    kind = "floating"
                 }
             })
         end,
