@@ -7,7 +7,9 @@ return {
         end,
         keys = {
             {"<leader>g", function()
-                require("neogit").open()
+                require("neogit").open({
+                    kind = "replace"
+                })
             end}
         },
         enabled = true
