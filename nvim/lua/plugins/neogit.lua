@@ -4,7 +4,10 @@ return {
         dependencies = "nvim-lua/plenary.nvim",
         config = function()
             require("neogit").setup({
-                kind = "replace"
+                kind = "floating",
+                commit_editor = {
+                    kind = "floating"
+                }
             })
         end,
         keys = {
