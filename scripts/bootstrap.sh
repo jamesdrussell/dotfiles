@@ -19,7 +19,8 @@ dnf config-manager --set-enabled google-chrome
 dnf install -y alacritty neovim bspwm sxhkd picom xsetroot google-chrome-stable \
                 xrandr ripgrep fd-find fzf gcc-c++ nodejs bash-completion \
                 playerctl dbus-x11 xsecurelock xset xss-lock flatpak dmenu \
-                google-noto-emoji-color-fonts tmux pulseaudio-utils emacs
+                google-noto-emoji-color-fonts tmux pulseaudio-utils emacs \
+                polybar
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
@@ -58,6 +59,9 @@ sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/picom $USER_HOME/.config/p
 
 rm -rf $USER_HOME/.config/nvim
 sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/nvim $USER_HOME/.config/nvim
+
+rm -rf $USER_HOME/.config/polybar
+sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/polybar $USER_HOME/.config/polybar
 
 rm -f /usr/local/bin/vim
 ln -s /usr/bin/nvim /usr/local/bin/vim
