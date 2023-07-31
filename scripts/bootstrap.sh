@@ -63,6 +63,9 @@ sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/nvim $USER_HOME/.config/nv
 rm -rf $USER_HOME/.config/polybar
 sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/polybar $USER_HOME/.config/polybar
 
+rm -rf $USER_HOME/.config/emacs
+sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/emacs/init.el $USER_HOME/.config/emacs/init.el
+
 rm -f /usr/local/bin/vim
 ln -s /usr/bin/nvim /usr/local/bin/vim
 
