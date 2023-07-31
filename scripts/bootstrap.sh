@@ -35,6 +35,9 @@ sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/bash/bashrc $USER_HOME/.ba
 rm -f $USER_HOME/.xinitrc
 sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/xorg/xinitrc $USER_HOME/.xinitrc
 
+rm -f $USER_HOME/.Xresources
+sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/xorg/Xresources $USER_HOME/.Xresources
+
 rm -rf $USER_HOME/.fonts
 sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/fonts $USER_HOME/.fonts
 
