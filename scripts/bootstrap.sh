@@ -24,7 +24,7 @@ dnf install -y alacritty neovim bspwm sxhkd picom xsetroot google-chrome-stable 
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-flatpak install flathub com.spotify.Client
+flatpak install -y flathub com.spotify.Client
 
 USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 
