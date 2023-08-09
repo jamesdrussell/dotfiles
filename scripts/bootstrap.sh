@@ -77,3 +77,5 @@ ln -s $USER_HOME/projects/dotfiles/xorg/10-mouse.conf /etc/X11/xorg.conf.d/10-mo
 
 rm -f $USER_HOME/.bash_profile
 sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/bash/bash_profile $USER_HOME/.bash_profile
+
+sudo -u $SUDO_USER pactl set-sink-volume @DEFAULT_SINK@ 100%
