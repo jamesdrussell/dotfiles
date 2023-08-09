@@ -19,8 +19,8 @@ dnf config-manager --set-enabled google-chrome
 dnf install -y alacritty neovim bspwm sxhkd picom xsetroot google-chrome-stable \
                 xrandr ripgrep fd-find fzf gcc-c++ nodejs bash-completion \
                 playerctl dbus-x11 xsecurelock xset xss-lock flatpak dmenu \
-                google-noto-emoji-color-fonts tmux pulseaudio-utils emacs \
-                polybar
+                google-noto-emoji-color-fonts tmux pulseaudio-utils polybar \
+                easyeffects
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
@@ -45,6 +45,9 @@ sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/fonts $USER_HOME/.fonts
 rm -f $USER_HOME/.gitconfig
 sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/git/gitconfig $USER_HOME/.gitconfig
 
+rm -f $USER_HOME/.tmux.conf
+sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/tmux/tmux.conf $USER_HOME/.tmux.conf
+
 rm -rf $USER_HOME/.config/alacritty
 sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/alacritty $USER_HOME/.config/alacritty
 
@@ -62,9 +65,6 @@ sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/nvim $USER_HOME/.config/nv
 
 rm -rf $USER_HOME/.config/polybar
 sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/polybar $USER_HOME/.config/polybar
-
-rm -rf $USER_HOME/.config/emacs
-sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/emacs $USER_HOME/.config/emacs
 
 rm -f /usr/local/bin/vim
 ln -s /usr/bin/nvim /usr/local/bin/vim

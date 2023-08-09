@@ -29,5 +29,3 @@ unset rc
 [[ -f "$HOME/.cargo/env" ]] && . "$HOME/.cargo/env"
 
 alias tmux='TERM=xterm-256color tmux'
-
-export PATH="$HOME/.config/emacs/bin:$PATH"
