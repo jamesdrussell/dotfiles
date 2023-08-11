@@ -75,6 +75,9 @@ ln -s /var/lib/flatpak/exports/bin/com.spotify.Client /usr/local/bin/spotify
 rm -f /etc/X11/xorg.conf.d/10-mouse.conf
 ln -s $USER_HOME/projects/dotfiles/xorg/10-mouse.conf /etc/X11/xorg.conf.d/10-mouse.conf
 
+rm -f /etc/systemd/logind.conf
+ln -s $USER_HOME/projects/dotfiles/systemd/logind.conf /etc/systemd/logind.conf
+
 rm -f $USER_HOME/.bash_profile
 sudo -u $SUDO_USER ln -s $USER_HOME/projects/dotfiles/bash/bash_profile $USER_HOME/.bash_profile
 
