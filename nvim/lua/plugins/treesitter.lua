@@ -13,7 +13,8 @@ return {
                 "lua",
                 "markdown",
                 "markdown_inline",
-                "swift"
+                "yaml",
+                "go"
             },
             auto_install = true
         })
