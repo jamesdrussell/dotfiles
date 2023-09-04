@@ -14,7 +14,8 @@ return {
                 "markdown",
                 "markdown_inline",
                 "yaml",
-                "go"
+                "go",
+                "bash"
             },
             auto_install = true
         })
