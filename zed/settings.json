@@ -8,5 +8,6 @@
 // from the command palette or from `Zed` application menu.
 {
   "theme": "One Dark",
-  "buffer_font_family": "Menlo"
+  "buffer_font_family": "Menlo",
+  "vim_mode": true
 }
