@@ -15,7 +15,8 @@ return {
                 "markdown_inline",
                 "yaml",
                 "go",
-                "bash"
+                "bash",
+                "javascript"
             },
             auto_install = true
         })
