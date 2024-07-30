@@ -16,7 +16,8 @@ return {
                 "yaml",
                 "go",
                 "bash",
-                "javascript"
+                "javascript",
+                "nix"
             },
             auto_install = true
         })

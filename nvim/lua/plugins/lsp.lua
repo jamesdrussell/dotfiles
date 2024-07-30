@@ -10,7 +10,8 @@ return {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             local ensure_installed = {
-                "rust_analyzer"
+                "rust_analyzer",
+                "nil_ls"
             }
 
             if not(require("jit").arch == "arm64" and require("jit").os == "Linux") then
@@ -66,6 +67,8 @@ return {
                     }
                 })
             end
+
+            require("lspconfig")["nil_ls"].setup({})
         end,
         enabled = true
     },
