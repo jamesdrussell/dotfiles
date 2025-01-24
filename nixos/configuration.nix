@@ -118,6 +118,12 @@
     wezterm
     spotify
     neovim
+    easyeffects
+    ripgrep
+    fd
+    fzf
+    gcc14
+    gnumake
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
