@@ -7,6 +7,6 @@
     "editor.minimap.enabled": false,
     "extensions.ignoreRecommendations": true,
     "update.mode": "none",
-    "editor.fontFamily": "'JetBrainsMono Nerd Font'",
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
     "editor.fontSize": 15
 }
