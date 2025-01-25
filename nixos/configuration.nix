@@ -125,6 +125,7 @@
     gcc14
     gnumake
     vscode
+    nerdfonts
   ];
 
   programs.bash.promptInit = ''
