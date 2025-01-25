@@ -6,5 +6,7 @@
     "editor.lightbulb.enabled": "off",
     "editor.minimap.enabled": false,
     "extensions.ignoreRecommendations": true,
-    "update.mode": "none"
+    "update.mode": "none",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font'",
+    "editor.fontSize": 15
 }
