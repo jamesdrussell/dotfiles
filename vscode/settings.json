@@ -3,10 +3,8 @@
     "security.workspace.trust.enabled": false,
     "editor.codeLens": false,
     "editor.inlayHints.enabled": "off",
-    "editor.fontFamily": "'CaskaydiaCove Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
-    "editor.fontSize": 16,
     "editor.lightbulb.enabled": false,
     "editor.minimap.enabled": false,
-    "workbench.colorTheme": "Atom One Light",
-    "extensions.ignoreRecommendations": true
+    "extensions.ignoreRecommendations": true,
+    "update.mode": "none"
 }
