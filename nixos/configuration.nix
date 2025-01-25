@@ -124,6 +124,7 @@
     fzf
     gcc14
     gnumake
+    vscode
   ];
 
   programs.bash.promptInit = ''
