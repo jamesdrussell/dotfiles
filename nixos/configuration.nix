@@ -128,6 +128,7 @@
     nerdfonts
     direnv
     tmux
+    slack
   ];
 
   programs.bash.promptInit = ''
