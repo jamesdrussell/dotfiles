@@ -126,6 +126,8 @@
     gnumake
     vscode
     nerdfonts
+    direnv
+    tmux
   ];
 
   programs.bash.promptInit = ''
