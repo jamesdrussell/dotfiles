@@ -7,7 +7,8 @@ return {
                 require("neo-tree.command").execute({
                     action = "focus",
                     toggle = true,
-                    reveal = true
+                    reveal = true,
+                    position = "float"
                 })
             end},
         },
@@ -30,7 +31,8 @@ return {
                             conflict  = ""
                         }
                     }
-                }
+                },
+                popup_border_style = "rounded"
             })
         end,
         enabled = true

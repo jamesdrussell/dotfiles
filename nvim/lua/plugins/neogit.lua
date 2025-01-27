@@ -5,7 +5,7 @@ return {
         config = function()
             require("neogit").setup({
                 disable_hint = true,
-                kind = "replace"
+                kind = "floating"
             })
         end,
         keys = {
