@@ -1,49 +1,49 @@
 # open launcher
-alt + space
+super + space
     dmenu_run -nb '#282A2E' -sb '#373B41' -sf '#F0C674'
 
 # open terminal
-alt + t
-    alacritty
+super + t
+    ghostty
 
 # open browser
-alt + b
+super + b
     google-chrome
 
 # make sxhkd reload its configuration file
-alt + Escape
+super + Escape
     pkill -USR1 -x sxhkd
 
 # quit/restart bspwm
-alt + shift + {q,r}
+super + shift + {q,r}
     bspc {quit,wm -r}
 
 # close and kill
-alt + {_,shift + }w
+super + {_,shift + }w
 	bspc node -{c,k}
 
 # toggle between the tiled and monocle layout
-alt + m
+super + m
 	bspc desktop -l next
 
 # send to desktop
-alt + shift + {1-4}
+super + shift + {1-4}
     bspc node -d '{1-4}' --follow
 
 # switch to desktop
-alt + {1-4}
+super + {1-4}
     bspc desktop -f '{1-4}'
 
 # switch to prev/next desktop
-alt + {p,n}
+super + {p,n}
     bspc desktop -f {prev,next}
 
 # send to prev/next desktop
-alt + shift + {p,n}
+super + shift + {p,n}
     bspc node -d {prev,next} --follow
 
 # focus or swap the node in given direction
-alt + {_,shift + }{h,j,k,l}
+super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the next/previous window in the current desktop
@@ -51,7 +51,7 @@ alt + {_,shift + }Tab
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next window in current desktop
-alt + o
+super + o
     bspc node -f next.local.!hidden.window
 
 # resizing windows
