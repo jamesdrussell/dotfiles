@@ -1,2 +1,4 @@
 config-file = ?config-mac
 config-file = ?config-linux
+
+resize-overlay = "never"
