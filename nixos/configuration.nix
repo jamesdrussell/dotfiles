@@ -42,12 +42,52 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  #services.displayManager.defaultSession = "none+bspwm";
+
+  services.xserver = {
+    enable = true;
+    dpi = 218;
+
+    resolutions = [
+      {
+        x = 2560;
+        y = 1440;
+      }
+    ];
+
+    virtualScreen = {
+      x = 2560;
+      y = 1440;
+    };
+
+    desktopManager = {
+      xterm.enable = false;
+    };
+
+    displayManager.startx = {
+      enable = true;
+    };
+
+    #windowManager.bspwm = {
+      #enable = true;
+    #};
+   
+    #windowManager.i3 = {
+      #enable = true;
+      #extraPackages = with pkgs; [
+        #dmenu #application launcher most people use
+        #i3status # gives you the default i3 status bar
+        #i3lock #default i3 screen locker
+     #];
+    #};
+  };
+
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  #services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  #services.xserver.displayManager.gdm.enable = true;
+  #services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -57,21 +97,6 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  hardware.graphics = {
-    enable = true;
-  };
-
-  services.xserver.videoDrivers = ["nvidia"];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -102,6 +127,8 @@
     ];
   };
 
+  virtualisation.vmware.guest.enable = true;
+
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -111,24 +138,16 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    bspwm
+    sxhkd
+    picom
     wget
-    vim
     git
-    google-chrome
-    wezterm
-    spotify
-    neovim
-    easyeffects
-    ripgrep
-    fd
-    fzf
-    gcc14
-    gnumake
-    vscode
-    nerdfonts
+    vim
+    ghostty
     direnv
-    tmux
-    slack
+    fzf
+    gnumake
   ];
 
   programs.bash.promptInit = ''
@@ -159,7 +178,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
