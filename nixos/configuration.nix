@@ -144,6 +144,7 @@
     direnv
     fzf
     gnumake
+    aichat
   ];
 
   programs.bash.promptInit = ''
