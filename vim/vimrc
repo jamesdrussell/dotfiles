@@ -1,4 +1,5 @@
 set number
+set nowrap
 set shortmess+=I
 set fillchars=eob:\ 
 
@@ -8,3 +9,5 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+inoremap jk <esc>
