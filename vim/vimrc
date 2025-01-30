@@ -1,7 +1,8 @@
-:set number
-:set shortmess+=I
+set number
+set shortmess+=I
+set fillchars=eob:\ 
 
-:let mapleader = " "
+let mapleader = " "
 
-:nnoremap <leader>w :w<cr>
-:nnoremap <leader>q :q<cr>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q<cr>
