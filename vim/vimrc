@@ -1,5 +1,6 @@
 set number
 set nowrap
+set hidden
 set shortmess+=I
 set fillchars=eob:\ 
 
