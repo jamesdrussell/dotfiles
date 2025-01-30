@@ -1,0 +1,6 @@
+:set number
+
+:let mapleader = " "
+
+:nnoremap <leader>w :w<cr>
+:nnoremap <leader>q :q<cr>
