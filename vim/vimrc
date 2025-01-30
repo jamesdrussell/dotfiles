@@ -1,4 +1,5 @@
 :set number
+:set shortmess+=I
 
 :let mapleader = " "
 
