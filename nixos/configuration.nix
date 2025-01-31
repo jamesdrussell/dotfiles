@@ -117,13 +117,14 @@
   users.users.james = {
     isNormalUser = true;
     description = "James Russell";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
     #  thunderbird
     ];
   };
 
   virtualisation.vmware.guest.enable = true;
+  virtualisation.docker.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -145,6 +146,7 @@
     fzf
     gnumake
     aichat
+	file
   ];
 
   programs.bash.promptInit = ''
