@@ -1,3 +1,9 @@
+call plug#begin()
+
+Plug 'joshdick/onedark.vim'
+
+call plug#end()
+
 set number
 set nowrap
 set hidden
@@ -9,6 +15,7 @@ set ttyfast
 set tabstop=4
 
 syntax on
+colorscheme onedark
 
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
