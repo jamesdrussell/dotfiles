@@ -43,7 +43,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  #services.displayManager.defaultSession = "none+bspwm";
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   services.getty.autologinUser = "james";
 
