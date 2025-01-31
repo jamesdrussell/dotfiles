@@ -147,6 +147,7 @@
     gnumake
     aichat
 	file
+	tree
   ];
 
   programs.bash.promptInit = ''
