@@ -1,5 +1,6 @@
 config-file = ?config-mac
 config-file = ?config-linux
 
+theme = "OneHalfDark"
 resize-overlay = "never"
 quit-after-last-window-closed = true
