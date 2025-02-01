@@ -2,6 +2,10 @@
 alt + t
     ghostty
 
+# open browser
+alt + b
+    chromium
+
 # make sxhkd reload its configuration file
 alt + Escape
     pkill -USR1 -x sxhkd

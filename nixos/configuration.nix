@@ -49,7 +49,7 @@
 
   services.xserver = {
     enable = true;
-    dpi = 218;
+    #dpi = 218;
 
     resolutions = [
       {
@@ -150,6 +150,7 @@
     tree
     jq
     terraform
+    chromium
   ];
 
   programs.bash.promptInit = ''
