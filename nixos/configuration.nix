@@ -49,7 +49,6 @@
 
   services.xserver = {
     enable = true;
-    #dpi = 218;
 
     resolutions = [
       {
@@ -70,19 +69,6 @@
     displayManager.startx = {
       enable = true;
     };
-
-    #windowManager.bspwm = {
-      #enable = true;
-    #};
-
-    #windowManager.i3 = {
-      #enable = true;
-      #extraPackages = with pkgs; [
-        #dmenu #application launcher most people use
-        #i3status # gives you the default i3 status bar
-        #i3lock #default i3 screen locker
-     #];
-    #};
   };
 
   # Configure keymap in X11
@@ -127,7 +113,7 @@
   virtualisation.docker.enable = true;
 
   # Install firefox.
-  programs.firefox.enable = true;
+  programs.firefox.enable = false;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
