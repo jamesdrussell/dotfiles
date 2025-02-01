@@ -146,9 +146,10 @@
     fzf
     gnumake
     aichat
-	file
-	tree
+    file
+    tree
     jq
+    terraform
   ];
 
   programs.bash.promptInit = ''
