@@ -148,6 +148,7 @@
     aichat
 	file
 	tree
+    jq
   ];
 
   programs.bash.promptInit = ''
