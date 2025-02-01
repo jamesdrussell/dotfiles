@@ -2,7 +2,7 @@
 
 vmware-user-suid-wrapper
 
-#export GTK_THEME=Adwaita:dark
+export GTK_THEME=Adwaita:dark
 
 #export XSECURELOCK_SAVER=saver_blank
 #export XSECURELOCK_BACKGROUND_COLOR="#000000"
