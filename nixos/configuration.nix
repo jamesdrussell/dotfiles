@@ -15,9 +15,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 0;
 
-  boot.binfmt.emulatedSystems = [
-    "x86_64-linux"
-  ];
+  boot.binfmt = {
+    emulatedSystems = [ "x86_64-linux" ];
+    preferStaticEmulators = true;
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
