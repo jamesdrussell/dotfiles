@@ -21,6 +21,7 @@ set cursorline
 set incsearch
 set ignorecase
 set smartcase
+set clipboard=unnamed
 
 syntax on
 colorscheme onedark
