@@ -17,6 +17,7 @@ set shiftwidth=2
 set expandtab
 set noswapfile
 set splitbelow
+set cursorline
 
 syntax on
 colorscheme onedark
