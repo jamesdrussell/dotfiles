@@ -4,6 +4,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -28,6 +29,7 @@ set smartcase
 set clipboard=unnamed
 set mouse=a
 set signcolumn=yes
+set updatetime=100
 
 syntax on
 colorscheme onedark
