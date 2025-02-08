@@ -27,6 +27,7 @@ set ignorecase
 set smartcase
 set clipboard=unnamed
 set mouse=a
+set signcolumn=yes
 
 syntax on
 colorscheme onedark
