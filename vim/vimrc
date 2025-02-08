@@ -18,6 +18,9 @@ set expandtab
 set noswapfile
 set splitbelow
 set cursorline
+set incsearch
+set ignorecase
+set smartcase
 
 syntax on
 colorscheme onedark
