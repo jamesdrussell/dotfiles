@@ -41,3 +41,6 @@ nnoremap <leader>bn :bnext<cr>
 nnoremap <leader>bp :bprevious<cr>
 
 inoremap jk <esc>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
