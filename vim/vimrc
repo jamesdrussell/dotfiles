@@ -3,6 +3,7 @@ call plug#begin()
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
@@ -37,12 +38,16 @@ let mapleader = " "
 
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
-nnoremap <leader>ev :e $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>e :NERDTreeToggle<cr>
+nnoremap <leader>u :PlugUpdate<cr>
 
-inoremap jk <esc>
+nnoremap <c-h> :wincmd h<cr>
+nnoremap <c-j> :wincmd j<cr>
+nnoremap <c-k> :wincmd k<cr>
+nnoremap <c-l> :wincmd l<cr>
+
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
