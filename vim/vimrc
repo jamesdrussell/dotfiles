@@ -39,10 +39,13 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap <leader>bn :bnext<cr>
-nnoremap <leader>bp :bprevious<cr>
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>b :Buffers<cr>
 
 inoremap jk <esc>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
+
+let g:fzf_vim = {}
+let g:fzf_preview_window = []
