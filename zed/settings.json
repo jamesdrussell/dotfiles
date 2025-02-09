@@ -9,5 +9,7 @@
 {
   "theme": "One Dark",
   "buffer_font_family": "Menlo",
-  "vim_mode": true
+  "vim_mode": true,
+  "ensure_final_newline_on_save": false,
+  "format_on_save": "off"
 }
