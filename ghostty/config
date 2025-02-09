@@ -2,5 +2,6 @@ config-file = ?config-mac
 config-file = ?config-linux
 
 theme = "OneHalfDark"
+font-family = "JetBrains Mono NL"
 resize-overlay = "never"
 quit-after-last-window-closed = true
