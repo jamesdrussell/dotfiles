@@ -16,5 +16,6 @@
   "format_on_save": "off",
   "gutter": {
     "code_actions": false
-  }
+  },
+  "tab_size": 2
 }
