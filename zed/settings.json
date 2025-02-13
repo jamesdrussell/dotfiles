@@ -27,5 +27,9 @@
   "telemetry": {
     "diagnostics": false,
     "metrics": false
+  },
+  "auto_install_extensions": {
+    "html": true,
+    "just": true
   }
 }
