@@ -15,6 +15,7 @@
   "ensure_final_newline_on_save": false,
   "format_on_save": "off",
   "remove_trailing_whitespace_on_save": false,
+  "hover_popover_enabled": false,
   "gutter": {
     "code_actions": false
   },
