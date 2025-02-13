@@ -30,6 +30,14 @@
   },
   "auto_install_extensions": {
     "html": true,
-    "just": true
+    "just": true,
+    "dockerfile": true,
+    "nix": true,
+    "toml": true,
+    "terraform": true,
+    "git-firefly": true,
+    "lua": true,
+    "docker-compose": true,
+    "meson": true
   }
 }
