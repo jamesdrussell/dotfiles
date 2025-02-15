@@ -25,7 +25,6 @@
     "html": true,
     "just": true,
     "dockerfile": true,
-    "nix": true,
     "toml": true,
     "terraform": true,
     "git-firefly": true,
