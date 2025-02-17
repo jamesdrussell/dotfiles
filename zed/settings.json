@@ -30,6 +30,7 @@
     "git-firefly": true,
     "lua": true,
     "docker-compose": true,
-    "meson": true
+    "meson": true,
+    "nix": true
   }
 }
