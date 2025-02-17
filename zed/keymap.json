@@ -2,7 +2,8 @@
   {
     "bindings": {
       "ctrl-shift-tab": "pane::ActivatePrevItem",
-      "ctrl-tab": "pane::ActivateNextItem"
+      "ctrl-tab": "pane::ActivateNextItem",
+      "ctrl-z": "workspace::ToggleVimMode"
     }
   }
 ]
