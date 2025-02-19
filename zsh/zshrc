@@ -1,0 +1,5 @@
+export PATH=/opt/homebrew/bin:$PATH
+
+eval "$(direnv hook zsh)"
+
+autoload -Uz compinit && compinit
