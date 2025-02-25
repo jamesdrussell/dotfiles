@@ -33,7 +33,7 @@
     "meson": true,
     "nix": true
   },
-  "enable_language_server": false,
+  "enable_language_server": true,
   "show_wrap_guides": true,
   "wrap_guides": [80]
 }
