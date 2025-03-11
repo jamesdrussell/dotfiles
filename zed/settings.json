@@ -38,7 +38,8 @@
     "lua": true,
     "docker-compose": true,
     "meson": true,
-    "nix": true
+    "nix": true,
+    "pylsp": true
   },
   "enable_language_server": true,
   "show_wrap_guides": true,
