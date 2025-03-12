@@ -3,3 +3,8 @@ export PATH=/opt/homebrew/bin:$PATH
 eval "$(direnv hook zsh)"
 
 autoload -Uz compinit && compinit
+
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ];
+then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
