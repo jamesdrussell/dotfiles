@@ -5,6 +5,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'airblade/vim-gitgutter'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -50,10 +51,6 @@ nnoremap <c-h> :wincmd h<cr>
 nnoremap <c-j> :wincmd j<cr>
 nnoremap <c-k> :wincmd k<cr>
 nnoremap <c-l> :wincmd l<cr>
-
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
 
 let g:fzf_vim = {}
 let g:fzf_preview_window = []
