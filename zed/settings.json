@@ -40,7 +40,8 @@
     "meson": true,
     "nix": true,
     "pylsp": true,
-    "sql": true
+    "sql": true,
+    "swift": true
   },
   "enable_language_server": true,
   "show_wrap_guides": true,
