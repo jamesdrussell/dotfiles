@@ -1,4 +1,5 @@
 export PATH=/opt/homebrew/bin:$PATH
+export PATH=~/go/bin:$PATH
 
 eval "$(direnv hook zsh)"
 
