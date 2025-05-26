@@ -5,3 +5,4 @@ theme = "OneHalfDark"
 font-family = "JetBrains Mono NL"
 resize-overlay = "never"
 quit-after-last-window-closed = true
+shell-integration-features = sudo
