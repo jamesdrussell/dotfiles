@@ -14,24 +14,24 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 
-require("lazy").setup({
+require('lazy').setup({
   spec = {
-    {
-      'nvim-treesitter/nvim-treesitter',
-      lazy = false,
-      branch = 'main',
-      build = ':TSUpdate'
-    },
     {
       'sonph/onehalf',
       lazy = false,
       priority = 1000,
       config = function(plugin)
-        vim.opt.rtp:append(plugin.dir .. "/vim")
+        vim.opt.rtp:append(plugin.dir .. '/vim')
         vim.cmd([[colorscheme onehalfdark]])
       end
+    },
+    {
+      'nvim-treesitter/nvim-treesitter',
+      lazy = false,
+      branch = 'main',
+      build = ':TSUpdate'
     },
     {
       'ibhagwan/fzf-lua',
