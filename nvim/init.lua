@@ -41,6 +41,12 @@ require("lazy").setup({
           function()
             require('fzf-lua').files()
           end
+        },
+        {
+          '<leader>b',
+          function()
+            require('fzf-lua').buffers()
+          end
         }
       },
       dependencies = { 'nvim-tree/nvim-web-devicons' },
