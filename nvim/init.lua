@@ -32,6 +32,19 @@ require("lazy").setup({
         vim.opt.rtp:append(plugin.dir .. "/vim")
         vim.cmd([[colorscheme onehalfdark]])
       end
+    },
+    {
+      'ibhagwan/fzf-lua',
+      keys = {
+        {
+          '<leader>f',
+          function()
+            require('fzf-lua').files()
+          end
+        }
+      },
+      dependencies = { 'nvim-tree/nvim-web-devicons' },
+      opts = {}
     }
   },
   install = { colorscheme = { 'onehalfdark' } },
