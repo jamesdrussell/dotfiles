@@ -15,7 +15,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
 
 require("lazy").setup({
   spec = {
@@ -37,3 +36,56 @@ require("lazy").setup({
   },
   checker = { enabled = true },
 })
+
+vim.opt.number = true
+vim.opt.relativenumber = false
+vim.opt.wrap = false
+vim.opt.mouse = 'a'
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.autoindent = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.cursorline = true
+vim.opt.termguicolors = true
+vim.opt.background = 'dark'
+vim.opt.signcolumn = 'yes'
+vim.opt.scrolloff = 5
+vim.opt.backspace = 'indent,eol,start'
+vim.opt.clipboard:append('unnamedplus')
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+vim.opt.iskeyword:append('-')
+vim.opt.laststatus = 3
+vim.opt.shortmess:append('I')
+vim.opt.showmode = false
+vim.opt.showcmd = false
+vim.opt.cmdheight = 1
+vim.opt.hidden = true
+vim.opt.fillchars = {eob = ' '}
+vim.diagnostic.config({
+  virtual_text = false
+})
+
+vim.keymap.set("n", "x", '"_x')
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
+vim.keymap.set("n", "<leader>q", "<cmd>q<cr>")
+vim.keymap.set("n", "<leader>Q", "<cmd>q!<cr>")
+vim.keymap.set("n", "<leader>v", "<C-w>v")
+vim.keymap.set("n", "<leader>h", "<C-w>s")
+vim.keymap.set("n", "<leader>=", "<C-w>=")
+vim.keymap.set("n", "<leader>m", "<cmd>MaximizerToggle<cr>")
+vim.keymap.set("n", "<leader>x", "<cmd>close<cr>")
+vim.keymap.set("n", "<leader>u", "<cmd>Lazy update<cr>")
+vim.keymap.set("n", "J", "5j")
+vim.keymap.set("n", "K", "5k")
+vim.keymap.set("n", "H", "^")
+vim.keymap.set("n", "L", "$")
+vim.keymap.set("i", "<C-h>", "<Left>")
+vim.keymap.set("i", "<C-j>", "<Down>")
+vim.keymap.set("i", "<C-k>", "<Up>")
+vim.keymap.set("i", "<C-l>", "<Right>")
+vim.keymap.set("n", "U", "<C-r>")
