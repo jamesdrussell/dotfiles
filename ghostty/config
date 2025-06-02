@@ -1,8 +1,6 @@
-config-file = ?config-mac
-config-file = ?config-linux
-
 theme = "OneHalfDark"
 font-family = "JetBrains Mono NL"
-resize-overlay = "never"
-quit-after-last-window-closed = true
 shell-integration-features = sudo
+quit-after-last-window-closed = true
+resize-overlay = "never"
+macos-titlebar-proxy-icon = "hidden"
