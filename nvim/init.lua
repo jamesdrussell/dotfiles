@@ -34,7 +34,8 @@ require("lazy").setup({
       end
     }
   },
-  checker = { enabled = true },
+  install = { colorscheme = { 'onehalfdark' } },
+  checker = { enabled = true }
 })
 
 vim.opt.number = true
