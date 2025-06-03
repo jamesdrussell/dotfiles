@@ -50,7 +50,20 @@ require('lazy').setup({
         }
       },
       dependencies = { 'nvim-tree/nvim-web-devicons' },
-      opts = {}
+      opts = {
+        winopts = {
+          height = 0.25,
+          preview = { hidden = 'hidden' }
+        },
+        files = {
+          winopts = {
+            title_flags = false
+          }
+        },
+        buffers = {
+          no_header = true
+        }
+      }
     }
   },
   install = { colorscheme = { 'onehalfdark' } },
