@@ -104,6 +104,13 @@ require('lazy').setup({
       end
     },
     {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+      lazy = false,
+      dependencies = {
+        'nvim-treesitter/nvim-treesitter'
+      }
+    },
+    {
       'ibhagwan/fzf-lua',
       keys = {
         {
