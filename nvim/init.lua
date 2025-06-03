@@ -16,77 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = ' '
 
-require('lazy').setup({
-  spec = {
-    {
-      'sonph/onehalf',
-      lazy = false,
-      priority = 1000,
-      config = function(plugin)
-        vim.opt.rtp:append(plugin.dir .. '/vim')
-        vim.cmd([[colorscheme onehalfdark]])
-      end
-    },
-    {
-      'nvim-treesitter/nvim-treesitter',
-      lazy = false,
-      build = ':TSUpdate',
-      config = function()
-	      require('nvim-treesitter.configs').setup({
-  	      ensure_installed = { 'c', 'cpp', 'lua' },
-  	      sync_install = false,
-  	      auto_install = true,
-  	      highlight = { enable = true },
-  	      indent = { enable = false },
-      		incremental_selection = {
-            enable = true,
-            keymaps = {
-              init_selection = 'gnn',
-              node_incremental = 'grn',
-              scope_incremental = 'grc',
-              node_decremental = 'grm'
-            }
-          }
-        })
-      end
-    },
-    {
-      'ibhagwan/fzf-lua',
-      keys = {
-        {
-          '<leader>f',
-          function()
-            require('fzf-lua').files()
-          end
-        },
-        {
-          '<leader>b',
-          function()
-            require('fzf-lua').buffers()
-          end
-        }
-      },
-      dependencies = { 'nvim-tree/nvim-web-devicons' },
-      opts = {
-        winopts = {
-          height = 0.25,
-          preview = { hidden = 'hidden' }
-        },
-        files = {
-          winopts = {
-            title_flags = false
-          }
-        },
-        buffers = {
-          no_header = true
-        }
-      }
-    }
-  },
-  install = { colorscheme = { 'onehalfdark' } },
-  checker = { enabled = true }
-})
-
 vim.opt.number = true
 vim.opt.relativenumber = false
 vim.opt.wrap = false
@@ -139,3 +68,85 @@ vim.keymap.set("i", "<C-j>", "<Down>")
 vim.keymap.set("i", "<C-k>", "<Up>")
 vim.keymap.set("i", "<C-l>", "<Right>")
 vim.keymap.set("n", "U", "<C-r>")
+
+require('lazy').setup({
+  spec = {
+    {
+      'sonph/onehalf',
+      lazy = false,
+      priority = 1000,
+      config = function(plugin)
+        vim.opt.rtp:append(plugin.dir .. '/vim')
+        vim.cmd([[colorscheme onehalfdark]])
+      end
+    },
+    {
+      'nvim-treesitter/nvim-treesitter',
+      lazy = false,
+      build = ':TSUpdate',
+      config = function()
+	      require('nvim-treesitter.configs').setup({
+  	      ensure_installed = { 'c', 'cpp', 'lua' },
+  	      sync_install = false,
+  	      auto_install = true,
+  	      highlight = { enable = true },
+  	      indent = { enable = true },
+      		incremental_selection = {
+            enable = true,
+            keymaps = {
+              init_selection = 'gnn',
+              node_incremental = 'grn',
+              scope_incremental = 'grc',
+              node_decremental = 'grm'
+            }
+          }
+        })
+      end
+    },
+    {
+      'ibhagwan/fzf-lua',
+      keys = {
+        {
+          '<leader>f',
+          function()
+            require('fzf-lua').files()
+          end
+        },
+        {
+          '<leader>b',
+          function()
+            require('fzf-lua').buffers()
+          end
+        }
+      },
+      dependencies = { 'nvim-tree/nvim-web-devicons' },
+      opts = {
+        winopts = {
+          height = 0.25,
+          preview = { hidden = 'hidden' }
+        },
+        files = {
+          winopts = {
+            title_flags = false
+          }
+        },
+        buffers = {
+          no_header = true
+        }
+      }
+    },
+    {
+      'windwp/nvim-autopairs',
+      config = function()
+        require('nvim-autopairs').setup({
+          check_ts = true,
+          ts_config = {
+            lua = { 'string' }
+          }
+        })
+      end
+    }
+  },
+  install = { colorscheme = { 'onehalfdark' } },
+  checker = { enabled = true }
+})
