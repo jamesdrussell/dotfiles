@@ -152,7 +152,22 @@ require('lazy').setup({
       dependencies = {
         'nvim-lua/plenary.nvim',
         'nvim-treesitter/nvim-treesitter'
-      }
+      },
+      config = function()
+        require('codecompanion').setup({
+          strategies = {
+            chat = {
+              adapter = 'gemini'
+            },
+            inline = {
+              adapter = 'gemini'
+            },
+            cmd = {
+              adapter = 'gemini'
+            }
+          }
+        })
+      end
     }
   },
   install = { colorscheme = { 'onehalfdark' } },
