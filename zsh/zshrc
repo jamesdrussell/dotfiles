@@ -1,5 +1,7 @@
 export PATH=/opt/homebrew/bin:$PATH
 export PATH=~/go/bin:$PATH
+export PATH=/usr/local/opt/bison/bin:/opt/homebrew/opt/bison/bin:$PATH
+export PATH=$PATH:/usr/local/llama.cpp/bin
 
 eval "$(direnv hook zsh)"
 
