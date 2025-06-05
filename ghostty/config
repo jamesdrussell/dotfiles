@@ -4,4 +4,4 @@ shell-integration-features = sudo
 quit-after-last-window-closed = true
 resize-overlay = "never"
 macos-titlebar-proxy-icon = "hidden"
-font-size = 14
+font-size = 15
