@@ -134,7 +134,6 @@ require('lazy').setup({
           end
         }
       },
-      dependencies = { 'nvim-tree/nvim-web-devicons' },
       opts = {
         winopts = {
           height = 0.25,
@@ -143,7 +142,8 @@ require('lazy').setup({
         files = {
           winopts = {
             title_flags = false
-          }
+          },
+          file_icons = false
         },
         buffers = {
           no_header = true
@@ -182,6 +182,12 @@ require('lazy').setup({
             }
           }
         })
+      end
+    },
+    {
+      'lewis6991/gitsigns.nvim',
+      config = function()
+        require('gitsigns').setup()
       end
     }
   },
