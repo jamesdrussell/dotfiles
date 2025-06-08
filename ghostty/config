@@ -1,4 +1,4 @@
-theme = "OneHalfDark"
+theme = "catppuccin-frappe"
 font-family = "JetBrains Mono NL"
 shell-integration-features = sudo
 quit-after-last-window-closed = true
