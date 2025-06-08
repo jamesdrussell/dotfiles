@@ -49,6 +49,13 @@ vim.diagnostic.config({
   virtual_text = false
 })
 
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldcolumn = '0'
+vim.opt.foldtext = ''
+vim.opt.foldnestmax = 1
+vim.opt.foldlevelstart = 1
+
 vim.keymap.set("n", "x", '"_x')
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
 vim.keymap.set("n", "<leader>q", "<cmd>q<cr>")
