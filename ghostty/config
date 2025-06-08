@@ -1,4 +1,4 @@
-theme = "catppuccin-frappe"
+theme = "catppuccin-macchiato"
 font-family = "JetBrains Mono NL"
 shell-integration-features = sudo
 quit-after-last-window-closed = true

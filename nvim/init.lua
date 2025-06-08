@@ -75,12 +75,12 @@ vim.keymap.set("n", "U", "<C-r>")
 require('lazy').setup({
   spec = {
     {
-      'sonph/onehalf',
+      'catppuccin/nvim',
+      name = 'catppuccin',
       lazy = false,
       priority = 1000,
-      config = function(plugin)
-        vim.opt.rtp:append(plugin.dir .. '/vim')
-        vim.cmd([[colorscheme onehalfdark]])
+      config = function()
+        vim.cmd([[colorscheme catppuccin-macchiato]])
       end
     },
     {

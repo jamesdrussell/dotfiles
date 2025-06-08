@@ -3,6 +3,8 @@ export PATH=~/go/bin:$PATH
 export PATH=/usr/local/opt/bison/bin:/opt/homebrew/opt/bison/bin:$PATH
 export PATH=$PATH:/usr/local/llama.cpp/bin
 
+alias vim=nvim
+
 eval "$(direnv hook zsh)"
 
 autoload -Uz compinit && compinit
