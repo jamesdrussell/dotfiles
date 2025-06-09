@@ -1,7 +1,7 @@
 theme = "catppuccin-macchiato"
 font-family = "JetBrains Mono NL"
 shell-integration-features = sudo
-quit-after-last-window-closed = true
 resize-overlay = "never"
-macos-titlebar-proxy-icon = "hidden"
-font-size = 15
+
+config-file = ?config-mac
+config-file = ?config-linux
