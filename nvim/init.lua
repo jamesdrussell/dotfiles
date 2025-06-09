@@ -80,7 +80,7 @@ require('lazy').setup({
       lazy = false,
       priority = 1000,
       config = function()
-        vim.cmd([[colorscheme catppuccin-macchiato]])
+        vim.cmd([[colorscheme catppuccin-frappe]])
       end
     },
     {
@@ -194,6 +194,6 @@ require('lazy').setup({
       end
     }
   },
-  install = { colorscheme = { 'catppuccin-macchiato' } },
+  install = { colorscheme = { 'catppuccin-frappe' } },
   checker = { enabled = true }
 })
