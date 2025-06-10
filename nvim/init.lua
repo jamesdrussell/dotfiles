@@ -194,6 +194,15 @@ require('lazy').setup({
       config = function()
         require('gitsigns').setup()
       end
+    },
+    {
+      'nvim-lualine/lualine.nvim',
+      dependencies = {
+        'nvim-tree/nvim-web-devicons'
+      },
+      config = function()
+        require('lualine').setup()
+      end
     }
   },
   install = { colorscheme = { 'catppuccin-frappe' } },
