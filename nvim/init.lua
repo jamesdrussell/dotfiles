@@ -203,6 +203,12 @@ require('lazy').setup({
       config = function()
         require('lualine').setup()
       end
+    },
+    {
+      'numToStr/Comment.nvim',
+      config = function()
+        require('Comment').setup()
+      end
     }
   },
   install = { colorscheme = { 'catppuccin-frappe' } },
