@@ -215,6 +215,12 @@ require('lazy').setup({
       config = function()
         require('diffview').setup()
       end
+    },
+    {
+      'kylechui/nvim-surround',
+      config = function()
+        require('nvim-surround').setup()
+      end
     }
   },
   install = { colorscheme = { 'catppuccin-frappe' } },
