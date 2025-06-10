@@ -92,7 +92,9 @@ require('lazy').setup({
       },
       config = function()
         require('nvim-treesitter.configs').setup({
-          ensure_installed = { 'c', 'cpp', 'lua', 'markdown', 'markdown_inline', 'vim', 'vimdoc' },
+          ensure_installed = {
+            'bash', 'c', 'cmake', 'cpp', 'lua', 'markdown', 'markdown_inline', 'vim', 'vimdoc'
+          },
           sync_install = false,
           auto_install = true,
           highlight = { enable = true },
