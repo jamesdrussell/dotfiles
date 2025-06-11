@@ -1,5 +1,6 @@
 {
   "agent": {
+    "default_profile": "write",
     "default_model": {
       "provider": "google",
       "model": "gemini-2.5-flash-preview-04-17"
@@ -47,5 +48,6 @@
   },
   "enable_language_server": true,
   "show_wrap_guides": true,
-  "wrap_guides": [80]
+  "wrap_guides": [80],
+  "show_edit_predictions": false
 }
