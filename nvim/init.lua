@@ -177,13 +177,22 @@ require('lazy').setup({
         require('codecompanion').setup({
           strategies = {
             chat = {
-              adapter = 'gemini'
+              adapter = {
+                name = 'gemini',
+                model = 'gemini-2.5-flash-preview-05-20'
+              }
             },
             inline = {
-              adapter = 'gemini'
+              adapter = {
+                name = 'gemini',
+                model = 'gemini-2.5-flash-preview-05-20'
+              }
             },
             cmd = {
-              adapter = 'gemini'
+              adapter = {
+                name = 'gemini',
+                model = 'gemini-2.5-flash-preview-05-20'
+              }
             }
           }
         })
