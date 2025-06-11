@@ -1,9 +1,20 @@
 {
+  "language_models": {
+    "google": {
+      "available_models": [
+        {
+          "name": "gemini-2.5-flash-preview-05-20",
+          "display_name": "Gemini 2.5 Flash (Custom)",
+          "max_tokens": 1000000
+        }
+      ]
+    }
+  },
   "agent": {
     "default_profile": "write",
     "default_model": {
       "provider": "google",
-      "model": "gemini-2.5-flash-preview-04-17"
+      "model": "gemini-2.5-flash-preview-05-20"
     },
     "version": "2"
   },
