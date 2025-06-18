@@ -3,7 +3,7 @@
     "google": {
       "available_models": [
         {
-          "name": "gemini-2.5-flash-preview-05-20",
+          "name": "gemini-2.5-flash",
           "display_name": "Gemini 2.5 Flash (Custom)",
           "max_tokens": 1000000
         }
@@ -11,10 +11,11 @@
     }
   },
   "agent": {
+    "always_allow_tool_actions": false,
     "default_profile": "write",
     "default_model": {
       "provider": "google",
-      "model": "gemini-2.5-flash-preview-05-20"
+      "model": "gemini-2.5-flash"
     },
     "version": "2"
   },
