@@ -3,6 +3,8 @@ export PATH=~/go/bin:$PATH
 export PATH=/usr/local/opt/bison/bin:/opt/homebrew/opt/bison/bin:$PATH
 export PATH=$PATH:/usr/local/llama.cpp/bin
 
+export GEMINI_MODEL=gemini-2.5-flash
+
 alias vim=nvim
 
 eval "$(direnv hook zsh)"
