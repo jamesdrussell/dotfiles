@@ -80,7 +80,7 @@ require('lazy').setup({
       lazy = false,
       priority = 1000,
       config = function()
-        vim.cmd([[colorscheme catppuccin-frappe]])
+        vim.cmd([[colorscheme catppuccin-macchiato]])
       end
     },
     {
@@ -167,38 +167,6 @@ require('lazy').setup({
       end
     },
     {
-      'olimorris/codecompanion.nvim',
-      opts = {},
-      dependencies = {
-        'nvim-lua/plenary.nvim',
-        'nvim-treesitter/nvim-treesitter'
-      },
-      config = function()
-        require('codecompanion').setup({
-          strategies = {
-            chat = {
-              adapter = {
-                name = 'gemini',
-                model = 'gemini-2.5-flash-preview-05-20'
-              }
-            },
-            inline = {
-              adapter = {
-                name = 'gemini',
-                model = 'gemini-2.5-flash-preview-05-20'
-              }
-            },
-            cmd = {
-              adapter = {
-                name = 'gemini',
-                model = 'gemini-2.5-flash-preview-05-20'
-              }
-            }
-          }
-        })
-      end
-    },
-    {
       'lewis6991/gitsigns.nvim',
       config = function()
         require('gitsigns').setup()
@@ -232,6 +200,6 @@ require('lazy').setup({
       end
     }
   },
-  install = { colorscheme = { 'catppuccin-frappe' } },
+  install = { colorscheme = { 'catppuccin-macchiato' } },
   checker = { enabled = true }
 })
