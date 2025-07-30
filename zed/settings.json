@@ -55,7 +55,6 @@
     "sql": true,
     "swift": true,
     "proto": true,
-    "hare": true,
     "catppuccin": true
   },
   "enable_language_server": true,
