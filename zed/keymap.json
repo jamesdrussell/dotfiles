@@ -2,8 +2,7 @@
   {
     "bindings": {
       "ctrl-shift-tab": "pane::ActivatePreviousItem",
-      "ctrl-tab": "pane::ActivateNextItem",
-      "cmd-j": "workspace::ToggleVimMode"
+      "ctrl-tab": "pane::ActivateNextItem"
     }
   }
 ]
