@@ -30,9 +30,9 @@
   "format_on_save": "off",
   "remove_trailing_whitespace_on_save": true,
   "hover_popover_enabled": false,
-  "gutter": {
-    "code_actions": false
-  },
+  // "gutter": {
+  //   "code_actions": false
+  // },
   "tab_size": 2,
   "git": {
     "inline_blame": {
