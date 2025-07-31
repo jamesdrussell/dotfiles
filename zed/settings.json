@@ -21,6 +21,9 @@
   "theme": "Catppuccin Macchiato",
   "buffer_font_family": "JetBrains Mono NL",
   "buffer_font_size": 16,
+  "terminal": {
+    "font_size": 12
+  },
   "vim_mode": false,
   "cursor_blink": true,
   "ensure_final_newline_on_save": false,
