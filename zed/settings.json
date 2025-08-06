@@ -58,6 +58,7 @@
     "sql": true,
     "swift": true,
     "proto": true,
+    "make": true,
     "catppuccin": true
   },
   "enable_language_server": true,
