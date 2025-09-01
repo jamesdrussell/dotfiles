@@ -144,10 +144,15 @@
     git
     ghostty
     fuzzel
-    firefox
+    (chromium.override {
+      commandLineArgs = [
+        "--password-store=basic"
+      ];
+    })
     xwayland-satellite
     clang
     fzf
+    gemini-cli
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
