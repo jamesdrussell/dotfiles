@@ -20,12 +20,8 @@
   };
 
   programs._1password.enable = true;
-  programs._1password-gui = {
-    enable = true;
-    polkitPolicyOwners = [ "james" ];
-  };
 
-  services.emacs.package = pkgs.emacs-unstable;
+  services.emacs.package = pkgs.emacs-unstable-pgtk;
 
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
@@ -159,7 +155,6 @@
         "--password-store=basic"
       ];
     })
-    xwayland-satellite
     clang
     fzf
     gemini-cli
