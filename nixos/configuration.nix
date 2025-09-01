@@ -146,6 +146,8 @@
     fuzzel
     firefox
     xwayland-satellite
+    clang
+    fzf
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
