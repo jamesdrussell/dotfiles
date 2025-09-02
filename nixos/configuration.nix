@@ -31,13 +31,20 @@
     enable = true;
     package = with pkgs; (
       (emacsPackagesFor emacs-unstable-pgtk).emacsWithPackages (
-        epkgs: [ epkgs.catppuccin-theme ]
+        epkgs: [
+	  epkgs.catppuccin-theme
+	  epkgs.doom-modeline
+	  epkgs.vertico
+	  epkgs.magit
+        ]
       )
     );
   };
 
   fonts.packages = with pkgs; [
     jetbrains-mono
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
   ];
 
   # Bootloader.
