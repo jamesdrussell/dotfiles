@@ -36,6 +36,7 @@
 	  epkgs.doom-modeline
 	  epkgs.vertico
 	  epkgs.magit
+	  epkgs.spacious-padding
         ]
       )
     );

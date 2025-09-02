@@ -16,6 +16,8 @@
 (vertico-mode)
 (setq vertico-cycle t)
 
+(spacious-padding-mode)
+
 (setq default-frame-alist '((font . "JetBrains Mono NL-12")))
 
 (setq vc-follow-symlinks t)
