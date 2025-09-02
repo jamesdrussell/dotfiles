@@ -21,15 +21,20 @@
 
   programs._1password.enable = true;
 
-  services.emacs.package = pkgs.emacs-unstable-pgtk;
-
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
       url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
     }))
   ];
 
-  services.emacs.enable = true;
+  services.emacs = {
+    enable = true;
+    package = with pkgs; (
+      (emacsPackagesFor emacs-unstable-pgtk).emacsWithPackages (
+        epkgs: [ epkgs.catppuccin-theme ]
+      )
+    );
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
