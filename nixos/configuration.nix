@@ -10,6 +10,12 @@
       ./hardware-configuration.nix
     ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.download-buffer-size = 536870912;
+
+  environment.sessionVariables.GTK_THEME = "Adwaita:dark";
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   fonts.packages = with pkgs; [
     jetbrains-mono
   ];
@@ -167,6 +173,7 @@
     clang
     fzf
     gemini-cli
+    unzip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
