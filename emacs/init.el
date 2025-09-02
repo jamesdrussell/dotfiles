@@ -8,15 +8,14 @@
 
 (add-hook 'server-after-make-frame-hook
   (lambda ()				
-    (scroll-bar-mode -1)))
-
-(doom-modeline-mode 1)
-(setq doom-modeline-icon t)
+    (scroll-bar-mode -1)
+		(setq-default header-line-format '(""))
+		(set-face-background 'header-line (face-background 'default))
+		(setq-default mode-line-format '(""))
+		(set-face-background 'mode-line (face-background 'default))))
 
 (vertico-mode)
 (setq vertico-cycle t)
-
-(spacious-padding-mode)
 
 (setq default-frame-alist '((font . "JetBrains Mono NL-12")))
 

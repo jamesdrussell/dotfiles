@@ -33,10 +33,8 @@
       (emacsPackagesFor emacs-unstable-pgtk).emacsWithPackages (
         epkgs: [
 	  epkgs.catppuccin-theme
-	  epkgs.doom-modeline
 	  epkgs.vertico
 	  epkgs.magit
-	  epkgs.spacious-padding
         ]
       )
     );
@@ -44,8 +42,6 @@
 
   fonts.packages = with pkgs; [
     jetbrains-mono
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.symbols-only
   ];
 
   # Bootloader.
