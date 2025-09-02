@@ -10,36 +10,6 @@
       ./hardware-configuration.nix
     ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.download-buffer-size = 536870912;
-
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
-  hardware.graphics = {
-    enable = true;
-  };
-
-  programs._1password.enable = true;
-
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-      url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-    }))
-  ];
-
-  services.emacs = {
-    enable = true;
-    package = with pkgs; (
-      (emacsPackagesFor emacs-unstable-pgtk).emacsWithPackages (
-        epkgs: [
-	  epkgs.catppuccin-theme
-	  epkgs.vertico
-	  epkgs.magit
-        ]
-      )
-    );
-  };
-
   fonts.packages = with pkgs; [
     jetbrains-mono
   ];
@@ -47,10 +17,48 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.timeout = 0;
+  boot.loader.timeout = 5;
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  hardware.graphics = {
+    enable = true;
+  };
+
+  # Load nvidia driver for Xorg and Wayland
+  services.xserver.videoDrivers = ["nvidia"];
+
+  hardware.nvidia = {
+
+    # Modesetting is required.
+    modesetting.enable = true;
+
+    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
+    # Enable this if you have graphical corruption issues or application crashes after waking
+    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
+    # of just the bare essentials.
+    powerManagement.enable = false;
+
+    # Fine-grained power management. Turns off GPU when not in use.
+    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
+    powerManagement.finegrained = false;
+
+    # Use the NVidia open source kernel module (not to be confused with the
+    # independent third-party "nouveau" open source driver).
+    # Support is limited to the Turing and later architectures. Full list of 
+    # supported GPUs is at: 
+    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
+    # Only available from driver 515.43.04+
+    open = true;
+
+    # Enable the Nvidia settings menu,
+	# accessible via `nvidia-settings`.
+    nvidiaSettings = true;
+
+    # Optionally, you may need to select the appropriate driver version for your specific GPU.
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -61,13 +69,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.networkmanager.dns = "none";
-  networking.nameservers = [
-    "1.1.1.1"
-    "1.0.0.1"
-  ];
-
-  virtualisation.vmware.guest.enable = true;
 
   programs.neovim = {
     enable = true;
@@ -92,24 +93,19 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  #services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  #services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
-
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "james";
-  };
-
   services.displayManager.gdm = {
     enable = true;
     wayland = true;
   };
 
   programs.niri.enable = true;
+
+  # Enable the X11 windowing system.
+  #services.xserver.enable = true;
+
+  # Enable the GNOME Desktop Environment.
+  #services.xserver.displayManager.gdm.enable = true;
+  #services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   #services.xserver.xkb = {
@@ -139,6 +135,9 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  programs._1password.enable = true;
+  programs._1password-gui.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.james = {
     isNormalUser = true;
@@ -163,11 +162,8 @@
     git
     ghostty
     fuzzel
-    (chromium.override {
-      commandLineArgs = [
-        "--password-store=basic"
-      ];
-    })
+    google-chrome
+    zed-editor
     clang
     fzf
     gemini-cli
@@ -200,16 +196,4 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 
-  fileSystems."/host" = {
-    fsType = "fuse./run/current-system/sw/bin/vmhgfs-fuse";
-    device = ".host:/james";
-    options = [
-      "umask=22"
-      "uid=1000"
-      "gid=1000"
-      "allow_other"
-      "auto_unmount"
-      "defaults"
-    ];
-  };
 }
