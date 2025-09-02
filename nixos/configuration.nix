@@ -24,6 +24,14 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 5;
+  boot.loader.systemd-boot.configurationLimit = 5;
+
+  boot.loader.systemd-boot.extraEntries = {
+    "windows.conf" = ''
+      title Windows
+      efi /boot/EFI/Microsoft/Boot/bootmgfw.efi
+    '';
+  };
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
