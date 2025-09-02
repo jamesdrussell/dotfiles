@@ -11,7 +11,11 @@
     (scroll-bar-mode -1)
 		(setq-default header-line-format '(""))
 		(set-face-background 'header-line (face-background 'default))
-    (setq-default mode-line-format '(" %b"))
+    (setq-default mode-line-format
+		  (list
+				""
+				'mode-line-format-right-align
+			  "%b  "))
 		(set-face-background 'mode-line (face-background 'default))))
 
 (vertico-mode)
