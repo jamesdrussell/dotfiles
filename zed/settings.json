@@ -66,6 +66,7 @@
     "just": true,
     "dockerfile": true,
     "toml": true,
+    "kdl": true,
     "terraform": true,
     "git-firefly": true,
     "lua": true,
