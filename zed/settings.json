@@ -1,4 +1,22 @@
 {
+  "ssh_connections": [
+    {
+      "host": "192.168.50.168",
+      "username": "root",
+      "projects": [
+        {
+          "paths": [
+            "/data"
+          ]
+        },
+        {
+          "paths": [
+            "/etc"
+          ]
+        }
+      ]
+    }
+  ],
   "language_models": {
     "google": {
       "available_models": [
