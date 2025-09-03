@@ -173,6 +173,7 @@
     git
     alacritty
     fuzzel
+    swaylock
     google-chrome
     zed-editor
     clang
