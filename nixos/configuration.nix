@@ -41,9 +41,15 @@
     IdleActionSec = "10min";
   };
 
-#  services.udev.extraRules = ''
-#    ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x1022", ATTR{device}=="0x149c", ATTR{power/wakeup}="disabled"
-#  '';
+  systemd.services.wakeup-disabled-service = {
+    description = "Disable keyboard wakeup event on startup";
+    after = [ "systemd-sleep.service" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "/run/current-system/sw/bin/bash -c \"echo 'disabled' > /sys/bus/usb/devices/3-1/power/wakeup\"";
+    };
+  };
 
   hardware.graphics = {
     enable = true;
@@ -183,7 +189,11 @@
     alacritty
     fuzzel
     swaylock
-    google-chrome
+    (google-chrome.override {
+      commandLineArgs = [
+        "--password-store=basic"
+      ];
+    })
     zed-editor
     clang
     fzf
