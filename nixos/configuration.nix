@@ -48,6 +48,7 @@
 
   xdg.portal.enable = true;
   security.polkit.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   hardware.graphics = {
     enable = true;
