@@ -268,8 +268,10 @@ layout {
 // spawn-at-startup "waybar"
 
 spawn-at-startup "swayidle" "-w" \
-    "timeout" "300" "niri msg action power-off-monitors" \
-    "timeout" "600" "systemctl suspend"
+    "timeout" "300" "swaylock -f" \
+    "timeout" "301" "niri msg action power-off-monitors" \
+    "timeout" "600" "systemctl suspend" \
+    "before-sleep" "swaylock -f"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
