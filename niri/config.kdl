@@ -268,6 +268,7 @@ layout {
 // spawn-at-startup "waybar"
 
 spawn-at-startup "swayidle" "-w" \
+    "timeout" "300" "niri msg action power-off-monitors" \
     "timeout" "600" "systemctl suspend"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
