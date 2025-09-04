@@ -201,6 +201,7 @@
     swayidle
     spotify
     easyeffects
+    playerctl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
