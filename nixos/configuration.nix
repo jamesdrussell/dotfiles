@@ -36,11 +36,6 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  services.logind.settings.Login = {
-    IdleAction = "suspend";
-    IdleActionSec = "10min";
-  };
-
   systemd.services.wakeup-disabled-service = {
     description = "Disable keyboard wakeup event on startup";
     after = [ "systemd-sleep.service" ];
@@ -52,7 +47,6 @@
   };
 
   xdg.portal.enable = true;
-
   security.polkit.enable = true;
 
   hardware.graphics = {
@@ -203,6 +197,7 @@
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
     nautilus
+    swayidle
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
