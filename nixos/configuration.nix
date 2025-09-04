@@ -199,6 +199,7 @@
     xdg-desktop-portal-gnome
     nautilus
     swayidle
+    spotify
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
