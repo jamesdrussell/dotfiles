@@ -42,7 +42,7 @@
   "terminal": {
     "font_size": 12
   },
-  "vim_mode": false,
+  "vim_mode": true,
   "cursor_blink": true,
   "ensure_final_newline_on_save": false,
   "format_on_save": "off",
