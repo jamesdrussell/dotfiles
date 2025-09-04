@@ -51,6 +51,10 @@
     };
   };
 
+  xdg.portal.enable = true;
+
+  security.polkit.enable = true;
+
   hardware.graphics = {
     enable = true;
   };
@@ -189,16 +193,16 @@
     alacritty
     fuzzel
     swaylock
-    (google-chrome.override {
-      commandLineArgs = [
-        "--password-store=basic"
-      ];
-    })
+    google-chrome
     zed-editor
     clang
     fzf
     gemini-cli
     unzip
+    gnome-keyring
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-gnome
+    nautilus
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
