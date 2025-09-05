@@ -128,21 +128,24 @@
 
   programs.niri.enable = true;
 
-  # Enable the X11 windowing system.
-  #services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  #services.xserver.displayManager.gdm.enable = true;
-  #services.xserver.desktopManager.gnome.enable = true;
-
-  # Configure keymap in X11
-  #services.xserver.xkb = {
-  #  layout = "us";
-  #  variant = "";
-  #};
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.printing.drivers = [ pkgs.brlaser ];
+
+  hardware.printers = {
+    ensurePrinters = [
+      {
+        name = "Brother-HL-2270DW";
+	location = "Home";
+	deviceUri = "ipp://192.168.50.122:631";
+	model = "drv:///brlaser.drv/br2270d.ppd";
+	ppdOptions = {
+          PageSize = "Letter";
+	};
+      }
+    ];
+    ensureDefaultPrinter = "Brother-HL-2270DW";
+  };
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
