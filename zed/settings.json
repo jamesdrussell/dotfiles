@@ -83,5 +83,10 @@
   "enable_language_server": true,
   "show_wrap_guides": true,
   "wrap_guides": [80],
-  "show_edit_predictions": false
+  "show_edit_predictions": false,
+  "languages": {
+    "Nix": {
+      "language_servers": [ "nixd", "!nil" ]
+    }
+  }
 }
