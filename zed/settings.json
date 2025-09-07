@@ -43,7 +43,7 @@
     "font_size": 12
   },
   "vim_mode": false,
-  "cursor_blink": false,
+  "cursor_blink": true,
   "ensure_final_newline_on_save": false,
   "format_on_save": "off",
   "remove_trailing_whitespace_on_save": true,
