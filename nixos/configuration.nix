@@ -126,14 +126,6 @@
     wayland = true;
   };
 
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-    extraOptions = [
-      "--unsupported-gpu"
-    ];
-  };
-
   programs.niri.enable = true;
 
   # Enable CUPS to print documents.
