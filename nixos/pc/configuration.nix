@@ -26,6 +26,10 @@
   boot.loader.timeout = 5;
   boot.loader.systemd-boot.configurationLimit = 5;
 
+  boot.binfmt.emulatedSystems = [
+    "aarch64-linux"
+  ];
+
   boot.loader.systemd-boot.extraEntries = {
     "windows.conf" = ''
       title Windows
@@ -206,6 +210,7 @@
     easyeffects
     playerctl
     nixd
+    nixos-generators
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
