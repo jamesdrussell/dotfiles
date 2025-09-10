@@ -12,6 +12,7 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.download-buffer-size = 536870912;
+  nix.settings.warn-dirty = false;
 
   virtualisation.vmware.guest.enable = true;
 
