@@ -63,11 +63,6 @@ input {
     focus-follows-mouse max-scroll-amount="0%"
 }
 
-output "DP-1" {
-    mode  "2560x1440@359.979"
-    scale 1
-}
-
 cursor {
     xcursor-theme "Adwaita"
     hide-when-typing
@@ -266,14 +261,6 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 // spawn-at-startup "waybar"
-
-spawn-at-startup "swayidle" "-w" \
-    "timeout" "300" "swaylock -f" \
-    "timeout" "301" "niri msg action power-off-monitors" \
-    "timeout" "600" "systemctl suspend" \
-    "before-sleep" "swaylock -f"
-
-spawn-at-startup "easyeffects" "--gapplication-service"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
