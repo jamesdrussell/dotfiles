@@ -21,6 +21,8 @@
     jetbrains-mono
   ];
 
+  virtualisation.docker.enable = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -177,7 +179,7 @@
   users.users.james = {
     isNormalUser = true;
     description = "James Russell";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
     #  thunderbird
     ];
