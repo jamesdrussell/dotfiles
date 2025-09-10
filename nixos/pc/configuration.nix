@@ -12,6 +12,7 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.download-buffer-size = 536870912;
+  nix.settings.warn-dirty = false;
 
   environment.sessionVariables.GTK_THEME = "Adwaita:dark";
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -195,7 +196,11 @@
     alacritty
     fuzzel
     swaylock
-    google-chrome
+    (google-chrome.override {
+      commandLineArgs = [
+        "--disable-gpu-compositing"
+      ];
+    })
     zed-editor
     clang
     fzf
