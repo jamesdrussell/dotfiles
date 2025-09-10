@@ -32,9 +32,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 0;
 
-  boot.binfmt.emulatedSystems = [
-    "x86_64-linux"
-  ];
+  boot.binfmt.emulatedSystems = if pkgs.system == "x86_64-linux"
+    then [ "aarch64-linux" ]
+    else [ "x86_64-linux" ];
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
