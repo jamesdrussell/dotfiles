@@ -395,7 +395,6 @@ binds {
     Alt+O repeat=false { toggle-overview; }
 
     Alt+W { close-window; }
-    Alt+Q { close-window; }
 
     Alt+Tab   { focus-column-right; }
     Alt+Shift+Tab  { focus-column-left; }
@@ -568,7 +567,7 @@ binds {
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
-    Mod+W { toggle-column-tabbed-display; }
+    Alt+backslash { toggle-column-tabbed-display; }
 
     // Actions to switch layouts.
     // Note: if you uncomment these, make sure you do NOT have
