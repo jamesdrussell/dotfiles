@@ -223,5 +223,5 @@ require('lazy').setup({
     }
   },
   install = { colorscheme = { 'catppuccin-macchiato' } },
-  checker = { enabled = true }
+  checker = { enabled = false }
 })
