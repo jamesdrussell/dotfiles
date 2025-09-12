@@ -358,6 +358,7 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+B hotkey-overlay-title="Open Browser: chrome" { spawn "chromium"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Alt+G hotkey-overlay-title="Run Gemini" { spawn "chromium" "--app=https://gemini.google.com"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
