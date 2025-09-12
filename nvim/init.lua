@@ -66,6 +66,7 @@ vim.keymap.set("n", "<leader>=", "<C-w>=")
 vim.keymap.set("n", "<leader>m", "<cmd>MaximizerToggle<cr>")
 vim.keymap.set("n", "<leader>x", "<cmd>close<cr>")
 vim.keymap.set("n", "<leader>u", "<cmd>Lazy update<cr>")
+vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>")
 vim.keymap.set("i", "<C-h>", "<Left>")
 vim.keymap.set("i", "<C-j>", "<Down>")
 vim.keymap.set("i", "<C-k>", "<Up>")
@@ -219,6 +220,21 @@ require('lazy').setup({
       'kylechui/nvim-surround',
       config = function()
         require('nvim-surround').setup()
+      end
+    },
+    {
+      "nvim-neo-tree/neo-tree.nvim",
+      branch = "v3.x",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "MunifTanjim/nui.nvim",
+        "nvim-tree/nvim-web-devicons", -- optional, but recommended
+      },
+      lazy = false, -- neo-tree will lazily load itself
+      config = function()
+        require('neo-tree').setup({
+
+        })
       end
     }
   },
