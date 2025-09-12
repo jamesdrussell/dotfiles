@@ -372,6 +372,7 @@ binds {
     Alt+B hotkey-overlay-title="Open Browser: chrome" { spawn "google-chrome-stable"; }
     Alt+E hotkey-overlay-title="Open Editor: zed" { spawn "zeditor"; }
     Alt+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Alt+G hotkey-overlay-title="Run Gemini" { spawn "google-chrome-stable" "--app=https://gemini.google.com"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
