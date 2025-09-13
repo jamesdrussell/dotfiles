@@ -14,6 +14,8 @@
   nix.settings.download-buffer-size = 536870912;
   nix.settings.warn-dirty = false;
 
+  time.hardwareClockInLocalTime = true;
+
   environment.sessionVariables.GTK_THEME = "Adwaita:dark";
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
