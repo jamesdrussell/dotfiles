@@ -220,7 +220,6 @@
     easyeffects
     playerctl
     nixd
-    nixos-generators
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

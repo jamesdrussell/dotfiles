@@ -126,7 +126,6 @@
         "--password-store=basic"
       ];
     })
-    nixos-generators
     file
   ];
 
