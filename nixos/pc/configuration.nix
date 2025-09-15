@@ -220,7 +220,7 @@
     easyeffects
     playerctl
     nixd
-    zellij
+    tmux
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
