@@ -218,7 +218,6 @@
         "--disable-gpu-compositing"
       ];
     })
-    zed-editor
     clang
     fzf
     gemini-cli
