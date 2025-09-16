@@ -222,6 +222,7 @@
     xdg-desktop-portal-gnome
     nautilus
     swayidle
+    hypridle
     spotify
     easyeffects
     playerctl
