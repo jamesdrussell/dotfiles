@@ -60,6 +60,8 @@
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
 
+  services.colord.enable = true;
+
   hardware.graphics = {
     enable = true;
   };
