@@ -223,6 +223,7 @@
     nautilus
     swayidle
     hypridle
+    hyprlock
     spotify
     easyeffects
     playerctl
