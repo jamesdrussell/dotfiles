@@ -138,12 +138,10 @@
 
   programs.niri.enable = true;
 
-  programs.sway = {
+  programs.hyprland = {
     enable = true;
-    wrapperFeatures.gtk = true;
-    extraOptions = [
-      "--unsupported-gpu"
-    ];
+    withUWSM = true;
+    xwayland.enable = false;
   };
 
   # Enable CUPS to print documents.
