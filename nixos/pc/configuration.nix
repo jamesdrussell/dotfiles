@@ -138,6 +138,14 @@
 
   programs.niri.enable = true;
 
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+    extraOptions = [
+      "--unsupported-gpu"
+    ];
+  };
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.brlaser ];
