@@ -92,7 +92,19 @@
     };
   };
 
-  programs.niri.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+    xwayland.enable = false;
+  };
+
+  programs.uwsm.waylandCompositors = {
+    hyprland = {
+      prettyName = "Hyprland";
+      comment = "Hyprland compositor managed by UWSM";
+      binPath = "/run/current-system/sw/bin/Hyprland";
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.james = {
