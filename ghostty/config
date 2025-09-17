@@ -1,4 +1,4 @@
-theme = "catppuccin-macchiato"
+theme = Catppuccin Macchiato
 font-family = "JetBrains Mono NL"
 shell-integration-features = sudo
 resize-overlay = "never"
