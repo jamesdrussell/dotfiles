@@ -212,7 +212,6 @@
     git
     alacritty
     fuzzel
-    swaylock
     (google-chrome.override {
       commandLineArgs = [
         "--disable-gpu-compositing"
@@ -226,7 +225,6 @@
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
     nautilus
-    swayidle
     hypridle
     hyprlock
     spotify
@@ -234,6 +232,7 @@
     playerctl
     nixd
     tmux
+    glow
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
