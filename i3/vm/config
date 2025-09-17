@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-client.focused #939ab7 #939ab7 #000000 #000000 #939ab7
+client.focused #939ab7 #939ab7 #181926 #000000 #939ab7
 
 set $mod Mod4
 
