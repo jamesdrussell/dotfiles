@@ -14,35 +14,28 @@
   nix.settings.download-buffer-size = 536870912;
   nix.settings.warn-dirty = false;
 
-  virtualisation.vmware.guest.enable = true;
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.timeout = 0;
 
+  # Use latest kernel.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  virtualisation.vmware.guest.enable = true;
+  hardware.graphics.enable = true;
   virtualisation.docker.enable = true;
 
-  hardware.graphics.enable = true;
-
   environment.sessionVariables.GTK_THEME = "Adwaita:dark";
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   fonts.packages = with pkgs; [
     jetbrains-mono
     nerd-fonts.symbols-only
   ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.timeout = 0;
-
-  boot.binfmt.emulatedSystems = if pkgs.system == "x86_64-linux"
-    then [ "aarch64-linux" ]
-    else [ "x86_64-linux" ];
-
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  xdg.portal.enable = true;
-  security.polkit.enable = true;
-  services.gnome.gnome-keyring.enable = true;
+  boot.binfmt.emulatedSystems = [
+    "x86_64-linux"
+  ];
 
   systemd.network.enable = true;
 
@@ -55,6 +48,17 @@
   programs.neovim = {
     enable = true;
     vimAlias = true;
+  };
+
+  services.displayManager = {
+    gdm = {
+      enable = true;
+      wayland = false;
+    };
+    autoLogin = {
+      enable = true;
+      user = "james";
+    };
   };
 
   # Set your time zone.
@@ -75,44 +79,68 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  environment.pathsToLink = [ "/libexec" ];
+  services.xserver = {
+    enable = true;
+
+    desktopManager = {
+      xterm.enable = false;
+    };
+   
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        dmenu #application launcher most people use
+        i3status # gives you the default i3 status bar
+        i3blocks #if you are planning on using i3blocks over i3status
+     ];
+    };
+  };
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
 
-  services.displayManager = {
-    gdm = {
-      enable = true;
-      wayland = true;
-    };
-    autoLogin = {
-      enable = true;
-      user = "james";
-    };
-  };
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
 
-  programs.hyprland = {
+  # Enable sound with pipewire.
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
     enable = true;
-    withUWSM = true;
-    xwayland.enable = false;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
   };
 
-  programs.uwsm.waylandCompositors = {
-    hyprland = {
-      prettyName = "Hyprland";
-      comment = "Hyprland compositor managed by UWSM";
-      binPath = "/run/current-system/sw/bin/Hyprland";
-    };
-  };
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.james = {
     isNormalUser = true;
     description = "James Russell";
-    extraGroups = [ "wheel" "docker" ];
-    packages = with pkgs; [];
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+    #  thunderbird
+    ];
   };
+
+  # Install firefox.
+  programs.firefox.enable = true;
+
+  #xdg.portal.enable = true;
+  security.polkit.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -123,23 +151,16 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
     git
+    chromium
+    rofi
     alacritty
-    fuzzel
     clang
     fzf
     gemini-cli
-    gnome-keyring
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-gnome
-    nautilus
     nixd
-    (chromium.override {
-      commandLineArgs = [
-        "--password-store=basic"
-      ];
-    })
     file
     tmux
+    gnome-keyring
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -151,6 +172,9 @@
   # };
 
   # List services that you want to enable:
+
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
