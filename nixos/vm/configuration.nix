@@ -129,7 +129,7 @@
   users.users.james = {
     isNormalUser = true;
     description = "James Russell";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -158,6 +158,8 @@
     file
     tmux
     gnome-keyring
+    lazygit
+    lazydocker
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
