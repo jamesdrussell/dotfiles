@@ -56,7 +56,7 @@
     };
   };
 
-  xdg.portal.enable = true;
+  # xdg.portal.enable = true;
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
 
@@ -133,22 +133,31 @@
 
   services.displayManager.gdm = {
     enable = true;
-    wayland = true;
+    wayland = false;
   };
 
-  programs.hyprland = {
+  environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw 
+  
+  services.xserver = {
     enable = true;
-    withUWSM = true;
-    xwayland.enable = false;
-  };
 
-  programs.uwsm.waylandCompositors = {
-    hyprland = {
-      prettyName = "Hyprland";
-      comment = "Hyprland compositor managed by UWSM";
-      binPath = "/run/current-system/sw/bin/Hyprland";
+    desktopManager = {
+      xterm.enable = false;
+    };
+   
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        dmenu #application launcher most people use
+        i3status # gives you the default i3 status bar
+        i3blocks #if you are planning on using i3blocks over i3status
+     ];
     };
   };
+
+  services.displayManager.defaultSession = "none+i3";
+
+  programs.i3lock.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -211,19 +220,13 @@
   environment.systemPackages = with pkgs; [
     git
     alacritty
-    fuzzel
-    (google-chrome.override {
-      commandLineArgs = [
-        "--disable-gpu-compositing"
-      ];
-    })
+    rofi
+    google-chrome
     clang
     fzf
     gemini-cli
     unzip
     gnome-keyring
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-gnome
     nautilus
     hypridle
     hyprlock
@@ -233,6 +236,8 @@
     nixd
     tmux
     glow
+    lazygit
+    lazydocker
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
