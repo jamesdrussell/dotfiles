@@ -135,9 +135,6 @@
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
   #xdg.portal.enable = true;
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
