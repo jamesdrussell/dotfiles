@@ -223,7 +223,6 @@
   environment.systemPackages = with pkgs; [
     git
     alacritty
-    ghostty
     google-chrome
     clang
     fzf
