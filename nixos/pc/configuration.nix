@@ -45,15 +45,15 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # systemd.services.wakeup-disabled-service = {
-  #   description = "Disable keyboard wakeup event on startup";
-  #   after = [ "systemd-sleep.service" ];
-  #   wantedBy = [ "multi-user.target" ];
-  #   serviceConfig = {
-  #     Type = "oneshot";
-  #     ExecStart = "/run/current-system/sw/bin/bash -c \"echo 'disabled' > /sys/bus/usb/devices/3-1/power/wakeup\"";
-  #   };
-  # };
+  systemd.services.wakeup-disabled-service = {
+    description = "Disable keyboard wakeup event on startup";
+    after = [ "systemd-sleep.service" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "/run/current-system/sw/bin/bash -c \"echo 'disabled' > /sys/bus/usb/devices/3-1/power/wakeup\"";
+    };
+  };
 
   # xdg.portal.enable = true;
   # security.polkit.enable = true;
