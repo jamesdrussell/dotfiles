@@ -236,7 +236,21 @@ require('lazy').setup({
       lazy = false, -- neo-tree will lazily load itself
       config = function()
         require('neo-tree').setup({
-
+          default_component_configs = {
+            git_status = {
+              symbols = {
+                added = "",
+                deleted = "",
+                renamed = "",
+                modified = "",
+                unstaged = "",
+                untracked = "",
+                ignored = "",
+                staged = "",
+                conflict = ""
+              }
+            }
+          }
         })
       end
     },
