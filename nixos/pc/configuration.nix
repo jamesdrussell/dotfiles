@@ -201,6 +201,10 @@
   # services.xserver.libinput.enable = true;
 
   programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "james" ];
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.james = {
