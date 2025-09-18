@@ -237,6 +237,7 @@
     lazydocker
     gnome-tweaks
     zed-editor
+    emacs
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
