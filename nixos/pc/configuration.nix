@@ -130,11 +130,11 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
 
   services.displayManager.gdm = {
     enable = true;
-    wayland = false;
+    # wayland = true;
   };
 
   services.desktopManager.gnome.enable = true;
@@ -227,7 +227,11 @@
   environment.systemPackages = with pkgs; [
     git
     alacritty
-    google-chrome
+    (google-chrome.override {
+      commandLineArgs = [
+        "--disable-features=GlobalShortcutsPortal"
+      ];
+    })
     clang
     fzf
     gemini-cli
