@@ -240,6 +240,7 @@
     lazydocker
     gnome-tweaks
     zed-editor
+    dconf-editor
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
