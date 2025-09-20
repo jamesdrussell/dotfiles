@@ -109,6 +109,9 @@
           "altwin:swap_alt_win"
         ];
       };
+      "org/gnome/settings-daemon/plugins/power" = {
+        sleep-inactive-ac-type = "nothing";
+      };
     };
   };
 }
