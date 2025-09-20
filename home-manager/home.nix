@@ -79,4 +79,12 @@
     userName = "James Russell";
     userEmail = "jamesdrus@gmail.com";
   };
+
+  dconf = {
+    settings = {
+      "org/gnome/desktop/peripherals/mouse" = {
+        speed = -0.5;
+      };
+    };
+  };
 }
