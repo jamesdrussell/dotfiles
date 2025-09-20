@@ -104,6 +104,11 @@
       "org/gnome/desktop/wm/preferences" = {
         audible-bell = false;
       };
+      "org/gnome/desktop/input-sources" = {
+        xkb-options = [
+          "altwin:swap_alt_win"
+        ];
+      };
     };
   };
 }
