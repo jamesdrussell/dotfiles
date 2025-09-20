@@ -110,7 +110,7 @@
         ];
       };
       "org/gnome/settings-daemon/plugins/power" = {
-        sleep-inactive-ac-type = "nothing";
+        sleep-inactive-ac-timeout = 600;
       };
     };
   };
