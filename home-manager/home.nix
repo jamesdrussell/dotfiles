@@ -85,6 +85,9 @@
       "org/gnome/desktop/peripherals/mouse" = {
         speed = -0.5;
       };
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
     };
   };
 }
