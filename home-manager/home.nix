@@ -88,6 +88,10 @@
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
       };
+      "org/gnome/desktop/notifications" = {
+        show-banners = false;
+        show-in-lock-screen = false;
+      };
     };
   };
 }
