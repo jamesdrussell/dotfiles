@@ -92,6 +92,18 @@
         show-banners = false;
         show-in-lock-screen = false;
       };
+      "org/gnome/desktop/screensaver" = {
+        idle-activation-enabled = false;
+      };
+      "org/gnome/desktop/interface" = {
+        clock-format = "12h";
+      };
+      "org/gnome/desktop/sound" = {
+        event-sounds = false;
+      };
+      "org/gnome/desktop/wm/preferences" = {
+        audible-bell = false;
+      };
     };
   };
 }
