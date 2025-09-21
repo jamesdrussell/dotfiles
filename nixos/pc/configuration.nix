@@ -214,11 +214,6 @@
   # Install firefox.
   #programs.firefox.enable = true;
 
-  programs.neovim = {
-    enable = true;
-    vimAlias = true;
-  };
-
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
 

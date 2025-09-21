@@ -97,6 +97,11 @@
     };
   };
 
+  programs.neovim = {
+    enable = true;
+    vimAlias = true;
+  };
+
   dconf = {
     settings = {
       "org/gnome/desktop/peripherals/mouse" = {
