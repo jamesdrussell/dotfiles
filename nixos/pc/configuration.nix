@@ -1,3 +1,4 @@
+
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
@@ -16,8 +17,6 @@
 
   time.hardwareClockInLocalTime = true;
 
-  # environment.sessionVariables.GTK_THEME = "Adwaita:dark";
-
   fonts.packages = with pkgs; [
     jetbrains-mono
     nerd-fonts.symbols-only
@@ -35,13 +34,6 @@
     "aarch64-linux"
   ];
 
-  boot.loader.systemd-boot.extraEntries = {
-    "windows.conf" = ''
-      title Windows
-      efi /boot/EFI/Microsoft/Boot/bootmgfw.efi
-    '';
-  };
-
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -55,9 +47,39 @@
     };
   };
 
-  # xdg.portal.enable = true;
-  # security.polkit.enable = true;
-  # services.gnome.gnome-keyring.enable = true;
+    systemd.services."gnome-suspend" = {
+      description = "suspend gnome shell";
+      before = [
+        "systemd-suspend.service"
+        "systemd-hibernate.service"
+        "nvidia-suspend.service"
+        "nvidia-hibernate.service"
+      ];
+      wantedBy = [
+        "systemd-suspend.service"
+        "systemd-hibernate.service"
+      ];
+      serviceConfig = {
+        Type = "oneshot";
+        ExecStart = ''${pkgs.procps}/bin/pkill -f -STOP ${pkgs.gnome-shell}/bin/gnome-shell'';
+      };
+    };
+    systemd.services."gnome-resume" = {
+      description = "resume gnome shell";
+      after = [
+        "systemd-suspend.service"
+        "systemd-hibernate.service"
+        "nvidia-resume.service"
+      ];
+      wantedBy = [
+        "systemd-suspend.service"
+        "systemd-hibernate.service"
+      ];
+      serviceConfig = {
+        Type = "oneshot";
+        ExecStart = ''${pkgs.procps}/bin/pkill -f -CONT ${pkgs.gnome-shell}/bin/gnome-shell'';
+      };
+    };
 
   hardware.graphics = {
     enable = true;
@@ -107,11 +129,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  programs.neovim = {
-    enable = true;
-    vimAlias = true;
-  };
-
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
 
@@ -130,8 +147,21 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  services.displayManager.gdm.enable = true;
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+
+  # Enable the GNOME Desktop Environment.
+  services.displayManager.gdm = {
+    enable = true;
+    #autoSuspend = false;
+  };
   services.desktopManager.gnome.enable = true;
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -171,12 +201,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  programs._1password.enable = true;
-  programs._1password-gui = {
-    enable = true;
-    polkitPolicyOwners = [ "james" ];
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.james = {
     isNormalUser = true;
@@ -190,17 +214,44 @@
   # Install firefox.
   #programs.firefox.enable = true;
 
+  programs.neovim = {
+    enable = true;
+    vimAlias = true;
+  };
+
+  programs._1password.enable = true;
+  programs._1password-gui.enable = true;
+
+  programs.bash.promptInit = ''
+    if [ "$TERM" != "dumb" ] || [ -n "$INSIDE_EMACS" ]; then
+      PROMPT_COLOR="1;31m"
+      ((UID)) && PROMPT_COLOR="1;32m"
+      if [ -n "$INSIDE_EMACS" ]; then
+        # Emacs term mode doesn't support xterm title escape sequence (\e]0;)
+        PS1="\[\033[$PROMPT_COLOR\][\u@\h:\w]\\$\[\033[0m\] "
+      else
+        PS1="\[\033[$PROMPT_COLOR\][\[\e]0;\u@\h: \w\a\]\u@\h:\w]\\$\[\033[0m\] "
+      fi
+      if test "$TERM" = "xterm"; then
+        PS1="\[\033]2;\h:\u:\w\007\]$PS1"
+      fi
+    fi
+  '';
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #  wget
     git
-    alacritty
     (google-chrome.override {
       commandLineArgs = [
         "--disable-features=GlobalShortcutsPortal"
+        "--disable-notifications"
+        "--hide-crash-restore-bubble"
       ];
     })
     clang
