@@ -80,6 +80,23 @@
     userEmail = "jamesdrus@gmail.com";
   };
 
+  programs.alacritty = {
+    enable = true;
+    theme = "catppuccin_macchiato";
+    settings = {
+      font.size = 12.0;
+      font.normal = {
+        family = "JetBrains Mono NL";
+        style = "Regular";
+      };
+      window.padding = {
+        x = 4;
+        y = 4;
+      };
+      env.TERM = "xterm-256color";
+    };
+  };
+
   dconf = {
     settings = {
       "org/gnome/desktop/peripherals/mouse" = {
