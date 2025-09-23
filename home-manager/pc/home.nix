@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -82,6 +82,10 @@
     config = rec {
       modifier = "Mod1";
       terminal = "alacritty";
+      keybindings = lib.mkOptionDefault {
+        "${modifier}+t" = "exec ${terminal}";
+        "${modifier}+b" = "exec google-chrome-stable";
+      };
     };
   };
 
