@@ -113,38 +113,38 @@
     vimAlias = true;
   };
 
-  dconf = {
-    settings = {
-      "org/gnome/desktop/peripherals/mouse" = {
-        speed = -0.5;
-      };
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-      };
-      "org/gnome/desktop/notifications" = {
-        show-banners = false;
-        show-in-lock-screen = false;
-      };
-      "org/gnome/desktop/screensaver" = {
-        idle-activation-enabled = false;
-      };
-      "org/gnome/desktop/interface" = {
-        clock-format = "12h";
-      };
-      "org/gnome/desktop/sound" = {
-        event-sounds = false;
-      };
-      "org/gnome/desktop/wm/preferences" = {
-        audible-bell = false;
-      };
-      "org/gnome/desktop/input-sources" = {
-        xkb-options = [
-          "altwin:swap_alt_win"
-        ];
-      };
-      "org/gnome/settings-daemon/plugins/power" = {
-        sleep-inactive-ac-timeout = 600;
-      };
-    };
-  };
+  # dconf = {
+  #   settings = {
+  #     "org/gnome/desktop/peripherals/mouse" = {
+  #       speed = -0.5;
+  #     };
+  #     "org/gnome/desktop/interface" = {
+  #       color-scheme = "prefer-dark";
+  #     };
+  #     "org/gnome/desktop/notifications" = {
+  #       show-banners = false;
+  #       show-in-lock-screen = false;
+  #     };
+  #     "org/gnome/desktop/screensaver" = {
+  #       idle-activation-enabled = false;
+  #     };
+  #     "org/gnome/desktop/interface" = {
+  #       clock-format = "12h";
+  #     };
+  #     "org/gnome/desktop/sound" = {
+  #       event-sounds = false;
+  #     };
+  #     "org/gnome/desktop/wm/preferences" = {
+  #       audible-bell = false;
+  #     };
+  #     "org/gnome/desktop/input-sources" = {
+  #       xkb-options = [
+  #         "altwin:swap_alt_win"
+  #       ];
+  #     };
+  #     "org/gnome/settings-daemon/plugins/power" = {
+  #       sleep-inactive-ac-timeout = 600;
+  #     };
+  #   };
+  # };
 }
