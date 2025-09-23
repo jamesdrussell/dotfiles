@@ -74,6 +74,17 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  wayland.windowManager.sway = {
+    enable = true;
+    extraOptions = [
+      "--unsupported-gpu"
+    ];
+    config = rec {
+      modifier = "Mod4";
+      terminal = "alacritty";
+    };
+  };
+
   programs.git = {
     enable = true;
     userName = "James Russell";
