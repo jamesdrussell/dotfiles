@@ -211,16 +211,22 @@
     ];
   };
 
-  services.displayManager.ly.enable = true;
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.sway}/bin/sway --unsupported-gpu";
+        user = "james";
+      };
+      default_session = initial_session;
+    };
+  };
 
   services.gnome.gnome-keyring.enable = true;
 
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
-    extraOptions = [
-      "--unsupported-gpu"
-    ];
   };
 
   security.polkit.enable = true;
