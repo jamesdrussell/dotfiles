@@ -47,39 +47,39 @@
     };
   };
 
-    systemd.services."gnome-suspend" = {
-      description = "suspend gnome shell";
-      before = [
-        "systemd-suspend.service"
-        "systemd-hibernate.service"
-        "nvidia-suspend.service"
-        "nvidia-hibernate.service"
-      ];
-      wantedBy = [
-        "systemd-suspend.service"
-        "systemd-hibernate.service"
-      ];
-      serviceConfig = {
-        Type = "oneshot";
-        ExecStart = ''${pkgs.procps}/bin/pkill -f -STOP ${pkgs.gnome-shell}/bin/gnome-shell'';
-      };
-    };
-    systemd.services."gnome-resume" = {
-      description = "resume gnome shell";
-      after = [
-        "systemd-suspend.service"
-        "systemd-hibernate.service"
-        "nvidia-resume.service"
-      ];
-      wantedBy = [
-        "systemd-suspend.service"
-        "systemd-hibernate.service"
-      ];
-      serviceConfig = {
-        Type = "oneshot";
-        ExecStart = ''${pkgs.procps}/bin/pkill -f -CONT ${pkgs.gnome-shell}/bin/gnome-shell'';
-      };
-    };
+#    systemd.services."gnome-suspend" = {
+#      description = "suspend gnome shell";
+#      before = [
+#        "systemd-suspend.service"
+#        "systemd-hibernate.service"
+#        "nvidia-suspend.service"
+#        "nvidia-hibernate.service"
+#      ];
+#      wantedBy = [
+#        "systemd-suspend.service"
+#        "systemd-hibernate.service"
+#      ];
+#      serviceConfig = {
+#        Type = "oneshot";
+#        ExecStart = ''${pkgs.procps}/bin/pkill -f -STOP ${pkgs.gnome-shell}/bin/gnome-shell'';
+#      };
+#    };
+#    systemd.services."gnome-resume" = {
+#      description = "resume gnome shell";
+#      after = [
+#        "systemd-suspend.service"
+#        "systemd-hibernate.service"
+#        "nvidia-resume.service"
+#      ];
+#      wantedBy = [
+#        "systemd-suspend.service"
+#        "systemd-hibernate.service"
+#      ];
+#      serviceConfig = {
+#        Type = "oneshot";
+#        ExecStart = ''${pkgs.procps}/bin/pkill -f -CONT ${pkgs.gnome-shell}/bin/gnome-shell'';
+#      };
+#    };
 
   hardware.graphics = {
     enable = true;
@@ -109,7 +109,7 @@
     # supported GPUs is at: 
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
     # Only available from driver 515.43.04+
-    open = true;
+    open = false;
 
     # Enable the Nvidia settings menu,
 	# accessible via `nvidia-settings`.
