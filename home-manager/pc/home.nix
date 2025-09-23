@@ -80,7 +80,7 @@
       "--unsupported-gpu"
     ];
     config = rec {
-      modifier = "Mod4";
+      modifier = "Mod1";
       terminal = "alacritty";
     };
   };
