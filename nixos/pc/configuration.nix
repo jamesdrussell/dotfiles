@@ -85,7 +85,14 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  networking.hostName = "nixos"; # Define your hostname.
+  systemd.network.enable = true;
+
+  networking = {
+    hostName = "nixos";
+    useNetworkd = true;
+    firewall.enable = true;
+  };
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -93,7 +100,7 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  # networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
@@ -161,7 +168,7 @@
   users.users.james = {
     isNormalUser = true;
     description = "James Russell";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "wheel" "docker" ];
     packages = with pkgs; [
     #  thunderbird
     ];
