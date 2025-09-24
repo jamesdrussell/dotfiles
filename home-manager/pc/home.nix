@@ -82,6 +82,11 @@
     config = rec {
       modifier = "Mod1";
       terminal = "alacritty";
+      output = {
+        "DP-1" = {
+          mode = "2560x1440@359.979Hz";
+	};
+      };
       keybindings = lib.mkOptionDefault {
         "${modifier}+t" = "exec ${terminal}";
         "${modifier}+b" = "exec google-chrome-stable";
