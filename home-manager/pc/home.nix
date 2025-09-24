@@ -93,6 +93,7 @@
     config = rec {
       modifier = "Mod1";
       terminal = "alacritty";
+      defaultWorkspace = "workspace number 1";
       output = {
         "DP-1" = {
           mode = "2560x1440@359.979Hz";
