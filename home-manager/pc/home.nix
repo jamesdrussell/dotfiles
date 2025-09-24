@@ -194,6 +194,27 @@
       };
       fzf-lua = {
         enable = true;
+        keymaps = {
+          "<leader>f" = "files";
+          "<leader>b" = "buffers";
+        };
+        settings = {
+          winopts = {
+            height = 0.25;
+            preview = {
+              hidden = "hidden";
+            };
+          };
+          files = {
+            winopts = {
+              title_flags = false;
+            };
+            file_icons = false;
+          };
+          buffers = {
+            no_header = true;
+          };
+        };
       };
       nvim-autopairs = {
         enable = true;
