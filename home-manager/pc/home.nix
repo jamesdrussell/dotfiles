@@ -202,6 +202,21 @@
       };
       neo-tree = {
         enable = true;
+        defaultComponentConfigs = {
+          gitStatus = {
+            symbols = {
+              added = "";
+              deleted = "";
+              renamed = "";
+              modified = "";
+              unstaged = "";
+              untracked = "";
+              ignored = "";
+              staged = "";
+              conflict = "";
+            };
+          };
+        };
       };
       web-devicons = {
         enable = true;
