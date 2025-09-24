@@ -230,9 +230,38 @@
           vimdoc
           yaml
         ];
+        settings = {
+          auto_install = false;
+          sync_install = false;
+          highlight = {
+            enable = true;
+          };
+          indent = {
+            enable = true;
+          };
+          incremental_selection = {
+            enable = true;
+            keymaps = {
+              init_selection = "gnn";
+              node_decremental = "grm";
+              node_incremental = "grn";
+              scope_incremental = "grc";
+            };
+          };
+        };
       };
       treesitter-textobjects = {
         enable = true;
+        select = {
+          enable = true;
+          lookahead = true;
+          keymaps = {
+            "af" = "@function.outer";
+            "if" = "@function.inner";
+            "ac" = "@class.outer";
+            "ic" = "@class.inner";
+          };
+        };
       };
     };
     opts = {
