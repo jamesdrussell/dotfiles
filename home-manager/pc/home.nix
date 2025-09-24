@@ -231,6 +231,9 @@
           yaml
         ];
       };
+      treesitter-textobjects = {
+        enable = true;
+      };
     };
     opts = {
       number = true;
