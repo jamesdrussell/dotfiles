@@ -460,6 +460,11 @@
 
   programs.gemini-cli = {
     enable = true;
+    settings = {
+      disableAutoUpdate = true;
+      disableUpdateNag = true;
+      selectedAuthType = "oauth-personal";
+    };
   };
 
   programs.tmux = {
