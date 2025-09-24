@@ -110,6 +110,38 @@
     };
   };
 
+  services.swayidle = {
+    enable = true;
+    events = [
+      {
+        event = "before-sleep";
+        command = "${pkgs.swaylock}/bin/swaylock -f";
+      }
+      {
+        event = "after-resume";
+        command = ''${pkgs.sway}/bin/swaymsg "output * dpms on"'';
+      }
+      {
+        event = "lock";
+        command = ''${pkgs.sway}/bin/swaymsg "output * dpms off"'';
+      }
+    ];
+    timeouts = [
+      {
+        timeout = 300;
+	command = "${pkgs.swaylock}/bin/swaylock -f";
+      }
+      {
+        timeout = 600;
+	command = "${pkgs.systemd}/bin/systemctl suspend";
+      }
+    ];
+  };
+
+  programs.swaylock = {
+    enable = true;
+  };
+
   programs.git = {
     enable = true;
     userName = "James Russell";
