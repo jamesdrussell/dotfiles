@@ -378,6 +378,14 @@
       }
       {
         mode = "n";
+        key = "s";
+        action = "<cmd>lua require('flash').jump()<cr>";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
         key = "<C-h>";
         action = "<C-w>h";
         options = {
