@@ -264,5 +264,31 @@
       hidden = true;
       shortmess = "I";
     };
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>q";
+        action = "<cmd>q<cr>";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>w";
+        action = "<cmd>w<cr>";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>e";
+        action = "<cmd>Neotree toggle<cr>";
+        options = {
+          silent = true;
+        };
+      }
+    ];
   };
 }
