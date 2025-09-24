@@ -194,9 +194,6 @@
 
   security.polkit.enable = true;
 
-  programs._1password.enable = true;
-  programs._1password-gui.enable = true;
-
   programs.bash.promptInit = ''
     if [ "$TERM" != "dumb" ] || [ -n "$INSIDE_EMACS" ]; then
       PROMPT_COLOR="1;31m"
