@@ -185,6 +185,20 @@
     plugins = {
       lualine = {
         enable = true;
+        settings = {
+          options = {
+            section_separators = "";
+            component_separators = "";
+          };
+          sections = {
+            lualine_a = [ "mode" ];
+            lualine_b = [ "" ];
+            lualine_c = [ "filename" ];
+            lualine_x = [ "" ];
+            lualine_y = [ "" ];
+            lualine_z = [ "" ];
+          };
+        };
       };
       neo-tree = {
         enable = true;
@@ -218,6 +232,14 @@
       };
       nvim-autopairs = {
         enable = true;
+        settings = {
+          check_ts = true;
+          ts_config = {
+            lua = [
+              "string"
+            ];
+          };
+        };
       };
       gitsigns = {
         enable = true;
