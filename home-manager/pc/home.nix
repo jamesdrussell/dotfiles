@@ -484,6 +484,26 @@
 
   programs.fuzzel = {
     enable = true;
+    settings = {
+      colors = {
+        background = "24273aff";
+        text = "cad3f5ff";
+        prompt = "b8c0e0ff";
+        placeholder = "8087a2ff";
+        input = "cad3f5ff";
+        match = "8aadf4ff";
+        selection = "5b6078ff";
+        selection-text = "cad3f5ff";
+        selection-match = "8aadf4ff";
+        counter = "8087a2ff";
+        border = "8aadf4ff";
+      };
+      key-bindings = {
+        next = "Control+j";
+        prev = "Control+k";
+        delete-line-forward = "none";
+      };
+    };
   };
 
 }
