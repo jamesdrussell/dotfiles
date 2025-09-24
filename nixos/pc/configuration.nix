@@ -196,6 +196,7 @@
     extraPackages = [];
   };
 
+  security.pam.services.greetd.enableGnomeKeyring = true;
   security.polkit.enable = true;
 
   programs.bash.promptInit = ''
