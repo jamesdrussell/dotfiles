@@ -130,6 +130,7 @@
         "${modifier}+b" = "exec google-chrome-stable";
       };
       bars = [];
+      menu = "fuzzel";
     };
   };
 
@@ -478,6 +479,10 @@
   };
 
   services.easyeffects = {
+    enable = true;
+  };
+
+  programs.fuzzel = {
     enable = true;
   };
 
