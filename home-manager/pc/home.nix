@@ -124,7 +124,7 @@
       }
       {
         event = "after-resume";
-        command = ''${pkgs.sway}/bin/swaymsg "output * dpms on"'';
+        command = ''${pkgs.sway}/bin/swaymsg "output * power on"'';
       }
     ];
     timeouts = [
@@ -134,8 +134,8 @@
       }
       {
         timeout = 300;
-        command = ''${pkgs.sway}/bin/swaymsg "output * dpms off"'';
-        resumeCommand = ''${pkgs.sway}/bin/swaymsg "output * dpms on"'';
+        command = ''${pkgs.sway}/bin/swaymsg "output * power off"'';
+        resumeCommand = ''${pkgs.sway}/bin/swaymsg "output * power on"'';
       }
       {
         timeout = 600;
