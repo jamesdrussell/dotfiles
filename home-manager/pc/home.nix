@@ -21,7 +21,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -38,6 +38,17 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    glow
+    nixd
+    spotify
+    clang
+    (google-chrome.override {
+      commandLineArgs = [
+        "--disable-features=GlobalShortcutsPortal"
+        "--disable-notifications"
+        "--hide-crash-restore-bubble"
+      ];
+    })
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -430,4 +441,37 @@
       }
     ];
   };
+
+  programs.fzf = {
+    enable = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+  };
+
+  programs.gemini-cli = {
+    enable = true;
+  };
+
+  programs.tmux = {
+    enable = true;
+  };
+
+  programs.lazygit = {
+    enable = true;
+  };
+
+  programs.lazydocker = {
+    enable = true;
+  };
+
+  programs.zed-editor = {
+    enable = true;
+  };
+
+  services.easyeffects = {
+    enable = true;
+  };
+
 }
