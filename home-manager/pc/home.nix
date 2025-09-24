@@ -192,6 +192,45 @@
       web-devicons = {
         enable = true;
       };
+      fzf-lua = {
+        enable = true;
+      };
+      nvim-autopairs = {
+        enable = true;
+      };
+      gitsigns = {
+        enable = true;
+      };
+      nvim-surround = {
+        enable = true;
+      };
+      flash = {
+        enable = true;
+      };
+      comment = {
+        enable = true;
+      };
+      treesitter = {
+        enable = true;
+        grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+          bash
+          c
+          cmake
+          cpp
+          json
+          kdl
+          lua
+          make
+          markdown
+          markdown_inline
+          nix
+          python
+          toml
+          vim
+          vimdoc
+          yaml
+        ];
+      };
     };
     opts = {
       number = true;
