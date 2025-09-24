@@ -17,10 +17,10 @@
 
   time.hardwareClockInLocalTime = true;
 
-  fonts.packages = with pkgs; [
-    jetbrains-mono
-    nerd-fonts.symbols-only
-  ];
+  # fonts.packages = with pkgs; [
+  #   jetbrains-mono
+  #   nerd-fonts.symbols-only
+  # ];
 
   virtualisation.docker.enable = true;
 
