@@ -117,6 +117,10 @@
         event = "before-sleep";
         command = "${pkgs.swaylock}/bin/swaylock -f";
       }
+      {
+        event = "after-resume";
+        command = ''${pkgs.sway}/bin/swaymsg "output * dpms on"'';
+      }
     ];
     timeouts = [
       {
