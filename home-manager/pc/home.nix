@@ -344,12 +344,24 @@
       clipboard = "unnamedplus";
       splitright = true;
       splitbelow = true;
+      iskeyword = "-";
       laststatus = 3;
       showmode = false;
       showcmd = false;
       cmdheight = 1;
       hidden = true;
       shortmess = "I";
+      foldmethod = "expr";
+      foldexpr = "v:lua.vim.treesitter.foldexpr()";
+      foldcolumn = "0";
+      foldtext = "";
+      foldnestmax = 1;
+      foldlevelstart = 1;
+    };
+    diagnostic = {
+      settings = {
+        virtual_text = false;
+      };
     };
     keymaps = [
       {
