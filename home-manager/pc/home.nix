@@ -1,6 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
+  imports = [
+    inputs.nixvim.homeModules.nixvim
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "james";
@@ -167,43 +171,51 @@
     };
   };
 
-  programs.neovim = {
+  programs.nixvim = {
     enable = true;
+    viAlias = true;
     vimAlias = true;
+    colorschemes.catppuccin.enable = true;
+    globals.mapleader = " ";
+    plugins = {
+      lualine = {
+        enable = true;
+      };
+      neo-tree = {
+        enable = true;
+      };
+      web-devicons = {
+        enable = true;
+      };
+    };
+    opts = {
+      number = true;
+      relativenumber = false;
+      wrap = false;
+      mouse = "a";
+      tabstop = 2;
+      shiftwidth = 2;
+      expandtab = true;
+      autoindent = true;
+      hlsearch = false;
+      incsearch = true;
+      ignorecase = true;
+      smartcase = true;
+      cursorline = true;
+      termguicolors = true;
+      background = "dark";
+      signcolumn = "yes";
+      scrolloff = 5;
+      backspace = "indent,eol,start";
+      clipboard = "unnamedplus";
+      splitright = true;
+      splitbelow = true;
+      laststatus = 3;
+      showmode = false;
+      showcmd = false;
+      cmdheight = 1;
+      hidden = true;
+      shortmess = "I";
+    };
   };
-
-  # dconf = {
-  #   settings = {
-  #     "org/gnome/desktop/peripherals/mouse" = {
-  #       speed = -0.5;
-  #     };
-  #     "org/gnome/desktop/interface" = {
-  #       color-scheme = "prefer-dark";
-  #     };
-  #     "org/gnome/desktop/notifications" = {
-  #       show-banners = false;
-  #       show-in-lock-screen = false;
-  #     };
-  #     "org/gnome/desktop/screensaver" = {
-  #       idle-activation-enabled = false;
-  #     };
-  #     "org/gnome/desktop/interface" = {
-  #       clock-format = "12h";
-  #     };
-  #     "org/gnome/desktop/sound" = {
-  #       event-sounds = false;
-  #     };
-  #     "org/gnome/desktop/wm/preferences" = {
-  #       audible-bell = false;
-  #     };
-  #     "org/gnome/desktop/input-sources" = {
-  #       xkb-options = [
-  #         "altwin:swap_alt_win"
-  #       ];
-  #     };
-  #     "org/gnome/settings-daemon/plugins/power" = {
-  #       sleep-inactive-ac-timeout = 600;
-  #     };
-  #   };
-  # };
 }
