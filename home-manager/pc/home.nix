@@ -49,6 +49,8 @@
         "--hide-crash-restore-bubble"
       ];
     })
+    _1password-cli
+    _1password-gui
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
