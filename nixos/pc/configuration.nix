@@ -195,6 +195,7 @@
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
+    extraPackages = [];
   };
 
   security.polkit.enable = true;
