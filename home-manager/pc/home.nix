@@ -87,6 +87,11 @@
           mode = "2560x1440@359.979Hz";
 	};
       };
+      input = {
+        "type:pointer" = {
+          pointer_accel = "-0.5";
+	};
+      };
       keybindings = lib.mkOptionDefault {
         "${modifier}+t" = "exec ${terminal}";
         "${modifier}+b" = "exec google-chrome-stable";
