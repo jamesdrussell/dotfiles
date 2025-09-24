@@ -165,6 +165,10 @@
 
   programs.swaylock = {
     enable = true;
+    settings = {
+      color = "24273a";
+      inside-color = "00000000";
+    };
   };
 
   programs.git = {
