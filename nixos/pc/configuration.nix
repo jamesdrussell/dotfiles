@@ -182,11 +182,9 @@
   services.greetd = {
     enable = true;
     settings = rec {
-      initial_session = {
-        command = "${pkgs.sway}/bin/sway --unsupported-gpu";
-        user = "james";
+      default_session = {
+        command = ''${pkgs.greetd}/bin/agreety --cmd "${pkgs.sway}/bin/sway --unsupported-gpu"'';
       };
-      default_session = initial_session;
     };
   };
 
