@@ -85,7 +85,12 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  systemd.network.enable = true;
+  systemd.network = {
+    enable = true;
+    wait-online = {
+      enable = false;
+    };
+  };
 
   networking = {
     hostName = "nixos";
