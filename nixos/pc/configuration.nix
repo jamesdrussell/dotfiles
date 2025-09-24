@@ -134,12 +134,12 @@
     ensurePrinters = [
       {
         name = "Brother-HL-2270DW";
-	location = "Home";
-	deviceUri = "ipp://192.168.50.122:631";
-	model = "drv:///brlaser.drv/br2270d.ppd";
-	ppdOptions = {
+        location = "Home";
+        deviceUri = "ipp://192.168.50.122:631";
+        model = "drv:///brlaser.drv/br2270d.ppd";
+        ppdOptions = {
           PageSize = "Letter";
-	};
+        };
       }
     ];
     ensureDefaultPrinter = "Brother-HL-2270DW";
@@ -221,27 +221,6 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-    git
-    (google-chrome.override {
-      commandLineArgs = [
-        "--disable-features=GlobalShortcutsPortal"
-        "--disable-notifications"
-        "--hide-crash-restore-bubble"
-      ];
-    })
-    clang
-    fzf
-    gemini-cli
-    spotify
-    easyeffects
-    nixd
-    tmux
-    glow
-    lazygit
-    lazydocker
-    gnome-tweaks
-    zed-editor
-    dconf-editor
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
