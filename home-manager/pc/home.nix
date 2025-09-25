@@ -504,6 +504,11 @@
 
   programs.lazydocker = {
     enable = true;
+    settings = {
+      gui = {
+        showBottomLine = false;
+      };
+    };
   };
 
   programs.zed-editor = {
