@@ -175,6 +175,9 @@
     enable = true;
     userName = "James Russell";
     userEmail = "jamesdrus@gmail.com";
+    lfs = {
+      enable = true;
+    };
   };
 
   programs.alacritty = {
