@@ -30,6 +30,13 @@
   boot.loader.timeout = 5;
   boot.loader.systemd-boot.configurationLimit = 5;
 
+  boot.loader.systemd-boot.extraEntries = {
+    "windows.conf" = ''
+      title Windows
+      efi /boot/EFI/Microsoft/Boot/bootmgfw.efi
+    '';
+  };
+
   boot.binfmt.emulatedSystems = [
     "aarch64-linux"
   ];
