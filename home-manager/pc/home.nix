@@ -460,6 +460,21 @@
 
   programs.direnv = {
     enable = true;
+    nix-direnv = {
+      enable = true;
+    };
+    enableBashIntegration = true;
+    config = {
+      global = {
+        hide_env_diff = true;
+        warn_timeout = 0;
+      };
+      whitelist = {
+        prefix = [
+          "~/projects/"
+        ];
+      };
+    };
   };
 
   programs.gemini-cli = {
