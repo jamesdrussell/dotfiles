@@ -477,6 +477,14 @@
 
   programs.lazygit = {
     enable = true;
+    settings = {
+      disableStartupPopups = true;
+      gui = {
+        showFileTree = false;
+        showBottomLine = false;
+        showCommandLog = false;
+      };
+    };
   };
 
   programs.lazydocker = {
