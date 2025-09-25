@@ -532,6 +532,7 @@
         showCommandLog = false;
       };
       git = {
+        autoFetch = false;
         paging = {
           externalDiffCommand = "difft --color=always --display=inline";
         };
