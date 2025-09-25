@@ -114,7 +114,7 @@
       gd = "git diff";
       gp = "git push";
       gs = "git status";
-      lg = "lazygit";
+      gg = "lazygit";
     };
   };
 
