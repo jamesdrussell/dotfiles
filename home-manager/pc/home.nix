@@ -489,6 +489,7 @@
 
   services.easyeffects = {
     enable = true;
+    preset = "Arctis-DF";
   };
 
   programs.fuzzel = {
