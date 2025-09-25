@@ -106,6 +106,16 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      ga = "git add";
+      gc = "git commit";
+      gd = "git diff";
+      gp = "git push";
+    };
+  };
+
   wayland.windowManager.sway = {
     enable = true;
     extraOptions = [
