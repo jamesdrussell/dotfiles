@@ -488,6 +488,25 @@
 
   programs.tmux = {
     enable = true;
+    shortcut = "a";
+    baseIndex = 1;
+    keyMode = "vi";
+    escapeTime = 1;
+    disableConfirmationPrompt = true;
+    terminal = "tmux-256color";
+    extraConfig = ''
+      set -as terminal-features ",xterm-256color:RGB"
+      set-option -g renumber-windows on
+      unbind %
+      bind \\ split-window -h
+      unbind '"'
+      bind - split-window -v
+      bind h select-pane -L
+      bind j select-pane -D
+      bind k select-pane -U
+      bind l select-pane -R
+      bind i set-option -g status
+    '';
   };
 
   programs.lazygit = {
