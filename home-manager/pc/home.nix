@@ -497,6 +497,7 @@
     extraConfig = ''
       set -as terminal-features ",xterm-256color:RGB"
       set-option -g renumber-windows on
+      set -g status off
       unbind %
       bind \\ split-window -h
       unbind '"'
