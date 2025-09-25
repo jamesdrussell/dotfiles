@@ -139,6 +139,11 @@
         "${modifier}+t" = "exec ${terminal}";
         "${modifier}+b" = "exec google-chrome-stable";
       };
+      seat = {
+        "*" = {
+          hide_cursor = "when-typing enable";
+        };
+      };
       bars = [];
       menu = "fuzzel";
     };
