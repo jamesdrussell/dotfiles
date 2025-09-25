@@ -116,6 +116,18 @@
     };
   };
 
+  programs.ssh = {
+    enable = true;
+    enableDefaultConfig = false;
+    matchBlocks = {
+      "home-server" = {
+        hostname = "192.168.50.168";
+        user = "james";
+        identityFile = "~/.ssh/id_ed25519";
+      };
+    };
+  };
+
   wayland.windowManager.sway = {
     enable = true;
     extraOptions = [
