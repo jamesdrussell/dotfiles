@@ -178,6 +178,9 @@
     lfs = {
       enable = true;
     };
+    difftastic = {
+      enable = true;
+    };
   };
 
   programs.alacritty = {
@@ -527,6 +530,11 @@
         showFileTree = false;
         showBottomLine = false;
         showCommandLog = false;
+      };
+      git = {
+        paging = {
+          externalDiffCommand = "difft --color=always --display=inline";
+        };
       };
     };
   };
