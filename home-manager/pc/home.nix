@@ -629,7 +629,10 @@
         selection-text = "cad3f5ff";
         selection-match = "8aadf4ff";
         counter = "8087a2ff";
-        border = "8aadf4ff";
+        border = "285577ff";
+      };
+      border = {
+        width = 2;
       };
       key-bindings = {
         next = "Control+j";
