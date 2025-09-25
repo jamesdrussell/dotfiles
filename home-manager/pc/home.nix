@@ -494,10 +494,12 @@
     escapeTime = 1;
     disableConfirmationPrompt = true;
     terminal = "tmux-256color";
+    mouse = true;
     extraConfig = ''
       set -as terminal-features ",xterm-256color:RGB"
       set-option -g renumber-windows on
       set -g status off
+      set-option -g status-right ""
       unbind %
       bind \\ split-window -h
       unbind '"'
@@ -507,6 +509,10 @@
       bind k select-pane -U
       bind l select-pane -R
       bind i set-option -g status
+      unbind -T copy-mode-vi MouseDragEnd1Pane
+      bind Escape copy-mode
+      bind-key -T copy-mode-vi 'v' send -X begin-selection
+      bind-key -T copy-mode-vi 'y' send -X copy-selection
     '';
   };
 
