@@ -485,6 +485,72 @@
 
   programs.zed-editor = {
     enable = true;
+    userSettings = {
+      theme = "Catppuccin Macchiato";
+      buffer_font_family = "JetBrains Mono NL";
+      buffer_font_size = 16;
+      terminal = {
+        font_size = 12;
+      };
+      vim_mode = false;
+      cursor_blink = true;
+      ensure_final_newline_on_save = false;
+      format_on_save = "off";
+      remove_trailing_whitespace_on_save = true;
+      hover_popover_enabled = false;
+      tab_size = 2;
+      git = {
+        inline_blame = {
+          enabled = false;
+        };
+      };
+      telemetry = {
+        diagnostics = false;
+        metrics = false;
+      };
+      enable_language_server = true;
+      show_wrap_guides = true;
+      wrap_guides = [ 80 ];
+      show_edit_predictions = false;
+      gutter = {
+        breakpoints = false;
+        folds = false;
+        runnables = false;
+        min_line_number_digits = 3;
+      };
+      languages = {
+        Nix = {
+          language_servers = [ "nixd" "!nil" ];
+        };
+      };
+    };
+    userKeymaps = [
+      {
+        bindings = {
+          ctrl-shift-tab = "pane::ActivatePreviousItem";
+          ctrl-tab = "pane::ActivateNextItem";
+        };
+      }
+    ];
+    extensions = [
+      "html"
+      "just"
+      "dockerfile"
+      "toml"
+      "kdl"
+      "terraform"
+      "git-firefly"
+      "lua"
+      "docker-compose"
+      "meson"
+      "nix"
+      "pylsp"
+      "sql"
+      "swift"
+      "proto"
+      "make"
+      "catppuccin"
+    ];
   };
 
   services.easyeffects = {
