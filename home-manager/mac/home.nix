@@ -35,6 +35,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     lima
+    nixd
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
