@@ -103,6 +103,18 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      ga = "git add";
+      gc = "git commit";
+      gd = "git diff";
+      gp = "git push";
+      gs = "git status";
+      gg = "lazygit";
+    };
+  };
+
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
