@@ -3,13 +3,11 @@ export PATH=~/go/bin:$PATH
 export PATH=/usr/local/opt/bison/bin:/opt/homebrew/opt/bison/bin:$PATH
 export PATH=/usr/local/bin/llama:$PATH
 
-alias vim=nvim
-
-eval "$(direnv hook zsh)"
-
 autoload -Uz compinit && compinit
 
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ];
 then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
+
+eval "$(direnv hook zsh)"

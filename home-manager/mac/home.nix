@@ -131,7 +131,7 @@
     enable = true;
     theme = "catppuccin_macchiato";
     settings = {
-      font.size = 12.0;
+      font.size = 15.0;
       font.normal = {
         family = "JetBrains Mono NL";
         style = "Regular";
