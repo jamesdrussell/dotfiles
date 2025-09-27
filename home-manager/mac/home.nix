@@ -38,7 +38,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    lima
     nixd
     (google-chrome.override {
       commandLineArgs = [
@@ -62,6 +61,7 @@
     raycast
     mos
     utm
+    difftastic
   ];
 
   fonts.fontconfig.enable = true;
@@ -140,9 +140,12 @@
     lfs = {
       enable = true;
     };
-    difftastic = {
-      enable = true;
+    extraConfig = {
+      diff.external = "difft --color=always --display=inline --syntax-highlight off";
     };
+    # difftastic = {
+    #   enable = true;
+    # };
   };
 
   programs.nixvim = {
@@ -479,7 +482,7 @@
       git = {
         autoFetch = false;
         paging = {
-          externalDiffCommand = "difft --color=always --display=inline";
+          externalDiffCommand = "difft --color=always --display=inline --syntax-highlight off";
         };
       };
     };
