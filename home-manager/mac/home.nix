@@ -144,9 +144,6 @@
     extraConfig = {
       diff.external = "difft --color=always --display=inline --syntax-highlight off";
     };
-    # difftastic = {
-    #   enable = true;
-    # };
   };
 
   programs.nixvim = {

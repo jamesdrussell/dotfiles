@@ -46,6 +46,7 @@
     ninja
     terraform
     python3
+    difftastic
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -105,8 +106,8 @@
     lfs = {
       enable = true;
     };
-    difftastic = {
-      enable = true;
+    extraConfig = {
+      diff.external = "difft --color=always --display=inline --syntax-highlight off";
     };
   };
 
@@ -444,7 +445,7 @@
       git = {
         autoFetch = false;
         paging = {
-          externalDiffCommand = "difft --color=always --display=inline";
+          externalDiffCommand = "difft --color=always --display=inline --syntax-highlight off";
         };
       };
     };
