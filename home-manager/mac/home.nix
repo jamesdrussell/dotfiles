@@ -55,12 +55,10 @@
     just
     ninja
     terraform
-    qemu
     python3
     soundsource
     raycast
     mos
-    utm
     difftastic
     tart
   ];
