@@ -113,6 +113,7 @@
       gp = "git push";
       gs = "git status";
       gg = "lazygit";
+      vm = "utmctl";
     };
   };
 
