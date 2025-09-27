@@ -139,23 +139,6 @@
     };
   };
 
-  programs.alacritty = {
-    enable = true;
-    theme = "catppuccin_macchiato";
-    settings = {
-      font.size = 15.0;
-      font.normal = {
-        family = "JetBrains Mono NL";
-        style = "Regular";
-      };
-      window.padding = {
-        x = 4;
-        y = 4;
-      };
-      env.TERM = "xterm-256color";
-    };
-  };
-
   programs.nixvim = {
     enable = true;
     viAlias = true;
