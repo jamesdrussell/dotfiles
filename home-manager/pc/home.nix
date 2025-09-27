@@ -166,20 +166,20 @@
   services.swayidle = {
     enable = true;
     events = [
-      # {
-      #   event = "before-sleep";
-      #   command = "${pkgs.swaylock}/bin/swaylock -f";
-      # }
+      {
+        event = "before-sleep";
+        command = "${pkgs.swaylock}/bin/swaylock -f";
+      }
       {
         event = "after-resume";
         command = ''${pkgs.sway}/bin/swaymsg "output * power on"'';
       }
     ];
     timeouts = [
-      # {
-      #   timeout = 300;
-      #   command = "${pkgs.swaylock}/bin/swaylock -f";
-      # }
+      {
+        timeout = 300;
+        command = "${pkgs.swaylock}/bin/swaylock -f";
+      }
       {
         timeout = 300;
         command = ''${pkgs.sway}/bin/swaymsg "output * power off"'';
