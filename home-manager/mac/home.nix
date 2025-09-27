@@ -61,6 +61,7 @@
     soundsource
     raycast
     mos
+    utm
   ];
 
   fonts.fontconfig.enable = true;
