@@ -60,6 +60,7 @@
     python3
     soundsource
     raycast
+    mos
   ];
 
   fonts.fontconfig.enable = true;
