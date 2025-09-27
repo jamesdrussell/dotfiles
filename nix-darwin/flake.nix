@@ -34,9 +34,12 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
-      programs.zsh = {
-        enable = true;
+      users.users.james = {
+        home = "/Users/james";
+        shell = pkgs.zsh;
       };
+
+      system.primaryUser = "james";
     };
   in
   {
