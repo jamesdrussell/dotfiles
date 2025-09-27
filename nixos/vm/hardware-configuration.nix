@@ -6,18 +6,18 @@
 {
   imports = [ ];
 
-  boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "xhci_pci" "nvme" "usbhid" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "virtio_pci" "xhci_pci" "usbhid" "usb_storage" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/e5cc1f17-d8bf-429b-875f-8b518f71c7b8";
+    { device = "/dev/disk/by-uuid/4c48829e-fc58-4cd2-bcd1-851f9308ac5e";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/AE64-4D94";
+    { device = "/dev/disk/by-uuid/D216-B9C9";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
@@ -28,8 +28,21 @@
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.ens160.useDHCP = lib.mkDefault true;
+  networking.useDHCP = false;
+  networking.interfaces.enp0s1 = {
+    useDHCP = false;
+    ipv4.addresses = [
+      {
+        address = "192.168.64.2";
+        prefixLength = 24;
+      }
+    ];
+  };
+
+  networking.defaultGateway = {
+    address = "192.168.64.1";
+    interface = "enp0s1";
+  };
 
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
 }
