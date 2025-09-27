@@ -8,10 +8,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    { nixpkgs, home-manager, nixvim, ... } @ inputs:
     let
       system = "aarch64-darwin";
       pkgs = import nixpkgs {
@@ -29,6 +33,9 @@
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
+        extraSpecialArgs = {
+          inherit inputs;
+        };
       };
     };
 }

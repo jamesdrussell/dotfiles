@@ -1,6 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
+  imports = [
+    inputs.nixvim.homeModules.nixvim
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "james";
@@ -90,6 +94,18 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.ssh = {
+    enable = true;
+    enableDefaultConfig = false;
+    matchBlocks = {
+      "home-server" = {
+        hostname = "192.168.50.168";
+        user = "james";
+        identityFile = "~/.ssh/id_ed25519";
+      };
+    };
+  };
+
   programs.git = {
     enable = true;
     userName = "James Russell";
@@ -117,6 +133,328 @@
       };
       env.TERM = "xterm-256color";
     };
+  };
+
+  programs.nixvim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    colorschemes.catppuccin = {
+      enable = true;
+      settings = {
+        flavour = "macchiato";
+      };
+    };
+    globals.mapleader = " ";
+    plugins = {
+      lualine = {
+        enable = true;
+        settings = {
+          options = {
+            section_separators = "";
+            component_separators = "";
+          };
+          sections = {
+            lualine_a = [ "mode" ];
+            lualine_b = [ "" ];
+            lualine_c = [ "filename" ];
+            lualine_x = [ "" ];
+            lualine_y = [ "" ];
+            lualine_z = [ "" ];
+          };
+        };
+      };
+      neo-tree = {
+        enable = true;
+        defaultComponentConfigs = {
+          gitStatus = {
+            symbols = {
+              added = "";
+              deleted = "";
+              renamed = "";
+              modified = "";
+              unstaged = "";
+              untracked = "";
+              ignored = "";
+              staged = "";
+              conflict = "";
+            };
+          };
+        };
+      };
+      web-devicons = {
+        enable = true;
+      };
+      fzf-lua = {
+        enable = true;
+        keymaps = {
+          "<leader>f" = "files";
+          "<leader>b" = "buffers";
+        };
+        settings = {
+          winopts = {
+            height = 0.25;
+            preview = {
+              hidden = "hidden";
+            };
+          };
+          files = {
+            winopts = {
+              title_flags = false;
+            };
+            file_icons = false;
+          };
+          buffers = {
+            no_header = true;
+          };
+        };
+      };
+      nvim-autopairs = {
+        enable = true;
+        settings = {
+          check_ts = true;
+          ts_config = {
+            lua = [
+              "string"
+            ];
+          };
+        };
+      };
+      gitsigns = {
+        enable = true;
+      };
+      nvim-surround = {
+        enable = true;
+      };
+      flash = {
+        enable = true;
+      };
+      comment = {
+        enable = true;
+      };
+      treesitter = {
+        enable = true;
+        grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+          bash
+          c
+          cmake
+          cpp
+          json
+          kdl
+          lua
+          make
+          markdown
+          markdown_inline
+          nix
+          python
+          toml
+          vim
+          vimdoc
+          yaml
+        ];
+        settings = {
+          auto_install = false;
+          sync_install = false;
+          highlight = {
+            enable = true;
+          };
+          indent = {
+            enable = true;
+          };
+          incremental_selection = {
+            enable = true;
+            keymaps = {
+              init_selection = "gnn";
+              node_decremental = "grm";
+              node_incremental = "grn";
+              scope_incremental = "grc";
+            };
+          };
+        };
+      };
+      treesitter-textobjects = {
+        enable = true;
+        select = {
+          enable = true;
+          lookahead = true;
+          keymaps = {
+            "af" = "@function.outer";
+            "if" = "@function.inner";
+            "ac" = "@class.outer";
+            "ic" = "@class.inner";
+          };
+        };
+      };
+    };
+    opts = {
+      number = true;
+      relativenumber = false;
+      wrap = false;
+      mouse = "a";
+      tabstop = 2;
+      shiftwidth = 2;
+      expandtab = true;
+      autoindent = true;
+      hlsearch = false;
+      incsearch = true;
+      ignorecase = true;
+      smartcase = true;
+      cursorline = true;
+      termguicolors = true;
+      background = "dark";
+      signcolumn = "yes";
+      scrolloff = 5;
+      backspace = "indent,eol,start";
+      clipboard = "unnamedplus";
+      splitright = true;
+      splitbelow = true;
+      iskeyword = "-";
+      laststatus = 3;
+      showmode = false;
+      showcmd = false;
+      cmdheight = 1;
+      hidden = true;
+      shortmess = "I";
+      foldmethod = "expr";
+      foldexpr = "v:lua.vim.treesitter.foldexpr()";
+      foldcolumn = "0";
+      foldtext = "";
+      foldnestmax = 1;
+      foldlevelstart = 1;
+    };
+    diagnostic = {
+      settings = {
+        virtual_text = false;
+      };
+    };
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>q";
+        action = "<cmd>q<cr>";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>w";
+        action = "<cmd>w<cr>";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>e";
+        action = "<cmd>Neotree toggle<cr>";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "s";
+        action = "<cmd>lua require('flash').jump()<cr>";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<C-h>";
+        action = "<C-w>h";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<C-j>";
+        action = "<C-w>j";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<C-k>";
+        action = "<C-w>k";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<C-l>";
+        action = "<C-w>l";
+        options = {
+          silent = true;
+        };
+      }
+    ];
+  };
+
+  programs.fzf = {
+    enable = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv = {
+      enable = true;
+    };
+    enableZshIntegration = true;
+    config = {
+      global = {
+        hide_env_diff = true;
+        warn_timeout = 0;
+      };
+      whitelist = {
+        prefix = [
+          "~/projects/"
+        ];
+      };
+    };
+  };
+
+  programs.gemini-cli = {
+    enable = true;
+    settings = {
+      disableAutoUpdate = true;
+      disableUpdateNag = true;
+      selectedAuthType = "oauth-personal";
+    };
+  };
+
+  programs.tmux = {
+    enable = true;
+    shortcut = "a";
+    baseIndex = 1;
+    keyMode = "vi";
+    escapeTime = 1;
+    disableConfirmationPrompt = true;
+    terminal = "tmux-256color";
+    mouse = true;
+    extraConfig = ''
+      set -as terminal-features ",xterm-256color:RGB"
+      set-option -g renumber-windows on
+      set -g status off
+      set-option -g status-right ""
+      unbind %
+      bind \\ split-window -h
+      unbind '"'
+      bind - split-window -v
+      bind h select-pane -L
+      bind j select-pane -D
+      bind k select-pane -U
+      bind l select-pane -R
+      bind i set-option -g status
+      unbind -T copy-mode-vi MouseDragEnd1Pane
+      bind Escape copy-mode
+      bind-key -T copy-mode-vi 'v' send -X begin-selection
+      bind-key -T copy-mode-vi 'y' send -X copy-selection
+    '';
   };
 
   programs.lazygit = {
