@@ -62,6 +62,7 @@
     mos
     utm
     difftastic
+    tart
   ];
 
   fonts.fontconfig.enable = true;
