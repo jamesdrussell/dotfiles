@@ -120,6 +120,11 @@
     enable = true;
     enableDefaultConfig = false;
     matchBlocks = {
+      "vm" = {
+        hostname = "192.168.64.2";
+        user = "james";
+        identityFile = "~/.ssh/id_ed25519";
+      };
       "home-server" = {
         hostname = "192.168.50.168";
         user = "james";
