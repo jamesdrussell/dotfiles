@@ -36,8 +36,21 @@
     # '')
     lima
     nixd
-    google-chrome
+    (google-chrome.override {
+      commandLineArgs = [
+        "--hide-crash-restore-bubble"
+      ];
+    })
+    spotify
+    ghostty-bin
+    clang
+    glow
+    jetbrains-mono
+    nerd-fonts.symbols-only
+    _1password-cli
   ];
+
+  fonts.fontconfig.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -76,4 +89,130 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.git = {
+    enable = true;
+    userName = "James Russell";
+    userEmail = "jamesdrus@gmail.com";
+    lfs = {
+      enable = true;
+    };
+    difftastic = {
+      enable = true;
+    };
+  };
+
+  programs.alacritty = {
+    enable = true;
+    theme = "catppuccin_macchiato";
+    settings = {
+      font.size = 12.0;
+      font.normal = {
+        family = "JetBrains Mono NL";
+        style = "Regular";
+      };
+      window.padding = {
+        x = 4;
+        y = 4;
+      };
+      env.TERM = "xterm-256color";
+    };
+  };
+
+  programs.lazygit = {
+    enable = true;
+    settings = {
+      disableStartupPopups = true;
+      gui = {
+        showFileTree = false;
+        showBottomLine = false;
+        showCommandLog = false;
+      };
+      git = {
+        autoFetch = false;
+        paging = {
+          externalDiffCommand = "difft --color=always --display=inline";
+        };
+      };
+    };
+  };
+
+  programs.lazydocker = {
+    enable = true;
+    settings = {
+      gui = {
+        showBottomLine = false;
+      };
+    };
+  };
+
+  programs.zed-editor = {
+    enable = true;
+    userSettings = {
+      theme = "Catppuccin Macchiato";
+      buffer_font_family = "JetBrains Mono NL";
+      buffer_font_size = 16;
+      terminal = {
+        font_size = 12;
+      };
+      vim_mode = false;
+      cursor_blink = true;
+      ensure_final_newline_on_save = false;
+      format_on_save = "off";
+      remove_trailing_whitespace_on_save = true;
+      hover_popover_enabled = false;
+      tab_size = 2;
+      git = {
+        inline_blame = {
+          enabled = false;
+        };
+      };
+      telemetry = {
+        diagnostics = false;
+        metrics = false;
+      };
+      enable_language_server = true;
+      show_wrap_guides = true;
+      wrap_guides = [ 80 ];
+      show_edit_predictions = false;
+      gutter = {
+        breakpoints = false;
+        folds = false;
+        runnables = false;
+        min_line_number_digits = 3;
+      };
+      languages = {
+        Nix = {
+          language_servers = [ "nixd" "!nil" ];
+        };
+      };
+    };
+    userKeymaps = [
+      {
+        bindings = {
+          ctrl-shift-tab = "pane::ActivatePreviousItem";
+          ctrl-tab = "pane::ActivateNextItem";
+        };
+      }
+    ];
+    extensions = [
+      "html"
+      "just"
+      "dockerfile"
+      "toml"
+      "kdl"
+      "terraform"
+      "git-firefly"
+      "lua"
+      "docker-compose"
+      "meson"
+      "nix"
+      "pylsp"
+      "sql"
+      "swift"
+      "proto"
+      "make"
+      "catppuccin"
+    ];
+  };
 }
