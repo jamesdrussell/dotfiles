@@ -34,12 +34,18 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
+      nixpkgs.config.allowUnfree = true;
+
       users.users.james = {
         home = "/Users/james";
         shell = pkgs.zsh;
       };
 
       system.primaryUser = "james";
+
+      programs._1password-gui = {
+        enable = true;
+      };
     };
   in
   {
