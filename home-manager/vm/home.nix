@@ -107,7 +107,7 @@
       enable = true;
     };
     extraConfig = {
-      diff.external = "difft --color=always --display=inline --syntax-highlight off";
+      diff.external = "difft --color=always --display=inline --syntax-highlight=off";
     };
   };
 
@@ -445,7 +445,7 @@
       git = {
         autoFetch = false;
         paging = {
-          externalDiffCommand = "difft --color=always --display=inline --syntax-highlight off";
+          externalDiffCommand = "difft --color=always --display=inline --syntax-highlight=off";
         };
       };
     };
