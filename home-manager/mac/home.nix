@@ -52,6 +52,12 @@
     jetbrains-mono
     nerd-fonts.symbols-only
     _1password-cli
+    cmake
+    just
+    ninja
+    terraform
+    qemu
+    python3
   ];
 
   fonts.fontconfig.enable = true;
@@ -552,5 +558,21 @@
       "make"
       "catppuccin"
     ];
+  };
+
+  programs.uv = {
+    enable = true;
+  };
+
+  programs.bat = {
+    enable = true;
+  };
+
+  programs.fd = {
+    enable = true;
+  };
+
+  programs.ripgrep = {
+    enable = true;
   };
 }
