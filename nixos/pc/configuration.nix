@@ -190,7 +190,7 @@
     enable = true;
     settings = rec {
       default_session = {
-        command = ''${pkgs.greetd}/bin/agreeter --cmd "${pkgs.sway}/bin/sway --unsupported-gpu"'';
+        command = ''${pkgs.greetd}/bin/agreety --cmd "${pkgs.sway}/bin/sway --unsupported-gpu"'';
       };
     };
   };
