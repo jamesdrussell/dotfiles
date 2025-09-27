@@ -6,18 +6,18 @@
 {
   imports = [ ];
 
-  boot.initrd.availableKernelModules = [ "virtio_pci" "xhci_pci" "usbhid" "usb_storage" ];
+  boot.initrd.availableKernelModules = [ "virtio_pci" "xhci_pci" "usbhid" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/4c48829e-fc58-4cd2-bcd1-851f9308ac5e";
+    { device = "/dev/disk/by-uuid/c132e321-6a6b-4464-9c0a-0433c8413b6c";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/D216-B9C9";
+    { device = "/dev/disk/by-uuid/EB12-C359";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
@@ -28,6 +28,9 @@
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+  # networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp0s1.useDHCP = lib.mkDefault true;
+
   networking.useDHCP = false;
   networking.interfaces.enp0s1 = {
     useDHCP = false;
@@ -43,6 +46,7 @@
     address = "192.168.64.1";
     interface = "enp0s1";
   };
+
 
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
 }
