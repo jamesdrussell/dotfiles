@@ -58,6 +58,8 @@
     terraform
     qemu
     python3
+    soundsource
+    raycast
   ];
 
   fonts.fontconfig.enable = true;
