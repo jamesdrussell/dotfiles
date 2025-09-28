@@ -53,6 +53,8 @@
         casks = [
           "google-chrome"
           "1password"
+          "raycast"
+          "spotify"
         ];
       };
     };

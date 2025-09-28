@@ -39,7 +39,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     nixd
-    spotify
     ghostty-bin
     clang
     glow
@@ -52,7 +51,6 @@
     terraform
     python3
     soundsource
-    raycast
     mos
     difftastic
     tart
