@@ -146,6 +146,10 @@
         hostname = "192.168.64.2";
         user = "james";
         identityFile = "~/.ssh/id_ed25519";
+        extraOptions = {
+          RequestTTY = "yes";
+          RemoteCommand = "tmux new -A -s 0";
+        };
       };
       "home-server" = {
         hostname = "192.168.50.168";
