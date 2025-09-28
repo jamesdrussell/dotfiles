@@ -43,8 +43,12 @@
 
       system.primaryUser = "james";
 
-      programs._1password-gui = {
+      homebrew = {
         enable = true;
+        casks = [
+          "google-chrome"
+          "1password"
+        ];
       };
     };
   in
