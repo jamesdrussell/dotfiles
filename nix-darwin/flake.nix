@@ -55,6 +55,8 @@
           "1password"
           "raycast"
           "spotify"
+          "slack"
+          "discord"
         ];
       };
     };
