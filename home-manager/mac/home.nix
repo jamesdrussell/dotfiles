@@ -50,8 +50,6 @@
     ninja
     terraform
     python3
-    soundsource
-    mos
     difftastic
     tart
   ];

@@ -57,6 +57,8 @@
           "spotify"
           "slack"
           "discord"
+          "soundsource"
+          "mos"
         ];
       };
     };
