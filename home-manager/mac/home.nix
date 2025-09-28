@@ -78,6 +78,7 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".hushlogin".text = "";
   };
 
   # Home Manager can also manage your environment variables through
@@ -123,6 +124,9 @@
 
   programs.zsh = {
     enable = true;
+    initContent = ''
+      PROMPT='%n@%m %1~ %# '
+    '';
     shellAliases = {
       ga = "git add";
       gc = "git commit";
