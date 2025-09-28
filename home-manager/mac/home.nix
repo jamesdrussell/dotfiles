@@ -103,6 +103,24 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  launchd.agents = {
+    tart = {
+      enable = true;
+      config = {
+        ProgramArguments = [
+          "${pkgs.tart}/bin/tart"
+          "run"
+          "nixos"
+          "--no-graphics"
+          "--no-audio"
+          "--no-clipboard"
+        ];
+        RunAtLoad = true;
+        KeepAlive = false;
+      };
+    };
+  };
+
   programs.zsh = {
     enable = true;
     shellAliases = {
