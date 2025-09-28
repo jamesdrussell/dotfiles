@@ -39,11 +39,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     nixd
-    # (google-chrome.override {
-    #   commandLineArgs = [
-    #     "--hide-crash-restore-bubble"
-    #   ];
-    # })
     spotify
     ghostty-bin
     clang
