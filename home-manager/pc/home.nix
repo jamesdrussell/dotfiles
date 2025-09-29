@@ -38,6 +38,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    ghostty.terminfo
     glow
     nixd
     spotify
