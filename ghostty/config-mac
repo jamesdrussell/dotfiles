@@ -2,3 +2,4 @@ theme = Catppuccin Macchiato
 font-size = 15
 macos-titlebar-proxy-icon = "hidden"
 quit-after-last-window-closed = true
+window-save-state = "always"
