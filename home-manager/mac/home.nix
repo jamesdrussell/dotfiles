@@ -56,6 +56,19 @@
 
   fonts.fontconfig.enable = true;
 
+  xdg.enable = true;
+
+  xdg.configFile."ghostty/config".text = ''
+    theme = Catppuccin Macchiato
+    font-family = "JetBrains Mono NL"
+    font-size = 15
+    shell-integration-features = sudo
+    resize-overlay = "never"
+    macos-titlebar-proxy-icon = "hidden"
+    quit-after-last-window-closed = true
+    window-save-state = "always"
+  '';
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
