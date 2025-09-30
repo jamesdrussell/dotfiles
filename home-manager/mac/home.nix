@@ -155,11 +155,6 @@
           RemoteCommand = "tmux new -A -s 0";
         };
       };
-      "vm-no-tmux" = {
-        hostname = "192.168.64.2";
-        user = "james";
-        identityFile = "~/.ssh/id_ed25519";
-      };
       "pc" = {
         hostname = "192.168.50.84";
         user = "james";
@@ -475,9 +470,15 @@
   programs.gemini-cli = {
     enable = true;
     settings = {
-      disableAutoUpdate = true;
-      disableUpdateNag = true;
-      selectedAuthType = "oauth-personal";
+      general = {
+        disableAutoUpdate = true;
+        disableUpdateNag = true;
+      };
+      security = {
+        auth = {
+          selectedType = "oauth-personal";
+        };
+      };
     };
   };
 
@@ -580,8 +581,13 @@
       };
       ssh_connections = [
         {
-          host = "vm-no-tmux";
+          host = "192.168.64.2";
+          user = "james";
           nickname = "vm";
+          args = [
+            "-i"
+            "~/.ssh/id_ed25519"
+          ];
           projects = [
             {
               paths = [
