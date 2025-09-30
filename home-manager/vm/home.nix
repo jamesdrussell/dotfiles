@@ -397,9 +397,15 @@
   programs.gemini-cli = {
     enable = true;
     settings = {
-      disableAutoUpdate = true;
-      disableUpdateNag = true;
-      selectedAuthType = "oauth-personal";
+      general = {
+        disableAutoUpdate = true;
+        disableUpdateNag = true;
+      };
+      security = {
+        auth = {
+          selectedType = "oauth-personal";
+        };
+      };
     };
   };
 
