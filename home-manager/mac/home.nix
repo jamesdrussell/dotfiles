@@ -155,6 +155,11 @@
           RemoteCommand = "tmux new -A -s 0";
         };
       };
+      "vm-no-tmux" = {
+        hostname = "192.168.64.2";
+        user = "james";
+        identityFile = "~/.ssh/id_ed25519";
+      };
       "pc" = {
         hostname = "192.168.50.84";
         user = "james";
@@ -573,6 +578,19 @@
           language_servers = [ "nixd" "!nil" ];
         };
       };
+      ssh_connections = [
+        {
+          host = "vm-no-tmux";
+          nickname = "vm";
+          projects = [
+            {
+              paths = [
+                "~/projects"
+              ];
+            }
+          ];
+        }
+      ];
     };
     userKeymaps = [
       {
