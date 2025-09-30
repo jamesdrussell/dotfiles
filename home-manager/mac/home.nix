@@ -579,6 +579,7 @@
           language_servers = [ "nixd" "!nil" ];
         };
       };
+      read_ssh_config = false;
       ssh_connections = [
         {
           host = "192.168.64.2";
