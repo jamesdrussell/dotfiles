@@ -451,6 +451,11 @@
     };
   };
 
+  programs.zed-editor = {
+    enable = true;
+    installRemoteServer = true;
+  };
+
   programs.uv = {
     enable = true;
   };
