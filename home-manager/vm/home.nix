@@ -40,6 +40,7 @@
     # '')
     ghostty.terminfo
     nixd
+    nixfmt-rfc-style
     clang
     clang-tools
     cmake
@@ -261,6 +262,19 @@
             "if" = "@function.inner";
             "ac" = "@class.outer";
             "ic" = "@class.inner";
+          };
+        };
+      };
+      lsp = {
+        enable = true;
+        servers = {
+          nixd = {
+            enable = true;
+            settings = {
+              formatting = {
+                command = [ "nixfmt" ];
+              };
+            };
           };
         };
       };
