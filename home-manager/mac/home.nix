@@ -41,17 +41,20 @@
     nixd
     ghostty-bin
     clang
+    clang-tools
     glow
     jetbrains-mono
     nerd-fonts.symbols-only
     _1password-cli
     cmake
+    gnumake
     just
     ninja
     terraform
     python3
     difftastic
     tart
+    file
   ];
 
   fonts.fontconfig.enable = true;
