@@ -41,7 +41,9 @@
     ghostty.terminfo
     nixd
     clang
+    clang-tools
     cmake
+    gnumake
     just
     ninja
     terraform
