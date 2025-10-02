@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -280,6 +285,16 @@
             enable = true;
           };
         };
+        onAttach = ''
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            callback = function()
+              vim.lsp.buf.format({
+                async = false
+              })
+            end
+          })
+        '';
       };
     };
     opts = {
