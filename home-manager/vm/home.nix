@@ -102,7 +102,7 @@
       ga = "git add";
       gc = "git commit";
       gd = "git diff";
-      gp = "git push";
+      gp = "git pull";
       gs = "git status";
       gg = "lazygit";
     };
