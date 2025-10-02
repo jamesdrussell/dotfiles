@@ -324,6 +324,7 @@
           current_line = true;
         };
         virtual_text = false;
+        underline = false;
       };
     };
     keymaps = [
