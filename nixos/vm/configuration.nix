@@ -5,12 +5,15 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nix.settings.download-buffer-size = 536870912;
   nix.settings.warn-dirty = false;
 
@@ -76,8 +79,11 @@
   users.users.james = {
     isNormalUser = true;
     description = "James Russell";
-    extraGroups = [ "wheel" "docker" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "wheel"
+      "docker"
+    ];
+    packages = with pkgs; [ ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILvWMr2U+LR7XEVJPEYa0zXoKNcZ0J7edVu1oUaG+9KC"
     ];
@@ -105,8 +111,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
