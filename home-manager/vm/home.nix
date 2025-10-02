@@ -472,6 +472,7 @@
       bind \\ split-window -h
       unbind '"'
       bind - split-window -v
+      bind = select-layout even-horizontal
       bind h select-pane -L
       bind j select-pane -D
       bind k select-pane -U
