@@ -302,6 +302,9 @@
           end
         '';
       };
+      blink-cmp = {
+        enable = true;
+      };
     };
     opts = {
       number = true;
