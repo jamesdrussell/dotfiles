@@ -15,7 +15,12 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, nixvim, ... } @ inputs:
+    {
+      nixpkgs,
+      home-manager,
+      nixvim,
+      ...
+    }@inputs:
     let
       system = "aarch64-linux";
       pkgs = import nixpkgs {
