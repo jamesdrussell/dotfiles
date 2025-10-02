@@ -15,13 +15,23 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixvim, ... } @ inputs: {
-    homeConfigurations."james" = home-manager.lib.homeManagerConfiguration {
-      pkgs = import nixpkgs { system = "x86_64-linux"; config.allowUnfree = true; };
-      modules = [ ./home.nix ];
-      extraSpecialArgs = {
-        inherit inputs;
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      nixvim,
+      ...
+    }@inputs:
+    {
+      homeConfigurations."james" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+        };
+        modules = [ ./home.nix ];
+        extraSpecialArgs = {
+          inherit inputs;
+        };
       };
     };
-  };
 }

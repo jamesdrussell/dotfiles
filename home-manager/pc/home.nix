@@ -1,4 +1,10 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -159,7 +165,7 @@
           hide_cursor = "when-typing enable";
         };
       };
-      bars = [];
+      bars = [ ];
       menu = "fuzzel";
     };
   };
@@ -616,7 +622,10 @@
       };
       languages = {
         Nix = {
-          language_servers = [ "nixd" "!nil" ];
+          language_servers = [
+            "nixd"
+            "!nil"
+          ];
         };
       };
     };
