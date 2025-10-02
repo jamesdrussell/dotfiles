@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -579,7 +584,10 @@
       };
       languages = {
         Nix = {
-          language_servers = [ "nixd" "!nil" ];
+          language_servers = [
+            "nixd"
+            "!nil"
+          ];
         };
       };
       read_ssh_config = false;

@@ -7,67 +7,73 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
-  let
-    configuration = { pkgs, ... }: {
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
-      environment.systemPackages = with pkgs;
-        [
-        ];
+  outputs =
+    inputs@{
+      self,
+      nix-darwin,
+      nixpkgs,
+    }:
+    let
+      configuration =
+        { pkgs, ... }:
+        {
+          # List packages installed in system profile. To search by name, run:
+          # $ nix-env -qaP | grep wget
+          environment.systemPackages = with pkgs; [
+          ];
 
-      # Necessary for using flakes on this system.
-      nix.settings.experimental-features = "nix-command flakes";
-      nix.settings.download-buffer-size = 536870912;
-      nix.settings.warn-dirty = false;
+          # Necessary for using flakes on this system.
+          nix.settings.experimental-features = "nix-command flakes";
+          nix.settings.download-buffer-size = 536870912;
+          nix.settings.warn-dirty = false;
 
-      # Enable alternative shell support in nix-darwin.
-      # programs.fish.enable = true;
+          # Enable alternative shell support in nix-darwin.
+          # programs.fish.enable = true;
 
-      # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
+          # Set Git commit hash for darwin-version.
+          system.configurationRevision = self.rev or self.dirtyRev or null;
 
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
-      system.stateVersion = 6;
+          # Used for backwards compatibility, please read the changelog before changing.
+          # $ darwin-rebuild changelog
+          system.stateVersion = 6;
 
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "aarch64-darwin";
+          # The platform the configuration will be used on.
+          nixpkgs.hostPlatform = "aarch64-darwin";
 
-      nixpkgs.config.allowUnfree = true;
+          nixpkgs.config.allowUnfree = true;
 
-      users.users.james = {
-        home = "/Users/james";
-        shell = pkgs.zsh;
-      };
+          users.users.james = {
+            home = "/Users/james";
+            shell = pkgs.zsh;
+          };
 
-      system.primaryUser = "james";
+          system.primaryUser = "james";
 
-      homebrew = {
-        enable = true;
-        onActivation = {
-          autoUpdate = true;
-          upgrade = true;
-          cleanup = "uninstall";
+          homebrew = {
+            enable = true;
+            onActivation = {
+              autoUpdate = true;
+              upgrade = true;
+              cleanup = "uninstall";
+            };
+            casks = [
+              "google-chrome"
+              "1password"
+              "raycast"
+              "spotify"
+              "slack"
+              "discord"
+              "soundsource"
+              "mos"
+            ];
+          };
         };
-        casks = [
-          "google-chrome"
-          "1password"
-          "raycast"
-          "spotify"
-          "slack"
-          "discord"
-          "soundsource"
-          "mos"
-        ];
+    in
+    {
+      # Build darwin flake using:
+      # $ darwin-rebuild build --flake .#james-mac
+      darwinConfigurations."james-mac" = nix-darwin.lib.darwinSystem {
+        modules = [ configuration ];
       };
     };
-  in
-  {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#james-mac
-    darwinConfigurations."james-mac" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
-    };
-  };
 }
