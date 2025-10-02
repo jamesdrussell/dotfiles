@@ -175,6 +175,7 @@
         keymaps = {
           "<leader>f" = "files";
           "<leader>b" = "buffers";
+          "<leader>l" = "lsp_document_symbols";
         };
         settings = {
           winopts = {
