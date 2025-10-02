@@ -286,14 +286,18 @@
           };
         };
         onAttach = ''
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = bufnr,
-            callback = function()
-              vim.lsp.buf.format({
-                async = false
-              })
-            end
-          })
+          if client.supports_method("textDocument/formatting") then
+            local augroup = vim.api.nvim_create_augroup("LspFormatOnSave", { clear = true })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              group = augroup,
+              buffer = bufnr,
+              callback = function()
+                vim.lsp.buf.format({
+                  async = false
+                })
+              end
+            })
+          end
         '';
       };
     };
