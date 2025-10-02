@@ -191,6 +191,7 @@
           };
           buffers = {
             no_header = true;
+            no_header_i = true;
           };
         };
       };
