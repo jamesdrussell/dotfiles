@@ -175,7 +175,6 @@
         keymaps = {
           "<leader>f" = "files";
           "<leader>b" = "buffers";
-          "<leader>s" = "lsp_document_symbols";
         };
         settings = {
           winopts = {
@@ -363,9 +362,6 @@
     };
     diagnostic = {
       settings = {
-        virtual_lines = {
-          current_line = true;
-        };
         virtual_text = false;
         underline = false;
       };
@@ -391,6 +387,14 @@
         mode = "n";
         key = "<leader>e";
         action = "<cmd>Neotree toggle<cr>";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>d";
+        action = "<cmd>Trouble diagnostics toggle<cr>";
         options = {
           silent = true;
         };
