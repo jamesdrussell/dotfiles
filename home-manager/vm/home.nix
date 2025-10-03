@@ -322,6 +322,11 @@
       };
       trouble = {
         enable = true;
+        settings = {
+          # win = {
+          #   position = "float";
+          # };
+        };
       };
     };
     opts = {
@@ -395,6 +400,14 @@
         mode = "n";
         key = "<leader>d";
         action = "<cmd>Trouble diagnostics toggle<cr>";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>s";
+        action = "<cmd>Trouble lsp_document_symbols toggle<cr>";
         options = {
           silent = true;
         };
