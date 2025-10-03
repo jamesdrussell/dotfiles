@@ -4,7 +4,6 @@
   inputs,
   ...
 }:
-
 {
   imports = [
     inputs.nixvim.homeModules.nixvim
@@ -323,9 +322,34 @@
       trouble = {
         enable = true;
         settings = {
-          # win = {
-          #   position = "float";
-          # };
+          modes = {
+            diagnostics = {
+              focus = true;
+              win = {
+                type = "split";
+                position = "bottom";
+              };
+            };
+            symbols = {
+              filter = {
+                any = {
+                  kind = [
+                    "Enum"
+                    "Field"
+                    "Function"
+                    "Module"
+                    "Namespace"
+                    "Struct"
+                  ];
+                };
+              };
+              focus = true;
+              win = {
+                type = "split";
+                position = "right";
+              };
+            };
+          };
         };
       };
     };
@@ -407,7 +431,7 @@
       {
         mode = "n";
         key = "<leader>s";
-        action = "<cmd>Trouble lsp_document_symbols toggle<cr>";
+        action = "<cmd>Trouble symbols toggle<cr>";
         options = {
           silent = true;
         };
