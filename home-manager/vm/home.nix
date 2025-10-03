@@ -322,6 +322,8 @@
       trouble = {
         enable = true;
         settings = {
+          follow = false;
+          auto_preview = false;
           modes = {
             diagnostics = {
               focus = true;
