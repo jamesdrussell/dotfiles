@@ -321,6 +321,9 @@
           };
         };
       };
+      trouble = {
+        enable = true;
+      };
     };
     opts = {
       number = true;
