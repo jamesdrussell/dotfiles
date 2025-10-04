@@ -297,6 +297,9 @@
               };
             };
           };
+          ruff = {
+            enable = true;
+          };
         };
         onAttach = ''
           if client.supports_method("textDocument/formatting") then
@@ -634,6 +637,13 @@
 
   programs.uv = {
     enable = true;
+  };
+
+  programs.ruff = {
+    enable = true;
+    settings = {
+
+    };
   };
 
   programs.bat = {
