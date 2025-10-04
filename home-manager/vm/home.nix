@@ -106,6 +106,8 @@
       gp = "git pull";
       gs = "git status";
       gg = "lazygit";
+      ls = "eza";
+      cat = "bat";
     };
   };
 
