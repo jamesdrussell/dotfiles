@@ -368,6 +368,9 @@
           '';
         };
       };
+      lazygit = {
+        enable = true;
+      };
     };
     autoCmd = [
       {
@@ -466,6 +469,14 @@
         mode = "n";
         key = "<leader>t";
         action = "<cmd>ToggleTerm<cr>";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>g";
+        action = "<cmd>LazyGit<cr>";
         options = {
           silent = true;
         };
