@@ -373,6 +373,14 @@
       lazygit = {
         enable = true;
       };
+      indent-blankline = {
+        enable = true;
+        settings = {
+          scope = {
+            enabled = false;
+          };
+        };
+      };
     };
     autoCmd = [
       {
