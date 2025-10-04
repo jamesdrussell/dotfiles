@@ -108,6 +108,7 @@
       gg = "lazygit";
       ls = "eza";
       cat = "bat";
+      grep = "rg";
     };
   };
 
