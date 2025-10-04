@@ -56,6 +56,7 @@
     python3
     difftastic
     file
+    glow
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -400,6 +401,12 @@
       };
       tiny-inline-diagnostic = {
         enable = true;
+      };
+      glow = {
+        enable = true;
+        settings = {
+          border = "rounded";
+        };
       };
     };
     # autoCmd = [
