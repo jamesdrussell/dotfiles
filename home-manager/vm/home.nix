@@ -45,6 +45,7 @@
     ghostty.terminfo
     nixd
     nixfmt-rfc-style
+    lua-language-server
     clang
     clang-tools
     cmake
@@ -284,6 +285,9 @@
             };
           };
           clangd = {
+            enable = true;
+          };
+          lua_ls = {
             enable = true;
           };
         };
