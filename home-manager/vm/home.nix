@@ -369,6 +369,20 @@
         };
       };
     };
+    autoCmd = [
+      {
+        event = [
+          "CursorHold"
+        ];
+        callback = {
+          __raw = ''
+            function()
+              vim.diagnostic.open_float()
+            end
+          '';
+        };
+      }
+    ];
     opts = {
       number = true;
       relativenumber = false;
@@ -407,6 +421,7 @@
       fillchars = {
         vert = " ";
       };
+      updatetime = 750;
     };
     diagnostic = {
       settings = {
@@ -435,14 +450,6 @@
         mode = "n";
         key = "<leader>e";
         action = "<cmd>Neotree toggle<cr>";
-        options = {
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>d";
-        action = "<cmd>Trouble diagnostics toggle<cr>";
         options = {
           silent = true;
         };
