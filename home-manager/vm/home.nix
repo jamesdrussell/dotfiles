@@ -57,6 +57,7 @@
     difftastic
     file
     glow
+    yazi
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -151,7 +152,7 @@
         };
       };
       neo-tree = {
-        enable = true;
+        enable = false;
         defaultComponentConfigs = {
           gitStatus = {
             symbols = {
@@ -408,6 +409,9 @@
           border = "rounded";
         };
       };
+      yazi = {
+        enable = true;
+      };
     };
     # autoCmd = [
     #   {
@@ -489,7 +493,7 @@
       {
         mode = "n";
         key = "<leader>e";
-        action = "<cmd>Neotree toggle<cr>";
+        action = "<cmd>Yazi<cr>";
         options = {
           silent = true;
         };
