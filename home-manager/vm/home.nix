@@ -57,7 +57,6 @@
     difftastic
     file
     glow
-    yazi
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -644,6 +643,10 @@
     };
   };
 
+  programs.lazydocker = {
+    enable = true;
+  };
+
   programs.zed-editor = {
     enable = true;
     installRemoteServer = true;
@@ -669,6 +672,18 @@
   };
 
   programs.ripgrep = {
+    enable = true;
+  };
+
+  programs.yazi = {
+    enable = true;
+  };
+
+  programs.eza = {
+    enable = true;
+  };
+
+  programs.zoxide = {
     enable = true;
   };
 }
