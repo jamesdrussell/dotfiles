@@ -381,6 +381,9 @@
           };
         };
       };
+      neoscroll = {
+        enable = true;
+      };
     };
     autoCmd = [
       {
