@@ -390,6 +390,9 @@
       foldtext = "";
       foldnestmax = 1;
       foldlevelstart = 1;
+      fillchars = {
+        vert = " ";
+      };
     };
     diagnostic = {
       settings = {
