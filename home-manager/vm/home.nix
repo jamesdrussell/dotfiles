@@ -174,6 +174,8 @@
         keymaps = {
           "<leader>f" = "files";
           "<leader>b" = "buffers";
+          "<leader>s" = "lsp_document_symbols";
+          "<leader>d" = "diagnostics_document";
         };
         settings = {
           winopts = {
@@ -320,7 +322,7 @@
         };
       };
       trouble = {
-        enable = true;
+        enable = false;
         settings = {
           follow = false;
           auto_preview = false;
@@ -453,14 +455,6 @@
         mode = "n";
         key = "<leader>e";
         action = "<cmd>Neotree toggle<cr>";
-        options = {
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>s";
-        action = "<cmd>Trouble symbols toggle<cr>";
         options = {
           silent = true;
         };
