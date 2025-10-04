@@ -328,8 +328,8 @@
             diagnostics = {
               focus = true;
               win = {
-                type = "split";
-                position = "bottom";
+                type = "float";
+                border = "rounded";
               };
             };
             symbols = {
@@ -352,6 +352,20 @@
               };
             };
           };
+          keys = {
+            "<esc>" = "close";
+          };
+        };
+      };
+      toggleterm = {
+        enable = true;
+        settings = {
+          direction = "float";
+          on_create = ''
+            function(term)
+              vim.keymap.set("t", "<esc>", "<cmd>close<cr>", {buffer = term.bufnr})
+            end
+          '';
         };
       };
     };
@@ -437,6 +451,14 @@
         mode = "n";
         key = "<leader>s";
         action = "<cmd>Trouble symbols toggle<cr>";
+        options = {
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>t";
+        action = "<cmd>ToggleTerm<cr>";
         options = {
           silent = true;
         };
