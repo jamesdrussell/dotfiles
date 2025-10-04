@@ -398,21 +398,24 @@
       neoscroll = {
         enable = true;
       };
+      tiny-inline-diagnostic = {
+        enable = true;
+      };
     };
-    autoCmd = [
-      {
-        event = [
-          "CursorHold"
-        ];
-        callback = {
-          __raw = ''
-            function()
-              vim.diagnostic.open_float()
-            end
-          '';
-        };
-      }
-    ];
+    # autoCmd = [
+    #   {
+    #     event = [
+    #       "CursorHold"
+    #     ];
+    #     callback = {
+    #       __raw = ''
+    #         function()
+    #           vim.diagnostic.open_float()
+    #         end
+    #       '';
+    #     };
+    #   }
+    # ];
     opts = {
       number = true;
       relativenumber = false;
